@@ -160,7 +160,7 @@
 					
 					
 	
-		<a href="/2018/10/01/DQL总结(一)：基础查询/" itemprop="url">		
+		<a href="/2018/10/01/DQL总结-条件查询/" itemprop="url">		
 			DQL总结		
 		</a>
 	
@@ -170,8 +170,8 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/01/DQL总结(一)：基础查询/" itemprop="url">
-	<time datetime="2018-10-01T07:39:45.411Z" itemprop="datePublished">
+						<a href="/2018/10/01/DQL总结-条件查询/" itemprop="url">
+	<time datetime="2018-10-01T09:08:03.308Z" itemprop="datePublished">
   		2018-10-01
   </time>
 </a>    
@@ -182,7 +182,7 @@
 						
 							<i class="fa fa-tags"></i>
 							
-								<a href="#Mysql" title="Mysql" rel="1">Mysql</a>&nbsp;
+								<a href="#Mysql" title="Mysql" rel="2">Mysql</a>&nbsp;
 													 											
 						
 					</span>
@@ -192,65 +192,39 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h2 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 查询列表 from 表名<span class="token punctuation">;</span>
+						<h2 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 查询列表 from 表名 where 筛选条件<span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>查询列表可以是字段、常量、表达式、函数，也可以是多个</li>
-<li>查询结果是一个虚拟表</li>
-</ul>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>查询单个字段</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 字段名 from 表名<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p> 查询多个字段</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 字段名 字段名 from 表名<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查询所有字段</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> * from 表名<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查询长量</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 常量值<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>注意：字符型和日期型的常量值必须用单引号引起来，数值型不需要</strong></p>
-<p>查询函数</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 函数名（实参列表）<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>解释：mysql的函数必须有返回值,且返回值唯一</strong></p>
-<p>查询表达式</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 表达式<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>起别名</p>
-<ol>
-<li>AS</li>
-<li>空格</li>
-</ol>
-<p>示例：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> * from user AS 用户<span class="token punctuation">;</span>
-<span class="token keyword">select</span> * from user 用户<span class="token punctuation">;</span>
-
+<h3 id="筛选条件的分类"><a href="#筛选条件的分类" class="headerlink" title="筛选条件的分类"></a>筛选条件的分类</h3><p>简单条件运算符</p>
+<pre><code>&gt; &lt; = &lt;&gt;不等于 != &gt;= &lt;=  &lt;=&gt;安全等于
+</code></pre><p>逻辑运算符</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&amp;&amp;</span> and    
+<span class="token operator">||</span> or
+<span class="token operator">!</span>  not
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>去重</p>
-<p>关键字：distinct</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> distinct 字段名 from 表名<span class="token punctuation">;</span>
+<p>模糊查询</p>
+<p>关键字</p>
+<p>like：一般搭配通配符使用，可以判断字符型或数值型</p>
+<p>%：任意多个字符</p>
+<p>_：任意单个字符</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> username from user where username LIKE <span class="token string">'%李%'</span><span class="token punctuation">;</span>
+<span class="token keyword">select</span> username from user where username LIKE <span class="token string">'李_'</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p><strong>between and</strong></p>
+<p>操作符 between … and 会选取介于两个值之间的数据范围。这些值可以是数值、文本或者日期。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 字段名 from 表名 where 字段名 between value1 and value2<span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<html><br>+<br></html>
-
-<p>作用：做加法运算</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 数值+数值<span class="token punctuation">;</span>    //直接运算
-<span class="token keyword">select</span> 数值+字符<span class="token punctuation">;</span>    //先尝试将字符转化为数值，如转换成功，继续运算；否则转换为0，再做运算
-<span class="token keyword">select</span> 值+null<span class="token punctuation">;</span>    //结果都为null
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p><strong>concat函数</strong></p>
-<p>功能：拼接字符</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> concat<span class="token punctuation">(</span>字符1，字符2，字符3，<span class="token punctuation">..</span>.<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p><strong>in</strong></p>
+<p>in 操作符允许我们在 where 子句中规定多个值。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 字段名 from 表名 where 字段名 <span class="token keyword">in</span> <span class="token punctuation">(</span>value1,value2,<span class="token punctuation">..</span>.<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>ifnull函数</strong></p>
-<p>功能：判断某字段或表达式是否为null，如果为null 返回指定的值，否则返回原本的值</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> ifnull（字段或表达式,值）<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>isnull函数</strong></p>
-<p>功能：判断某字段或表达式是否为null，如果是，则返回1，否则返回0</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> isnull<span class="token punctuation">(</span>字段或表达式<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>is null/is not null</strong></p>
+<p>用于判断null值</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 字段名 from 表名 where 字段名 is null<span class="token punctuation">;</span>
+<span class="token keyword">select</span> 字段名 from 表名 where 字段名 is not null<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>is null 跟 &lt;=&gt;的差别：</p>
+<p>is null用来判断null值，不能判断普通类型的数值</p>
+<p>&lt;=&gt;用来判断普通类型数值，不能判断null值</p>
 
 					
 				</div>
@@ -261,7 +235,7 @@
     
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/09/30/使用Markdown做笔记/" title="Markdown的使用">
+		<a class="pull-right" href="/2018/10/01/DQL总结-基础查询/" title="DQL总结">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -353,7 +327,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础查询"><span class="post-toc-text">基础查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法"><span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#特点"><span class="post-toc-text">特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例"><span class="post-toc-text">示例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#补充"><span class="post-toc-text">补充</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#条件查询"><span class="post-toc-text">条件查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法"><span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#筛选条件的分类"><span class="post-toc-text">筛选条件的分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#补充"><span class="post-toc-text">补充</span></a></li></ol></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>
