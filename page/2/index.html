@@ -158,6 +158,138 @@
 						<h2>
 							
 	
+		<a href="/2018/10/01/DQL总结-分页查询/" itemprop="url">		
+			DQL总结-分页查询		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									分页查询应用场景当要查询的条目数太多，一页显示不全
+语法select 查询列表
+from 表
+limit 【offset，】size;
+
+注意：
+offset代表的是起始的条目索引，默认从0开始
+size代表的是显示的条目数
+公式假如要显示的页数为page，每一页条目数为size
+select 查询列表
+from 表
+limit (page-1)*size,size;
+
+	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DQL总结-分页查询/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DQL总结-子查询/" itemprop="url">		
+			DQL总结-子查询		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									子查询含义嵌套在其他语句内部的select语句称为子查询或内查询，
+外面的语句可以是insert、update、delete、select等，一般select作为外面语句较多
+外面如果为select语句，则此语句称为外查询或主查询
+分类
+按位置出现
+
+select后面：仅仅支持标量子查询
+from后面：表子查询
+where或having后面：标量子查询 列子查询 行子查询
+exists后面：标量子	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DQL总结-子查询/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DQL总结-连接查询/" itemprop="url">		
+			DQL总结-连接查询		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									连接查询含义当查询中涉及到了多个表的字段，需要使用多表连接
+select 字段1，字段2 from 表1,表2 ...
+
+笛卡尔乘积：当查询多个表时，没有添加有效的连接条件，导致多个表所有行实现完全连接。
+如何解决：添加有效的连接条件。
+分类按年代分类：
+
+sql92：
+
+等值连接
+语法：
+select 查询列表
+from 表1 别名,表2 别名
+where 表1.key=表2.key
+【and 	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DQL总结-连接查询/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
 		<a href="/2018/10/01/DQL总结-分组查询/" itemprop="url">		
 			DQL总结-分组查询		
 		</a>
@@ -255,140 +387,6 @@ round
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/DQL总结-常见函数/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-排序查询/" itemprop="url">		
-			DQL总结-排序查询		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									排序查询语法关键字：order by
-select 查询列表 from 表 where 筛选条件 order by 排序列表 【asc|desc】   //asc 代表升序 desc代表降序 默认是升序
-
-特点asc：升序，不写默认降序
-desc：降序，可以省略不写
-排序列表 支持 单个字段、多个字段、函数、表达式、别名
-order by的位置一般放在查询语句的最后（除limit语句之外）
-	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-排序查询/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-条件查询/" itemprop="url">		
-			DQL总结-条件查询		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									条件查询语法select 查询列表 from 表名 where 筛选条件;
-
-筛选条件的分类简单条件运算符
-&gt; &lt; = &lt;&gt;不等于 != &gt;= &lt;=  &lt;=&gt;安全等于
-逻辑运算符
-&amp;&amp; and    
-|| or
-!  not
-
-模糊查询
-关键字
-like：一般搭配通配符使用，可以判断字符型或数值型
-%：任意多个字符
-_：任意单个字符	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-条件查询/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-基础查询/" itemprop="url">		
-			DQL总结-基础查询		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									基础查询语法select 查询列表 from 表名;
-
-特点
-查询列表可以是字段、常量、表达式、函数，也可以是多个
-查询结果是一个虚拟表
-
-示例查询单个字段
-select 字段名 from 表名;
-
- 查询多个字段
-select 字段名 字段名 from 表名;
-
-查询所有字段
-select * from 表名;
-
-查询长量
-select 常量值;
-
-注意：字符型和日期型的常量值必须用单引号引起来	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-基础查询/" class="pull-right">
 								展开全文
 							</a>		
 						<span>

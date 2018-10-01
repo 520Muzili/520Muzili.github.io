@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>DQL总结-分页查询</title>
+	<title>DML总结-插入</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《DQL总结-分页查询》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《DML总结-插入》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/01/DQL总结-分页查询/" itemprop="url">		
-			DQL总结-分页查询		
+		<a href="/2018/10/01/DML总结-插入/" itemprop="url">		
+			DML总结-插入		
 		</a>
 	
 
@@ -170,8 +170,8 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/01/DQL总结-分页查询/" itemprop="url">
-	<time datetime="2018-10-01T11:53:27.650Z" itemprop="datePublished">
+						<a href="/2018/10/01/DML总结-插入/" itemprop="url">
+	<time datetime="2018-10-01T12:33:26.573Z" itemprop="datePublished">
   		2018-10-01
   </time>
 </a>    
@@ -192,19 +192,35 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h2 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>当要查询的条目数太多，一页显示不全</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 查询列表
-from 表
-limit 【offset，】size<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>注意：</p>
-<p>offset代表的是起始的条目索引，默认从0开始</p>
-<p>size代表的是显示的条目数</p>
-<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>假如要显示的页数为page，每一页条目数为size</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 查询列表
-from 表
-limit <span class="token punctuation">(</span>page-1<span class="token punctuation">)</span>*size,size<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+						<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><h3 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h3><p>语法</p>
+<pre class="line-numbers language-bash"><code class="language-bash">insert into 表名<span class="token punctuation">(</span>字段名,<span class="token punctuation">..</span>.<span class="token punctuation">)</span> values<span class="token punctuation">(</span>值,<span class="token punctuation">..</span>.<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>特点</p>
+<ul>
+<li>要求值的类型和字段的类型要一致或兼容</li>
+<li>字段的个数和顺序不一定与原始表中的字段个数和顺序一致<br>但必须保证值和字段一一对应</li>
+<li>假如表中有可以为null的字段，注意可以通过以下两种方式插入null值</li>
+</ul>
+<blockquote>
+<p>①字段和值都省略</p>
+</blockquote>
+<blockquote>
+<p>②字段写上，值使用null</p>
+<ul>
+<li>字段和值的个数必须一致</li>
+<li>字段名可以省略，默认所有列</li>
+</ul>
+</blockquote>
+<h3 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h3><p>语法</p>
+<pre class="line-numbers language-bash"><code class="language-bash">insert into 表名 <span class="token keyword">set</span> 字段<span class="token operator">=</span>值,字段<span class="token operator">=</span>值,<span class="token punctuation">..</span>.<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="两种方式的区别"><a href="#两种方式的区别" class="headerlink" title="两种方式的区别"></a>两种方式的区别</h3><p>方式一支持一次插入多行，语法如下：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">insert into 表名【<span class="token punctuation">(</span>字段名,<span class="token punctuation">..</span><span class="token punctuation">)</span>】 values<span class="token punctuation">(</span>值，<span class="token punctuation">..</span><span class="token punctuation">)</span>,<span class="token punctuation">(</span>值，<span class="token punctuation">..</span>.<span class="token punctuation">)</span>,<span class="token punctuation">..</span>.<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>方式一支持子查询，语法如下：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">insert into 表名
+查询语句<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 					
 				</div>
@@ -214,14 +230,14 @@ limit <span class="token punctuation">(</span>page-1<span class="token punctuati
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/01/DQL总结-联合查询/" title="DQL总结-联合查询">
+   		<a class="pull-left" href="/2018/10/01/DML总结-修改/" title="DML总结-修改">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/01/DQL总结-子查询/" title="DQL总结-子查询">
+		<a class="pull-right" href="/2018/10/01/DQL查询总结/" title="DQL总结">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -313,7 +329,7 @@ limit <span class="token punctuation">(</span>page-1<span class="token punctuati
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分页查询"><span class="post-toc-text">分页查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#应用场景"><span class="post-toc-text">应用场景</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法"><span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#公式"><span class="post-toc-text">公式</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插入"><span class="post-toc-text">插入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式一"><span class="post-toc-text">方式一</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式二"><span class="post-toc-text">方式二</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#两种方式的区别"><span class="post-toc-text">两种方式的区别</span></a></li></ol></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>
