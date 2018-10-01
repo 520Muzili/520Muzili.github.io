@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>DQL总结</title>
+	<title>DQL总结-分组查询</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《DQL总结》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《DQL总结-分组查询》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/01/DQL总结-基础查询/" itemprop="url">		
-			DQL总结		
+		<a href="/2018/10/01/DQL总结-分组查询/" itemprop="url">		
+			DQL总结-分组查询		
 		</a>
 	
 
@@ -170,8 +170,8 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/01/DQL总结-基础查询/" itemprop="url">
-	<time datetime="2018-10-01T07:39:45.411Z" itemprop="datePublished">
+						<a href="/2018/10/01/DQL总结-分组查询/" itemprop="url">
+	<time datetime="2018-10-01T10:43:22.788Z" itemprop="datePublished">
   		2018-10-01
   </time>
 </a>    
@@ -192,65 +192,37 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h2 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 查询列表 from 表名<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>查询列表可以是字段、常量、表达式、函数，也可以是多个</li>
-<li>查询结果是一个虚拟表</li>
-</ul>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>查询单个字段</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 字段名 from 表名<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p> 查询多个字段</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 字段名 字段名 from 表名<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查询所有字段</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> * from 表名<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查询长量</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 常量值<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>注意：字符型和日期型的常量值必须用单引号引起来，数值型不需要</strong></p>
-<p>查询函数</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 函数名（实参列表）<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>解释：mysql的函数必须有返回值,且返回值唯一</strong></p>
-<p>查询表达式</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 表达式<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>起别名</p>
-<ol>
-<li>AS</li>
-<li>空格</li>
-</ol>
-<p>示例：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> * from user AS 用户<span class="token punctuation">;</span>
-<span class="token keyword">select</span> * from user 用户<span class="token punctuation">;</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>去重</p>
-<p>关键字：distinct</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> distinct 字段名 from 表名<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<html><br>+<br></html>
-
-<p>作用：做加法运算</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 数值+数值<span class="token punctuation">;</span>    //直接运算
-<span class="token keyword">select</span> 数值+字符<span class="token punctuation">;</span>    //先尝试将字符转化为数值，如转换成功，继续运算；否则转换为0，再做运算
-<span class="token keyword">select</span> 值+null<span class="token punctuation">;</span>    //结果都为null
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p><strong>concat函数</strong></p>
-<p>功能：拼接字符</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> concat<span class="token punctuation">(</span>字符1，字符2，字符3，<span class="token punctuation">..</span>.<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>ifnull函数</strong></p>
-<p>功能：判断某字段或表达式是否为null，如果为null 返回指定的值，否则返回原本的值</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> ifnull（字段或表达式,值）<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>isnull函数</strong></p>
-<p>功能：判断某字段或表达式是否为null，如果是，则返回1，否则返回0</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> isnull<span class="token punctuation">(</span>字段或表达式<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+						<h2 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 分组函数，分组后的字段
+from 表
+【where 筛选条件】
+group by 分组的字段
+【having 分组后的筛选】
+【order by 排序列表】
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:center">使用关键字</th>
+<th style="text-align:right">筛选的表</th>
+<th style="text-align:right">位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分组前筛选</td>
+<td style="text-align:center">where</td>
+<td style="text-align:right">原始表</td>
+<td style="text-align:right">group by的前面</td>
+</tr>
+<tr>
+<td>分组后筛选</td>
+<td style="text-align:center">having</td>
+<td style="text-align:right">分组后的表</td>
+<td style="text-align:right">group by的后面</td>
+</tr>
+</tbody>
+</table>
 
 					
 				</div>
@@ -259,15 +231,9 @@
 
 		<ul class="am-pagination">
     
-    	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/01/DQL总结-条件查询/" title="DQL总结">
-      		&laquo; 上一篇
-		</a>
-		</li>
-	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/09/30/使用Markdown做笔记/" title="Markdown的使用">
+		<a class="pull-right" href="/2018/10/01/DQL总结-常见函数/" title="DQL总结-常见函数">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -359,7 +325,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础查询"><span class="post-toc-text">基础查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法"><span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#特点"><span class="post-toc-text">特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例"><span class="post-toc-text">示例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#补充"><span class="post-toc-text">补充</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分组查询"><span class="post-toc-text">分组查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法"><span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#特点"><span class="post-toc-text">特点</span></a></li></ol></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>
