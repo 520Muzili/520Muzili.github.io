@@ -158,8 +158,8 @@
 						<h2>
 							
 	
-		<a href="/2018/10/01/DQL总结-分页查询/" itemprop="url">		
-			DQL总结-分页查询		
+		<a href="/2018/10/01/DDL总结-库的管理/" itemprop="url">		
+			DDL总结-库的管理		
 		</a>
 	
 
@@ -168,18 +168,11 @@
 						
 							<p>
 								
-									分页查询应用场景当要查询的条目数太多，一页显示不全
-语法select 查询列表
-from 表
-limit 【offset，】size;
+									库的管理创建库create database 【if not exists】 库名【 character set 字符集名】;
 
-注意：
-offset代表的是起始的条目索引，默认从0开始
-size代表的是显示的条目数
-公式假如要显示的页数为page，每一页条目数为size
-select 查询列表
-from 表
-limit (page-1)*size,size;
+修改库alter database 库名 character set 字符集名;
+
+删除库drop database 【if exists】 库名;
 
 	
 								  
@@ -190,7 +183,7 @@ limit (page-1)*size,size;
 							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
 						</span>
 						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-分页查询/" class="pull-right">
+							<a href="/2018/10/01/DDL总结-库的管理/" class="pull-right">
 								展开全文
 							</a>		
 						<span>
@@ -203,8 +196,8 @@ limit (page-1)*size,size;
 						<h2>
 							
 	
-		<a href="/2018/10/01/DQL总结-子查询/" itemprop="url">		
-			DQL总结-子查询		
+		<a href="/2018/10/01/DQL总结-删除/" itemprop="url">		
+			DML总结-删除		
 		</a>
 	
 
@@ -213,125 +206,111 @@ limit (page-1)*size,size;
 						
 							<p>
 								
-									子查询含义嵌套在其他语句内部的select语句称为子查询或内查询，
-外面的语句可以是insert、update、delete、select等，一般select作为外面语句较多
-外面如果为select语句，则此语句称为外查询或主查询
-分类
-按位置出现
+									删除方式一删除单表的记录
+语法
+语法：delete from 表名 【where 筛选条件】【limit 条目数】;
 
-select后面：仅仅支持标量子查询
-from后面：表子查询
-where或having后面：标量子查询 列子查询 行子查询
-exists后面：标量子	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-子查询/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-连接查询/" itemprop="url">		
-			DQL总结-连接查询		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									连接查询含义当查询中涉及到了多个表的字段，需要使用多表连接
-select 字段1，字段2 from 表1,表2 ...
-
-笛卡尔乘积：当查询多个表时，没有添加有效的连接条件，导致多个表所有行实现完全连接。
-如何解决：添加有效的连接条件。
-分类按年代分类：
-
-sql92：
-
-等值连接
-语法：
-select 查询列表
-from 表1 别名,表2 别名
-where 表1.key=表2.key
-【and 	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-连接查询/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-分组查询/" itemprop="url">		
-			DQL总结-分组查询		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									分组查询语法select 分组函数，分组后的字段
-from 表
+级联删除
+语法
+delete 别名1,别名2 from 表1 别名 
+inner|left|right join 表2 别名 
+on 连接条件
 【where 筛选条件】
-group by 分组的字段
-【having 分组后的筛选】
-【order by 排序列表】
+
+使用truncate语法
+truncate table 表名   //清空
+
+两种方式的区别【面试题】1.t	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DQL总结-删除/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DML总结-修改/" itemprop="url">		
+			DML总结-修改		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									修改修改单表的记录语法
+update 表名 set 字段=值,字段=值 【where 筛选条件】;
+
+修改多表的记录语法
+update 表1 别名 
+left|right|inner join 表2 别名 
+on 连接条件  
+set 字段=值,字段=值 
+【where 筛选条件】;
+
+	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DML总结-修改/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DML总结-插入/" itemprop="url">		
+			DML总结-插入		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									插入方式一语法
+insert into 表名(字段名,...) values(值,...);
 
 特点
 
-
-Name
-使用关键字
-筛选的表
-位置
+要求值的类型和字段的类型要一致或兼容
+字段的个数和顺序不一定与原始表中的字段个数和顺序一致但必须保证值和字段一一对应
+假如表中有可以为null的字段，注意可以通过以下两种方式插入null值
 
 
+①字段和值都省略
 
 
-分组前筛选
-where
-原始表
-group by的前面
+②字段写上，值使用null
 
-
-分组后筛选
-having
-分组后的表
-group by的后面
-
-
-
-	
+字段和值的个数必须一致
+字段名可以省略，默认所有列	
 								  
 							</p>
 						
@@ -340,7 +319,7 @@ group by的后面
 							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
 						</span>
 						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-分组查询/" class="pull-right">
+							<a href="/2018/10/01/DML总结-插入/" class="pull-right">
 								展开全文
 							</a>		
 						<span>
@@ -353,8 +332,8 @@ group by的后面
 						<h2>
 							
 	
-		<a href="/2018/10/01/DQL总结-常见函数/" itemprop="url">		
-			DQL总结-常见函数		
+		<a href="/2018/10/01/DQL查询总结/" itemprop="url">		
+			DQL总结		
 		</a>
 	
 
@@ -363,21 +342,18 @@ group by的后面
 						
 							<p>
 								
-									常见函数概述功能：类似于java中的方法
-好处：提高重用性和隐藏实现细节
-调用：select 函数名(实参列表);
-单行函数字符函数concat:连接
-substr:截取子串
-upper:变大写
-lower：变小写
-replace：替换
-length：获取字节长度
-trim:去前后空格
-lpad：左填充
-rpad：右填充
-instr:获取子串第一次出现的索引
-数学函数ceil:向上取整
-round	
+									总结语法select 查询列表    
+from 表1 别名       
+连接类型 join 表2   
+on 连接条件         
+where 筛选          
+group by 分组列表   
+having 筛选         
+order by排序列表    
+limit 起始条目索引，条目数;  
+
+执行顺序select 查询列表    ⑦
+from 表1 别名     	
 								  
 							</p>
 						
@@ -386,7 +362,7 @@ round
 							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
 						</span>
 						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-常见函数/" class="pull-right">
+							<a href="/2018/10/01/DQL查询总结/" class="pull-right">
 								展开全文
 							</a>		
 						<span>

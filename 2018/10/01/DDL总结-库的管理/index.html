@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>DQL总结-联合查询</title>
+	<title>DDL总结-库的管理</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《DQL总结-联合查询》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《DDL总结-库的管理》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/01/DQL总结-联合查询/" itemprop="url">		
-			DQL总结-联合查询		
+		<a href="/2018/10/01/DDL总结-库的管理/" itemprop="url">		
+			DDL总结-库的管理		
 		</a>
 	
 
@@ -170,8 +170,8 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/01/DQL总结-联合查询/" itemprop="url">
-	<time datetime="2018-10-01T11:57:52.077Z" itemprop="datePublished">
+						<a href="/2018/10/01/DDL总结-库的管理/" itemprop="url">
+	<time datetime="2018-10-01T13:05:04.586Z" itemprop="datePublished">
   		2018-10-01
   </time>
 </a>    
@@ -192,18 +192,12 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h2 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h2><h3 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h3><p>union：合并、联合，将多次查询结果合并成一个结果</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-bash"><code class="language-bash">查询语句1
-union 【all】
-查询语句2
-union 【all】
-<span class="token punctuation">..</span>.
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h3><p>将一条比较复杂的查询语句拆分成多条语句</p>
-<p>适用于查询多个表的时候，查询的列基本是一致</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>要求多条查询语句的查询列数必须一致</p>
-<p>要求多条查询语句的查询的各列类型、顺序最好一致</p>
-<p>union 去重，union all包含重复项</p>
+						<h2 id="库的管理"><a href="#库的管理" class="headerlink" title="库的管理"></a>库的管理</h2><h3 id="创建库"><a href="#创建库" class="headerlink" title="创建库"></a>创建库</h3><pre class="line-numbers language-bash"><code class="language-bash">create database 【if not exists】 库名【 character <span class="token keyword">set</span> 字符集名】<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="修改库"><a href="#修改库" class="headerlink" title="修改库"></a>修改库</h3><pre class="line-numbers language-bash"><code class="language-bash">alter database 库名 character <span class="token keyword">set</span> 字符集名<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="删除库"><a href="#删除库" class="headerlink" title="删除库"></a>删除库</h3><pre class="line-numbers language-bash"><code class="language-bash">drop database 【if exists】 库名<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 					
 				</div>
@@ -213,14 +207,14 @@ union 【all】
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/01/DQL查询总结/" title="DQL总结">
+   		<a class="pull-left" href="/2018/10/01/DDL总结-表的管理/" title="DDL总结-表的管理">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/01/DQL总结-分页查询/" title="DQL总结-分页查询">
+		<a class="pull-right" href="/2018/10/01/DQL总结-删除/" title="DML总结-删除">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -312,7 +306,7 @@ union 【all】
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#联合查询"><span class="post-toc-text">联合查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#含义"><span class="post-toc-text">含义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法"><span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#意义"><span class="post-toc-text">意义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#特点"><span class="post-toc-text">特点</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#库的管理"><span class="post-toc-text">库的管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建库"><span class="post-toc-text">创建库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改库"><span class="post-toc-text">修改库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除库"><span class="post-toc-text">删除库</span></a></li></ol></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>

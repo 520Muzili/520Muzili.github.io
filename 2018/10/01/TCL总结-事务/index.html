@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>DQL总结-联合查询</title>
+	<title>TCL总结-事务</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《DQL总结-联合查询》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《TCL总结-事务》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/01/DQL总结-联合查询/" itemprop="url">		
-			DQL总结-联合查询		
+		<a href="/2018/10/01/TCL总结-事务/" itemprop="url">		
+			TCL总结-事务		
 		</a>
 	
 
@@ -170,8 +170,8 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/01/DQL总结-联合查询/" itemprop="url">
-	<time datetime="2018-10-01T11:57:52.077Z" itemprop="datePublished">
+						<a href="/2018/10/01/TCL总结-事务/" itemprop="url">
+	<time datetime="2018-10-01T14:31:02.041Z" itemprop="datePublished">
   		2018-10-01
   </time>
 </a>    
@@ -192,18 +192,47 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h2 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h2><h3 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h3><p>union：合并、联合，将多次查询结果合并成一个结果</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-bash"><code class="language-bash">查询语句1
-union 【all】
-查询语句2
-union 【all】
-<span class="token punctuation">..</span>.
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h3><p>将一条比较复杂的查询语句拆分成多条语句</p>
-<p>适用于查询多个表的时候，查询的列基本是一致</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>要求多条查询语句的查询列数必须一致</p>
-<p>要求多条查询语句的查询的各列类型、顺序最好一致</p>
-<p>union 去重，union all包含重复项</p>
+						<h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><p>事务：一条或多条sql语句组成一个执行单位，一组sql语句要么都执行要么都不执行</p>
+<h2 id="特点（ACID）"><a href="#特点（ACID）" class="headerlink" title="特点（ACID）"></a>特点（ACID）</h2><p>A 原子性：一个事务是不可再分割的整体，要么都执行要么都不执行</p>
+<p>C 一致性：一个事务可以使数据从一个一致状态切换到另外一个一致的状态</p>
+<p>I 隔离性：一个事务不受其他事务的干扰，多个事务互相隔离的</p>
+<p>D 持久性：一个事务一旦提交了，则永久的持久化到本地</p>
+<h2 id="事务的使用步骤"><a href="#事务的使用步骤" class="headerlink" title="事务的使用步骤"></a>事务的使用步骤</h2><p><strong>了解：</strong></p>
+<p>隐式（自动）事务：没有明显的开启和结束，本身就是一条事务可以自动提交，比如insert、update、delete<br>显式事务：具有明显的开启和结束</p>
+<p><strong>使用显式事务：</strong></p>
+<p>开启事务</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> autocommit<span class="token operator">=</span>0<span class="token punctuation">;</span>
+start transaction<span class="token punctuation">;</span><span class="token comment" spellcheck="true">#可以省略</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>编写一组逻辑sql语句（注意：sql语句支持的是insert、update、delete）</p>
+<p>设置回滚点：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">savepoint 回滚点名<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>结束事务</p>
+<pre class="line-numbers language-bash"><code class="language-bash">commit<span class="token punctuation">;</span>  //提交
+rollback<span class="token punctuation">;</span>  //回滚
+回滚到指定的地方：rollback to 回滚点名<span class="token punctuation">;</span>  //回滚到指定的地方<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="并发事务"><a href="#并发事务" class="headerlink" title="并发事务"></a>并发事务</h2><ul>
+<li>事务的并发问题是如何发生的？</li>
+</ul>
+<p>多个事务 同时 操作 同一个数据库的相同数据时</p>
+<ul>
+<li>并发问题都有哪些？<br>脏读：一个事务读取了其他事务还没有提交的数据，读到的是其他事务“更新”的数据</li>
+</ul>
+<p>不可重复读：一个事务多次读取，结果不一样</p>
+<p>幻读：一个事务读取了其他事务还没有提交的数据，只是读到的是 其他事务“插入”的数据</p>
+<ul>
+<li>如何解决并发问题</li>
+</ul>
+<p>通过设置隔离级别来解决并发问题</p>
+<ul>
+<li>隔离级别<br>隔离级别 | 脏读 | 不可重复读 | 幻读 <ul>
+<li>| :-: | -:  | -:<br>read uncommitted:读未提交 |未解决| 未解决 | 未解决<br>read committed：读已提交 | 解决 | 未解决 | 未解决<br>repeatable read：可重复读 | 解决 | 解决 | 未解决<br>serializable：串行化  | 解决 | 解决 | 解决</li>
+</ul>
+</li>
+</ul>
+<p>注意：串行化会出现线程阻塞 效率非常低</p>
 
 					
 				</div>
@@ -213,14 +242,14 @@ union 【all】
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/01/DQL查询总结/" title="DQL总结">
+   		<a class="pull-left" href="/2018/10/01/Mysql-视图/" title="Mysql-视图">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/01/DQL总结-分页查询/" title="DQL总结-分页查询">
+		<a class="pull-right" href="/2018/10/01/DDL总结-常见的约束/" title="DDL总结-常见约束">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -312,7 +341,7 @@ union 【all】
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#联合查询"><span class="post-toc-text">联合查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#含义"><span class="post-toc-text">含义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法"><span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#意义"><span class="post-toc-text">意义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#特点"><span class="post-toc-text">特点</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#含义"><span class="post-toc-text">含义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特点（ACID）"><span class="post-toc-text">特点（ACID）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事务的使用步骤"><span class="post-toc-text">事务的使用步骤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#并发事务"><span class="post-toc-text">并发事务</span></a></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>
