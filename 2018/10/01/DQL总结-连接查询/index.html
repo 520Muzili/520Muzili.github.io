@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>DQL总结-排序查询</title>
+	<title>DQL总结-连接查询</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《DQL总结-排序查询》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《DQL总结-连接查询》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/01/DQL总结-排序查询/" itemprop="url">		
-			DQL总结-排序查询		
+		<a href="/2018/10/01/DQL总结-连接查询/" itemprop="url">		
+			DQL总结-连接查询		
 		</a>
 	
 
@@ -170,8 +170,8 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/01/DQL总结-排序查询/" itemprop="url">
-	<time datetime="2018-10-01T09:24:36.434Z" itemprop="datePublished">
+						<a href="/2018/10/01/DQL总结-连接查询/" itemprop="url">
+	<time datetime="2018-10-01T11:31:27.350Z" itemprop="datePublished">
   		2018-10-01
   </time>
 </a>    
@@ -192,13 +192,102 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h2 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>关键字：order by</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 查询列表 from 表 where 筛选条件 order by 排序列表 【asc<span class="token operator">|</span>desc】   //asc 代表升序 desc代表降序 默认是升序
+						<h2 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h2><h3 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h3><p>当查询中涉及到了多个表的字段，需要使用多表连接</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 字段1，字段2 from 表1,表2 <span class="token punctuation">..</span>.
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>asc：升序，不写默认降序</p>
-<p>desc：降序，可以省略不写</p>
-<p>排序列表 支持 单个字段、多个字段、函数、表达式、别名</p>
-<p>order by的位置一般放在查询语句的最后（除limit语句之外）</p>
+<p>笛卡尔乘积：当查询多个表时，没有添加有效的连接条件，导致多个表所有行实现完全连接。</p>
+<p>如何解决：添加有效的连接条件。</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>按年代分类：</p>
+<ul>
+<li><strong>sql92：</strong></li>
+</ul>
+<p>等值连接</p>
+<p>语法：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 查询列表
+from 表1 别名,表2 别名
+where 表1.key<span class="token operator">=</span>表2.key
+【and 筛选条件】
+【group by 分组字段】
+【having 分组后的筛选】
+【order by 排序字段】<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>特点：</p>
+<ul>
+<li>一般为表起别名</li>
+<li>多表的顺序可以调换</li>
+<li>n表连接至少需要n-1个连接条件</li>
+<li>等值连接的结果是多表的交集部分</li>
+</ul>
+<p>非等值</p>
+<p>语法：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 查询列表
+from 表1 别名,表2 别名
+where 非等值的连接条件
+【and 筛选条件】
+【group by 分组字段】
+【having 分组后的筛选】
+【order by 排序字段】<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>自连接</p>
+<p>语法：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 查询列表
+from 表 别名1,表 别名2
+where 等值的连接条件
+【and 筛选条件】
+【group by 分组字段】
+【having 分组后的筛选】
+【order by 排序字段】<span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><strong>sql99：</strong></li>
+</ul>
+<p>内连接</p>
+<ol>
+<li>等值</li>
+<li>非等值</li>
+<li>自连接</li>
+</ol>
+<p>语法：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 查询列表
+from 表1 别名
+【inner】 <span class="token function">join</span> 表2 别名 on 连接条件
+【where 筛选条件】
+【group by 分组列表】
+【having 分组后的筛选】
+【order by 排序列表】
+【limit 子句】<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>特点：<br>①表的顺序可以调换</p>
+<p>②内连接的结果=多表的交集</p>
+<p>③n表连接至少需要n-1个连接条件</p>
+<p>外连接：</p>
+<ol>
+<li>左外</li>
+<li>右外</li>
+<li>全外（mysql不支持）</li>
+</ol>
+<p>语法：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 查询列表
+from 表1 别名
+left<span class="token operator">|</span>right<span class="token operator">|</span>full【outer】 <span class="token function">join</span> 表2 别名 on 连接条件
+where 筛选条件
+group by 分组列表
+having 分组后的筛选
+order by 排序列表
+limit 子句<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>特点：</p>
+<p>①查询的结果=主表中所有的行，如果从表和它匹配的将显示匹配行，如果从表没有匹配的则显示null</p>
+<p>②left join 左边的就是主表，right join 右边的就是主表<br>  full join 两边都是主表</p>
+<p>③一般用于查询除了交集部分的剩余的不匹配的行</p>
+<p>交叉连接</p>
+<p>语法：</p>
+<pre><code>select 查询列表
+from 表1 别名
+cross join 表2 别名
+</code></pre><p>特点：</p>
+<p>类似于笛卡尔乘积</p>
 
 					
 				</div>
@@ -208,14 +297,14 @@
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/01/DQL总结-常见函数/" title="DQL总结-常见函数">
+   		<a class="pull-left" href="/2018/10/01/DQL总结-子查询/" title="DQL总结-子查询">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/01/DQL总结-条件查询/" title="DQL总结-条件查询">
+		<a class="pull-right" href="/2018/10/01/DQL总结-分组查询/" title="DQL总结-分组查询">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -307,7 +396,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#排序查询"><span class="post-toc-text">排序查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法"><span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#特点"><span class="post-toc-text">特点</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连接查询"><span class="post-toc-text">连接查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#含义"><span class="post-toc-text">含义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分类"><span class="post-toc-text">分类</span></a></li></ol></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>

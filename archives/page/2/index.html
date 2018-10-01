@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>DQL总结-排序查询</title>
+	<title>文章归档</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,8 +54,9 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《DQL总结-排序查询》</p>
-			
+			<!-- && is_current('archives/index.html') -->
+			<p class="page-name">文章归档</p>
+		
 		
 	
 	
@@ -149,172 +150,60 @@
 		<!-- content srart -->
 <div class="am-g am-g-fixed blog-fixed blog-content">
 	<div class="am-u-md-8 am-u-sm-12">
+		<div class="archive">
 
-		<article class="am-article blog-article-p">
-
-			<div class="am-article-hd">
+			<div class="blog-text-center">
 				
+					<i class="fa fa-book">总计11篇文章</i>
+				
+			</div>  
 
+			
 
-				<h1 class="am-article-title blog-text-center">
-					
-					
-	
-		<a href="/2018/10/01/DQL总结-排序查询/" itemprop="url">		
-			DQL总结-排序查询		
-		</a>
-	
-
-				</h1>
-
-				<p class="am-article-meta blog-text-center">
-					<span>
-						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/01/DQL总结-排序查询/" itemprop="url">
-	<time datetime="2018-10-01T09:24:36.434Z" itemprop="datePublished">
-  		2018-10-01
-  </time>
-</a>    
-&nbsp;
-					</span>
-					
-					<span>						
-						
-							<i class="fa fa-tags"></i>
 							
-								<a href="#Mysql" title="Mysql" rel="10">Mysql</a>&nbsp;
-													 											
-						
-					</span>
-				</p>
-			</div>
-
-			<div class="am-article-bd">
-				<div class="content" id="post-content">
+				
+				
+				
 					
-						<h2 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>关键字：order by</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 查询列表 from 表 where 筛选条件 order by 排序列表 【asc<span class="token operator">|</span>desc】   //asc 代表升序 desc代表降序 默认是升序
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>asc：升序，不写默认降序</p>
-<p>desc：降序，可以省略不写</p>
-<p>排序列表 支持 单个字段、多个字段、函数、表达式、别名</p>
-<p>order by的位置一般放在查询语句的最后（除limit语句之外）</p>
 
 					
-				</div>
-			</div>
-		</article>
-
-		<ul class="am-pagination">
+					<!--<a href="/archives/2018" class="archive-year">2018</a>-->
+				
+								
+				
+					  
+					<div class="archive-year">
+						<a href="/archives/2018/09">
+							2018-09
+						</a>
+					</div>				
+				  
+				
+				<div class="archive-item">
+					<div class="archive-post-title">									
+						<a href="/2018/09/30/使用Markdown做笔记/" itemprop="url">Markdown的使用</a>
+					</div>
+					<div class="archive-post-time">
+						<a href="/2018/09/30/使用Markdown做笔记/" itemprop="url">09-30</a>
+					</div>
+				</div>		        							
+			
+				
+			
+	<ul class="am-pagination">
+		
+			<li class="am-pagination-prev">
+				<a href="/archives/">&laquo; 上一页 </a>
+			</li>
+		
+		
+		
+	</ul>
     
-    	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/01/DQL总结-常见函数/" title="DQL总结-常见函数">
-      		&laquo; 上一篇
-		</a>
-		</li>
-	
-	
-		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/01/DQL总结-条件查询/" title="DQL总结-条件查询">
-			下一篇 &raquo;
-		</a>
-		</li>
-	 
- </ul>
-        
-
-		<div class="theme-annie-comment-button-container">
-	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
-		加载评论
-		<!--加载评论-->
-	</button>
-</div>
-
-<div id="annie-comment-container" class="theme-annie-comment-main-container">
-
-	
-		
-			<!-- comment valine -->
-			<!-- show valine comment -->
-<div id="valineComment" class="comment"></div>
-
-<!-- valine`s js & css -->
-<script>
-	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
-</script>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/js/valine.min.js"></script>
-<link rel="stylesheet" href="/css/comment.css">
-
-<script>
-	var checkExistComment = setInterval(function() {
-		if( $('#valineComment').length ) {
-			new Valine({
-				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
-				av: AV,
-				//使用id寻找div元素（使用class可能找不到）
-				el: '#valineComment',
-				emoticon_url: 'https://cloud.panjunwen.com/alu',
-				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
-				app_id: "3333....", //获取APP ID
-				app_key: "3333......", //获取APP KEY
-				placeholder: "no any!", //评论框占位提示文字        			
-			});
-			clearInterval(checkExistComment);
-		}
-	}, 100);
-</script>
-		
-	
-
-</div>
-
-<script type="text/javascript">
-	/* Show Comment */
-	var Annie_Comment = function() {
-		function Show_Hidden(obj) {
-			obj.style.display = 'block';
-		}
-		
-		//var obutton = $('#annie-comment-button');
-		//var obutton = $('#annie-comment-container');
-		var obutton = document.getElementById("annie-comment-button" || "0");
-		var odiv = document.getElementById("annie-comment-container");
-		if( 'obutton' ) {
-			obutton.onclick = function() {
-				Show_Hidden(odiv);
-				$("#annie-comment-button").css("display", 'none');
-				return false;
-			}
-		}
-	};
-
-	(function Annie_Init() {
-		Annie_Comment();
-	})();
-</script>
-		
-		<!--
-	时间：2018-09-24
-	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
--->
-
-	
-		<aside class="post-widget">
-			<nav class="post-toc-wrap" id="post-toc">
-				
-					<strong>文章目录</strong>
-				
-				
-				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#排序查询"><span class="post-toc-text">排序查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法"><span class="post-toc-text">语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#特点"><span class="post-toc-text">特点</span></a></li></ol></li></ol>
-			</nav>
-			<div class="post-toc-bar"><div>
-		</aside>
-	
-
+		</div>
 	</div>
 </div>
+
 		</div>
 		</main>
 		
@@ -383,18 +272,11 @@
 </style>
 
 
-	<script src="/js/motto.js"></script>
-	<script type="text/javascript">
-		$(".motto").html(getMingYanContent());
-	</script>	
 
 
 
 
 
-
-
-	<script type="text/javascript" src="/js/toc.js"></script>
 
 
 <script type="text/javascript" src="/js/main.js"></script>
