@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>DML总结-删除</title>
+	<title>Mysql-变量</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《DML总结-删除》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《Mysql-变量》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/01/DQL总结-删除/" itemprop="url">		
-			DML总结-删除		
+		<a href="/2018/10/02/Mysql-变量/" itemprop="url">		
+			Mysql-变量		
 		</a>
 	
 
@@ -170,9 +170,9 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/01/DQL总结-删除/" itemprop="url">
-	<time datetime="2018-10-01T12:48:22.502Z" itemprop="datePublished">
-  		2018-10-01
+						<a href="/2018/10/02/Mysql-变量/" itemprop="url">
+	<time datetime="2018-10-02T04:13:43.939Z" itemprop="datePublished">
+  		2018-10-02
   </time>
 </a>    
 &nbsp;
@@ -192,25 +192,81 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><h3 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h3><p><strong>删除单表的记录</strong></p>
+						<h2 id="Mysql-变量"><a href="#Mysql-变量" class="headerlink" title="Mysql-变量"></a>Mysql-变量</h2><h3 id="系统变量"><a href="#系统变量" class="headerlink" title="系统变量"></a>系统变量</h3><p>说明：变量由系统提供的，不用自定义</p>
 <p>语法</p>
-<pre class="line-numbers language-bash"><code class="language-bash">语法：delete from 表名 【where 筛选条件】【limit 条目数】<span class="token punctuation">;</span>
+<p>查看系统变量</p>
+<pre class="line-numbers language-bash"><code class="language-bash">show 【global<span class="token operator">|</span>session 】variables like <span class="token string">''</span><span class="token punctuation">;</span>   //如果没有显式声明global还是session，则默认是session
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>级联删除</strong></p>
-<p>语法</p>
-<pre class="line-numbers language-bash"><code class="language-bash">delete 别名1,别名2 from 表1 别名 
-inner<span class="token operator">|</span>left<span class="token operator">|</span>right <span class="token function">join</span> 表2 别名 
-on 连接条件
-【where 筛选条件】
+<p>查看指定的系统变量的值</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> @@【global<span class="token operator">|</span>session】.变量名<span class="token punctuation">;</span>    //如果没有显式声明global还是session，则默认是session
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>为系统变量赋值</p>
+<p>方式一</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> 【global<span class="token operator">|</span>session 】 变量名<span class="token operator">=</span>值<span class="token punctuation">;</span>  //如果没有显式声明global还是session，则默认是session
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>方式二</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> @@global.变量名<span class="token operator">=</span>值<span class="token punctuation">;</span>
+<span class="token keyword">set</span> @@变量名<span class="token operator">=</span>值；
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>全局变量</li>
+</ul>
+<p>服务器层面上的，必须拥有super权限才能为系统变量赋值，作用域为整个服务器，也就是针对于所有连接（会话）有效</p>
+<ul>
+<li>会话变量</li>
+</ul>
+<p>服务器为每一个连接的客户端都提供了系统变量，作用域为当前的连接（会话）</p>
+<h3 id="自定义变量"><a href="#自定义变量" class="headerlink" title="自定义变量"></a>自定义变量</h3><p>说明</p>
+<ul>
+<li>用户变量</li>
+</ul>
+<blockquote>
+<p>作用域：针对于当前连接（会话）生效</p>
+</blockquote>
+<blockquote>
+<p>位置：begin end里面，也可以放在外面</p>
+</blockquote>
+<p>使用</p>
+<p>声明并赋值：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> @变量名<span class="token operator">=</span>值<span class="token punctuation">;</span>或
+<span class="token keyword">set</span> @变量名:<span class="token operator">=</span>值<span class="token punctuation">;</span>或
+<span class="token keyword">select</span> @变量名:<span class="token operator">=</span>值<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>更新值</p>
+<p>方式一</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">set</span> @变量名<span class="token operator">=</span>值<span class="token punctuation">;</span>或
+<span class="token keyword">set</span> @变量名:<span class="token operator">=</span>值<span class="token punctuation">;</span>或
+<span class="token keyword">select</span> @变量名:<span class="token operator">=</span>值<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>方式二</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> xx into @变量名 from 表<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>使用</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> @变量名<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><blockquote>
+<p>作用域：仅仅在定义它的begin end中有效</p>
+</blockquote>
+<blockquote>
+<p>位置：只能放在begin end中，而且只能放在第一句</p>
+</blockquote>
+<p>使用</p>
+<p>声明</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">declare</span> 变量名 类型 【default 值】<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>赋值或更新</p>
+<p>方式一</p>
+<pre class="line-numbers language-bash"><code class="language-bash">方式一：
+<span class="token keyword">set</span> 变量名<span class="token operator">=</span>值<span class="token punctuation">;</span>或
+<span class="token keyword">set</span> 变量名:<span class="token operator">=</span>值<span class="token punctuation">;</span>或
+<span class="token keyword">select</span> @变量名:<span class="token operator">=</span>值<span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="使用truncate"><a href="#使用truncate" class="headerlink" title="使用truncate"></a>使用truncate</h3><p>语法</p>
-<pre class="line-numbers language-bash"><code class="language-bash">truncate table 表名   //清空
+<p>方式二</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> xx into 变量名 from 表<span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="两种方式的区别【面试题】"><a href="#两种方式的区别【面试题】" class="headerlink" title="两种方式的区别【面试题】"></a>两种方式的区别【面试题】</h3><p>1.truncate删除后，如果再插入，标识列从1开始<br>  delete删除后，如果再插入，标识列从断点开始</p>
-<p>2.delete可以添加筛选条件<br> truncate不可以添加筛选条件</p>
-<p>3.truncate效率较高</p>
-<p>4.truncate没有返回值<br>delete可以返回受影响的行数</p>
-<p>5.truncate不可以回滚<br>delete可以回滚</p>
+<p>使用</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">select</span> 变量名<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 					
 				</div>
@@ -220,14 +276,14 @@ on 连接条件
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/01/DDL总结-库的管理/" title="DDL总结-库的管理">
+   		<a class="pull-left" href="/2018/10/02/Mysql-存储过程/" title="Mysql-存储过程">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/01/DML总结-修改/" title="DML总结-修改">
+		<a class="pull-right" href="/2018/10/01/Mysql-视图/" title="Mysql-视图">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -319,7 +375,7 @@ on 连接条件
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除"><span class="post-toc-text">删除</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式一"><span class="post-toc-text">方式一</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用truncate"><span class="post-toc-text">使用truncate</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#两种方式的区别【面试题】"><span class="post-toc-text">两种方式的区别【面试题】</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Mysql-变量"><span class="post-toc-text">Mysql-变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统变量"><span class="post-toc-text">系统变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义变量"><span class="post-toc-text">自定义变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#局部变量"><span class="post-toc-text">局部变量</span></a></li></ol></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>

@@ -61,7 +61,7 @@
 	
 	<!-- others: such as change-bg, time... -->
 	<p class="page-name-other">
-		10/1/2018 
+		10/2/2018 
 		<style type="text/css">
 	header:after {
 		content: '';
@@ -158,6 +158,221 @@
 						<h2>
 							
 	
+		<a href="/2018/10/01/TCL总结-事务/" itemprop="url">		
+			TCL总结-事务		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									含义事务：一条或多条sql语句组成一个执行单位，一组sql语句要么都执行要么都不执行
+特点（ACID）A 原子性：一个事务是不可再分割的整体，要么都执行要么都不执行
+C 一致性：一个事务可以使数据从一个一致状态切换到另外一个一致的状态
+I 隔离性：一个事务不受其他事务的干扰，多个事务互相隔离的
+D 持久性：一个事务一旦提交了，则永久的持久化到本地
+事务的使用步骤了解：
+隐式（自动）事务：没有明显的	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/TCL总结-事务/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DDL总结-常见的约束/" itemprop="url">		
+			DDL总结-常见约束		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									常见约束常见的约束
+
+
+类型
+说明
+
+
+
+
+NOT NULL
+非空，该字段的值必填
+
+
+UNIQUE
+唯一，该字段的值不可重复
+
+
+DEFAULT
+默认，该字段的值不用手动插入有默认值
+
+
+CHECK
+检查，mysql不支持
+
+
+PRIMARY KEY
+主键，该字段的值不可重复并且非空  unique+not null
+
+
+FOREIGN KEY
+外键，该字段的值引用了另外的表的字段
+
+
+
+主键和	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DDL总结-常见的约束/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DDL总结-数据类型/" itemprop="url">		
+			DDL总结-数据类型		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									数据类型数值型整型
+
+
+
+类型
+字节数
+
+
+
+
+tinyint
+1
+
+
+smallint
+2
+
+
+mediumint
+3
+
+
+int/integer
+4
+
+
+bigint
+8
+
+
+
+特点
+
+都可以设置无符号和有符号，默认有符号，通过unsigned设置无符号
+如果超出了范围，会报out or range异常，插入临界值
+长度可以不指定，默认会有一个长度
+长度代表显示的最大宽度，如果不够则左边用0填	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DDL总结-数据类型/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DDL总结-表的管理/" itemprop="url">		
+			DDL总结-表的管理		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									表的管理创建表create table 【if not exists】 表名(
+    字段名 字段类型 【约束】,
+    字段名 字段类型 【约束】,
+    ...
+    字段名 字段类型 【约束】 
+)
+
+修改表添加列
+alter table 表名 add column 列名 类型 【first|after 字段名】;
+
+修改列的类型或约束
+alter table 表名 modify c	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DDL总结-表的管理/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
 		<a href="/2018/10/01/DDL总结-库的管理/" itemprop="url">		
 			DDL总结-库的管理		
 		</a>
@@ -184,185 +399,6 @@
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/DDL总结-库的管理/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-删除/" itemprop="url">		
-			DML总结-删除		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									删除方式一删除单表的记录
-语法
-语法：delete from 表名 【where 筛选条件】【limit 条目数】;
-
-级联删除
-语法
-delete 别名1,别名2 from 表1 别名 
-inner|left|right join 表2 别名 
-on 连接条件
-【where 筛选条件】
-
-使用truncate语法
-truncate table 表名   //清空
-
-两种方式的区别【面试题】1.t	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-删除/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DML总结-修改/" itemprop="url">		
-			DML总结-修改		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									修改修改单表的记录语法
-update 表名 set 字段=值,字段=值 【where 筛选条件】;
-
-修改多表的记录语法
-update 表1 别名 
-left|right|inner join 表2 别名 
-on 连接条件  
-set 字段=值,字段=值 
-【where 筛选条件】;
-
-	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DML总结-修改/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DML总结-插入/" itemprop="url">		
-			DML总结-插入		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									插入方式一语法
-insert into 表名(字段名,...) values(值,...);
-
-特点
-
-要求值的类型和字段的类型要一致或兼容
-字段的个数和顺序不一定与原始表中的字段个数和顺序一致但必须保证值和字段一一对应
-假如表中有可以为null的字段，注意可以通过以下两种方式插入null值
-
-
-①字段和值都省略
-
-
-②字段写上，值使用null
-
-字段和值的个数必须一致
-字段名可以省略，默认所有列	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DML总结-插入/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL查询总结/" itemprop="url">		
-			DQL总结		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									总结语法select 查询列表    
-from 表1 别名       
-连接类型 join 表2   
-on 连接条件         
-where 筛选          
-group by 分组列表   
-having 筛选         
-order by排序列表    
-limit 起始条目索引，条目数;  
-
-执行顺序select 查询列表    ⑦
-from 表1 别名     	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL查询总结/" class="pull-right">
 								展开全文
 							</a>		
 						<span>

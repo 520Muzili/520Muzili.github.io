@@ -61,7 +61,7 @@
 	
 	<!-- others: such as change-bg, time... -->
 	<p class="page-name-other">
-		10/1/2018 
+		10/2/2018 
 		<style type="text/css">
 	header:after {
 		content: '';
@@ -158,6 +158,193 @@
 						<h2>
 							
 	
+		<a href="/2018/10/02/Mysql-流程控制结构/" itemprop="url">		
+			Mysql-流程控制结构		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									流程控制结构分支结构特点
+if函数
+
+
+功能：实现简单双分支
+
+
+位置：可以作为表达式放在任何位置
+
+语法
+if(条件，值1，值2)
+
+
+case结构
+
+
+功能：实现多分支
+
+
+位置：可以放在任何位置，如果放在begin end 外面，作为表达式结合着其他语句使用如果放在begin end 里面，一般作为独立的语句使用
+
+语法
+语法1
+case 表达式或字段
+when 值1 then 语句1;
+w	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-02
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/02/Mysql-流程控制结构/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/02/Mysql-函数/" itemprop="url">		
+			Mysql-函数		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									函数创建create function 函数名(参数名 参数类型) returns  返回类型
+begin
+    函数体
+end
+
+注意：函数体中肯定需要有return语句
+调用select 函数名(实参列表);
+
+查看show create function 函数名;
+
+删除drop function 函数名；
+
+	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-02
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/02/Mysql-函数/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/02/Mysql-存储过程/" itemprop="url">		
+			Mysql-存储过程		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									存储过程创建create procedure 存储过程名(参数模式 参数名 参数类型)
+begin
+        存储过程体
+end
+
+注意
+
+参数模式：in、out、inout，其中in可以省略
+
+
+存储过程体的每一条sql语句都需要用分号结尾
+
+调用call 存储过程名(实参列表)
+
+举例
+call sp1（‘值’）;    //调用in模式的参数
+set @name; call sp1(@	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-02
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/02/Mysql-存储过程/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/02/Mysql-变量/" itemprop="url">		
+			Mysql-变量		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									Mysql-变量系统变量说明：变量由系统提供的，不用自定义
+语法
+查看系统变量
+show 【global|session 】variables like '';   //如果没有显式声明global还是session，则默认是session
+
+查看指定的系统变量的值
+select @@【global|session】.变量名;    //如果没有显式声明global还是session，则默认是se	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-02
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/02/Mysql-变量/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
 		<a href="/2018/10/01/Mysql-视图/" itemprop="url">		
 			Mysql-视图		
 		</a>
@@ -200,221 +387,6 @@ as
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/Mysql-视图/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/TCL总结-事务/" itemprop="url">		
-			TCL总结-事务		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									含义事务：一条或多条sql语句组成一个执行单位，一组sql语句要么都执行要么都不执行
-特点（ACID）A 原子性：一个事务是不可再分割的整体，要么都执行要么都不执行
-C 一致性：一个事务可以使数据从一个一致状态切换到另外一个一致的状态
-I 隔离性：一个事务不受其他事务的干扰，多个事务互相隔离的
-D 持久性：一个事务一旦提交了，则永久的持久化到本地
-事务的使用步骤了解：
-隐式（自动）事务：没有明显的	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/TCL总结-事务/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DDL总结-常见的约束/" itemprop="url">		
-			DDL总结-常见约束		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									常见约束常见的约束
-
-
-类型
-说明
-
-
-
-
-NOT NULL
-非空，该字段的值必填
-
-
-UNIQUE
-唯一，该字段的值不可重复
-
-
-DEFAULT
-默认，该字段的值不用手动插入有默认值
-
-
-CHECK
-检查，mysql不支持
-
-
-PRIMARY KEY
-主键，该字段的值不可重复并且非空  unique+not null
-
-
-FOREIGN KEY
-外键，该字段的值引用了另外的表的字段
-
-
-
-主键和	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DDL总结-常见的约束/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DDL总结-数据类型/" itemprop="url">		
-			DDL总结-数据类型		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									数据类型数值型整型
-
-
-
-类型
-字节数
-
-
-
-
-tinyint
-1
-
-
-smallint
-2
-
-
-mediumint
-3
-
-
-int/integer
-4
-
-
-bigint
-8
-
-
-
-特点
-
-都可以设置无符号和有符号，默认有符号，通过unsigned设置无符号
-如果超出了范围，会报out or range异常，插入临界值
-长度可以不指定，默认会有一个长度
-长度代表显示的最大宽度，如果不够则左边用0填	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DDL总结-数据类型/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DDL总结-表的管理/" itemprop="url">		
-			DDL总结-表的管理		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									表的管理创建表create table 【if not exists】 表名(
-    字段名 字段类型 【约束】,
-    字段名 字段类型 【约束】,
-    ...
-    字段名 字段类型 【约束】 
-)
-
-修改表添加列
-alter table 表名 add column 列名 类型 【first|after 字段名】;
-
-修改列的类型或约束
-alter table 表名 modify c	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DDL总结-表的管理/" class="pull-right">
 								展开全文
 							</a>		
 						<span>

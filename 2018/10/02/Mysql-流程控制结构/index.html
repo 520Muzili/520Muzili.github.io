@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>DML总结-删除</title>
+	<title>Mysql-流程控制结构</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《DML总结-删除》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《Mysql-流程控制结构》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/01/DQL总结-删除/" itemprop="url">		
-			DML总结-删除		
+		<a href="/2018/10/02/Mysql-流程控制结构/" itemprop="url">		
+			Mysql-流程控制结构		
 		</a>
 	
 
@@ -170,9 +170,9 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/01/DQL总结-删除/" itemprop="url">
-	<time datetime="2018-10-01T12:48:22.502Z" itemprop="datePublished">
-  		2018-10-01
+						<a href="/2018/10/02/Mysql-流程控制结构/" itemprop="url">
+	<time datetime="2018-10-02T04:46:46.676Z" itemprop="datePublished">
+  		2018-10-02
   </time>
 </a>    
 &nbsp;
@@ -192,25 +192,101 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><h3 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h3><p><strong>删除单表的记录</strong></p>
+						<h2 id="流程控制结构"><a href="#流程控制结构" class="headerlink" title="流程控制结构"></a>流程控制结构</h2><h3 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h3><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<li>if函数</li>
+</ul>
+<blockquote>
+<p>功能：实现简单双分支</p>
+</blockquote>
+<blockquote>
+<p>位置：可以作为表达式放在任何位置</p>
+</blockquote>
 <p>语法</p>
-<pre class="line-numbers language-bash"><code class="language-bash">语法：delete from 表名 【where 筛选条件】【limit 条目数】<span class="token punctuation">;</span>
+<pre class="line-numbers language-bash"><code class="language-bash">if<span class="token punctuation">(</span>条件，值1，值2<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><strong>级联删除</strong></p>
+<ul>
+<li>case结构</li>
+</ul>
+<blockquote>
+<p>功能：实现多分支</p>
+</blockquote>
+<blockquote>
+<p>位置：可以放在任何位置，<br>如果放在begin end 外面，作为表达式结合着其他语句使用<br>如果放在begin end 里面，一般作为独立的语句使用</p>
+</blockquote>
+<p><strong>语法</strong></p>
+<p>语法1</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">case</span> 表达式或字段
+when 值1 <span class="token keyword">then</span> 语句1<span class="token punctuation">;</span>
+when 值2 <span class="token keyword">then</span> 语句2；
+<span class="token punctuation">..</span>
+<span class="token keyword">else</span> 语句n<span class="token punctuation">;</span>
+end <span class="token punctuation">[</span>case<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>语法2</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">case</span> 
+when 条件1 <span class="token keyword">then</span> 语句1<span class="token punctuation">;</span>
+when 条件2 <span class="token keyword">then</span> 语句2；
+<span class="token punctuation">..</span>
+<span class="token keyword">else</span> 语句n<span class="token punctuation">;</span>
+end <span class="token punctuation">[</span>case<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>if结构</li>
+</ul>
+<blockquote>
+<p>功能：实现多分支</p>
+</blockquote>
+<blockquote>
+<p>位置：只能放在begin end中</p>
+</blockquote>
 <p>语法</p>
-<pre class="line-numbers language-bash"><code class="language-bash">delete 别名1,别名2 from 表1 别名 
-inner<span class="token operator">|</span>left<span class="token operator">|</span>right <span class="token function">join</span> 表2 别名 
-on 连接条件
-【where 筛选条件】
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="使用truncate"><a href="#使用truncate" class="headerlink" title="使用truncate"></a>使用truncate</h3><p>语法</p>
-<pre class="line-numbers language-bash"><code class="language-bash">truncate table 表名   //清空
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="两种方式的区别【面试题】"><a href="#两种方式的区别【面试题】" class="headerlink" title="两种方式的区别【面试题】"></a>两种方式的区别【面试题】</h3><p>1.truncate删除后，如果再插入，标识列从1开始<br>  delete删除后，如果再插入，标识列从断点开始</p>
-<p>2.delete可以添加筛选条件<br> truncate不可以添加筛选条件</p>
-<p>3.truncate效率较高</p>
-<p>4.truncate没有返回值<br>delete可以返回受影响的行数</p>
-<p>5.truncate不可以回滚<br>delete可以回滚</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">if</span> 条件1 <span class="token keyword">then</span> 语句1<span class="token punctuation">;</span>
+elseif 条件2 <span class="token keyword">then</span> 语句2<span class="token punctuation">;</span>
+<span class="token punctuation">..</span>.
+<span class="token keyword">else</span> 语句n<span class="token punctuation">;</span>
+end <span class="token keyword">if</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><blockquote>
+<p>位置：只能放在begin end中</p>
+</blockquote>
+<blockquote>
+<p>特点：都能实现循环结构</p>
+</blockquote>
+<p>对比：</p>
+<p>这三种循环都可以省略名称，但如果循环中添加了循环控制语句（leave或iterate）则必须添加名称</p>
+<p>loop 一般用于实现简单的死循环</p>
+<p>while 先判断后执行</p>
+<p>repeat 先执行后判断，无条件至少执行一次</p>
+<ul>
+<li>while</li>
+</ul>
+<p>语法</p>
+<pre class="line-numbers language-bash"><code class="language-bash">【名称:】while 循环条件 <span class="token keyword">do</span>
+        循环体
+end <span class="token keyword">while</span> 【名称】<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>loop</li>
+</ul>
+<p>语法</p>
+<pre class="line-numbers language-bash"><code class="language-bash">【名称：】loop
+        循环体
+end loop 【名称】<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>repeat<br>语法</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">语法：
+【名称:】repeat
+        循环体
+<span class="token keyword">until</span> 结束条件 
+end repeat 【名称】<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>循环控制语句</li>
+</ul>
+<p>leave：类似于break，用于跳出所在的循环</p>
+<p>iterate：类似于continue，用于结束本次循环，继续下一次</p>
 
 					
 				</div>
@@ -219,15 +295,9 @@ on 连接条件
 
 		<ul class="am-pagination">
     
-    	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/01/DDL总结-库的管理/" title="DDL总结-库的管理">
-      		&laquo; 上一篇
-		</a>
-		</li>
-	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/01/DML总结-修改/" title="DML总结-修改">
+		<a class="pull-right" href="/2018/10/02/Mysql-函数/" title="Mysql-函数">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -319,7 +389,7 @@ on 连接条件
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除"><span class="post-toc-text">删除</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式一"><span class="post-toc-text">方式一</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用truncate"><span class="post-toc-text">使用truncate</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#两种方式的区别【面试题】"><span class="post-toc-text">两种方式的区别【面试题】</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#流程控制结构"><span class="post-toc-text">流程控制结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分支结构"><span class="post-toc-text">分支结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#特点"><span class="post-toc-text">特点</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#循环结构"><span class="post-toc-text">循环结构</span></a></li></ol></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>
