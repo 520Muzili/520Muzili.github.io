@@ -158,6 +158,54 @@
 						<h2>
 							
 	
+		<a href="/2018/10/01/DML总结-插入/" itemprop="url">		
+			DML总结-插入		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									插入方式一语法
+insert into 表名(字段名,...) values(值,...);
+
+特点
+
+要求值的类型和字段的类型要一致或兼容
+字段的个数和顺序不一定与原始表中的字段个数和顺序一致但必须保证值和字段一一对应
+假如表中有可以为null的字段，注意可以通过以下两种方式插入null值
+
+
+①字段和值都省略
+
+
+②字段写上，值使用null
+
+字段和值的个数必须一致
+字段名可以省略，默认所有列	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DML总结-插入/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
 		<a href="/2018/10/01/DQL查询总结/" itemprop="url">		
 			DQL总结		
 		</a>
@@ -319,52 +367,6 @@ exists后面：标量子
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/DQL总结-子查询/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-连接查询/" itemprop="url">		
-			DQL总结-连接查询		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									连接查询含义当查询中涉及到了多个表的字段，需要使用多表连接
-select 字段1，字段2 from 表1,表2 ...
-
-笛卡尔乘积：当查询多个表时，没有添加有效的连接条件，导致多个表所有行实现完全连接。
-如何解决：添加有效的连接条件。
-分类按年代分类：
-
-sql92：
-
-等值连接
-语法：
-select 查询列表
-from 表1 别名,表2 别名
-where 表1.key=表2.key
-【and 	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-连接查询/" class="pull-right">
 								展开全文
 							</a>		
 						<span>

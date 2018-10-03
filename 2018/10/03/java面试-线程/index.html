@@ -1,0 +1,514 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head>
+	<title>java面试-多线程</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="John Doe">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-2">
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto"></p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class=page-name>当前文章&nbsp;:&nbsp;《java面试-多线程》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		10/3/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(https://wuchaojob.gitee.io/random-img/' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i  class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="标签">标签</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="关于">关于</a>	
+      		</li>
+    		
+      		<li class="fa fa-/gallery">
+           		<a href="/gallery" title="相册">相册</a>	
+      		</li>
+    		
+    		
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+	
+		<a href="/2018/10/03/java面试-线程/" itemprop="url">		
+			java面试-多线程		
+		</a>
+	
+
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/10/03/java面试-线程/" itemprop="url">
+	<time datetime="2018-10-03T13:38:41.110Z" itemprop="datePublished">
+  		2018-10-03
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+							<i class="fa fa-tags"></i>
+							
+								<a href="#线程" title="线程" rel="1">线程</a>&nbsp;
+													 											
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<h3 id="为什么使用多线程？"><a href="#为什么使用多线程？" class="headerlink" title="为什么使用多线程？"></a>为什么使用多线程？</h3><p>为了更高效的完成任务和利用CPU资源，现在的操作系统设计为多任务操作系统，而多进程和多线程是实现多任务的方式。</p>
+<h3 id="什么是进程和线程？"><a href="#什么是进程和线程？" class="headerlink" title="什么是进程和线程？"></a>什么是进程和线程？</h3><p>进程是指一个内存中运行的应用程序，每个进程都有自己独立的一块内存空间，一个进程中可以启动多个线程。进程是OS分配资源的最小单位。 线程是指进程中的一个执行流程，一个进程中可以运行多个线程。线程总是属于某个进程，进程中的多个线程共享进程的内存。进程是OS调度的最小单位。</p>
+<h3 id="工作原理？"><a href="#工作原理？" class="headerlink" title="工作原理？"></a>工作原理？</h3><ol>
+<li>多线程是这样一种机制，它允许在程序中并发执行多个指令流，每个指令流都称为一个线程，彼此间互相独立。线程又称为轻量级进程，它和进程一样拥有独立的执行控制，由操作系统负责调度，区别在于线程没有独立的存储空间，而是和所属进程中的其它线程共享一个存储空间，这使得线程间的通信远较进程简单。</li>
+<li>具体到java内存模型，由于Java被设计为跨平台的语言，在内存管理上，显然也要有一个统一的模型。系统存在一个主内存(Main Memory)， Java中所有变量都储存在主存中，对于所有线程都是共享的。每条线程都有自己的工作内存(Working Memory)——调用栈，工作内存中保存的是主存中某些变量的拷贝，线程对所有变量的操作都是在工作内存中进行，线程之间无法相互直接访问，变量传递均需要通过主存完成。</li>
+<li>多个线程的执行是并发的，也就是在逻辑上“同时”，而不管是否是物理上的“同时”。如果系统只有一个CPU，那么真正的“同时”是不可能的。多线程和传统的单线程在程序设计上最大的区别在于，由于各个线程的控制流彼此独立，使得各个线程之间的代码是乱序执行的，将会带来线程调度，同步等问题。</li>
+</ol>
+<h3 id="线程状态转换"><a href="#线程状态转换" class="headerlink" title="线程状态转换"></a>线程状态转换</h3><p>线程的状态转换是线程控制的基础。线程状态总的可分为五大状态：分别是新建、就绪、运行、等待/阻塞、死亡。</p>
+<ul>
+<li><p>新建状态：线程对象已经创建，还没有在其上调用start()方法。</p>
+</li>
+<li><p>就绪状态：当线程有资格运行，但调度程序还没有把它选定为运行线程时线程所处的状态。当start()方法调用时，线程首先进入可运行状态。在线程运行之后或者从阻塞、等待或睡眠状态回来后，也返回到就绪状态。</p>
+</li>
+<li><p>运行状态：线程调度程序从就绪线程池中选择一个线程作为当前线程时线程所处的状态。这也是线程进入运行状态的唯一一种方式。</p>
+</li>
+<li><p>等待/阻塞/睡眠状态：线程不会被分配 CPU 时间，无法执行；可能阻塞于I/O，或者阻塞于同步锁。实际上这个三状态组合为一种，其共同点是：线程仍旧是活的，但是当前没有条件运行。换句话说，它是可运行的，但是如果某件事件出现，他可能返回到可运行状态。</p>
+</li>
+<li><p>死亡态：当线程的run()方法完成时就认为它死去，调用 stop()或 destroy() 亦有同样效果，但是不被推荐，前者会产生异常，后者是强制终止，不会释放锁。这个线程对象也许是活的，但是，它已经不是一个单独执行的线程。线程一旦死亡，就不能复生。 如果在一个死去的线程上调用start()方法，会抛出java.lang.IllegalThreadStateException异常。</p>
+</li>
+</ul>
+<h3 id="锁机制"><a href="#锁机制" class="headerlink" title="锁机制"></a>锁机制</h3><p>线程锁机制的本质是解决线程通信中的互斥问题。 由于我们可以通过 private 关键字来保证数据对象只能被方法访问，所以我们只需针对方法提出一套机制，这套机制就是 synchronized 关键字，它包括两种用法：synchronized 方法和 synchronized 块。注意：每个类实例对应一把锁，同步和互斥等都是相对多线程而言的。</p>
+<h4 id="synchronized-方法"><a href="#synchronized-方法" class="headerlink" title="synchronized 方法"></a>synchronized 方法</h4><p>通过在方法声明中加入 synchronized关键字来声明 synchronized 方法，语法如下</p>
+<pre class="line-numbers language-bash"><code class="language-bash">public synchronized void procData<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>synchronized 方法原理：多个线程访问同一个 synchronized 方法时，必须获得调用该方法的类实例的锁才能执行，否则所属线程阻塞，方法一旦执行，就独占该锁，直到从该方法返回时才将锁释放，此后被阻塞的线程方能获得该锁，重新进入可执行状态。这种机制确保了同一时刻对于每一个类实例，其所有声明为 synchronized 的成员函数中至多只有一个处于可执行状态（因为至多只有一个能够获得该类实例对应的锁），从而有效避免了类成员变量的访问冲突（只要所有可能访问类成员变量的方法均被声明为 synchronized）。</p>
+<p>在 Java 中，不光是类实例，每一个类也对应一把锁，这样我们也可将类的静态成员函数声明为 synchronized ，以控制其对类的静态成员变量的访问。</p>
+<p>synchronized 方法的缺陷：若将一个大的方法声明为synchronized 将会大大影响效率，典型地，若将线程类的方法 run() 声明为 synchronized ，由于在线程的整个生命期内它一直在运行，因此将导致它对本类任何 synchronized 方法的调用都永远不会成功。当然我们可以通过将访问类成员变量的代码放到专门的方法中，将其声明为 synchronized ，并在主方法中调用来解决这一问题，但是 Java 为我们提供了更好的解决办法，那就是 synchronized 块</p>
+<h4 id="synchronized-块"><a href="#synchronized-块" class="headerlink" title="synchronized 块"></a>synchronized 块</h4><p>通过 synchronized关键字来声明synchronized 块，语法如下</p>
+<pre class="line-numbers language-bash"><code class="language-bash">synchronized<span class="token punctuation">(</span>syncObject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+//允许访问控制的代码
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>synchronized 块是这样一个代码块，其中的代码必须获得对象 syncObject （如前所述，可以是类实例或类）的锁方能执行，具体机制同前所述。由于可以针对任意代码块，且可任意指定上锁的对象，故灵活性较高。</p>
+<h3 id="阻塞机制"><a href="#阻塞机制" class="headerlink" title="阻塞机制"></a>阻塞机制</h3><p>阻塞机制的本质是为了解决线程通信的同步问题。锁和阻塞机制解决线程通信中的互斥和同步问题。</p>
+<p>为了解决对共享存储区的访问冲突，引入了锁机制，考察多个线程对共享资源的访问，显然锁机制已经不够了，因为在任意时刻所要求的资源不一定已经准备好了被访问，反过来，同一时刻准备好了的资源也可能不止一个。为了解决这种情况下的访问控制问题，引入了对阻塞机制的支持。</p>
+<p>阻塞指的是暂停一个线程的执行以等待某个条件发生（如某资源就绪）。Java 提供了大量方法来支持阻塞。</p>
+<ul>
+<li><strong>sleep()方法</strong>：sleep()允许指定以毫秒为单位的一段时间作为参数，它使得线程在指定的时间内进入阻塞状态，不能得到CPU 时间，指定的时间一过，线程重新进入可执行状态。典型地，sleep() 被用在等待某个资源就绪的情形：测试发现条件不满足后，让线程阻塞一段时间后重新测试，直到条件满足为止。</li>
+<li><strong>suspend()和resume()方法</strong>：两个方法配套使用，suspend()使得线程进入阻塞状态，并且不会自动恢复，必须其对应的resume() 被调用，才能使得线程重新进入可执行状态。典型地，suspend() 和 resume() 被用在等待另一个线程产生的结果的情形：测试发现结果还没有产生后，让线程阻塞，另一个线程产生了结果后，调用resume()使其恢复</li>
+<li><strong>yield() 方法</strong>：yield() 使得线程放弃当前分得的 CPU 时间，但是不使线程阻塞，即线程仍处于可执行状态，随时可能再次分得 CPU 时间。调用 yield() 的效果等价于调度程序认为该线程已执行了足够的时间从而转到另一个线程。</li>
+<li><strong>wait() 和 notify() 方法</strong> 两个方法配套使用，wait() 使得线程进入阻塞状态，它有两种形式，一种允许指定以毫秒为单位的一段时间作为参数，另一种没有参数，前者当对应的 notify() 被调用或者超出指定时间时线程重新进入可执行状态，后者则必须对应的 notify() 被调用。</li>
+</ul>
+<p><strong>阻塞方法比较</strong></p>
+<ul>
+<li>2和4区别的核心在于，前面叙述的所有方法，阻塞时都不会释放占用的锁（如果占用了的话），而这一对方法则相反。上述的核心区别导致了一系列的细节上的区别。</li>
+<li>首先，前面叙述的所有方法都隶属于Thread 类，但是这一对却直接隶属于 Object 类，也就是说，所有对象都拥有这一对方法。因为这一对方法阻塞时要释放占用的锁，而锁是任何对象都具有的，调用任意对象的 wait() 方法导致线程阻塞，并且该对象上的锁被释放。而调用任意对象的notify()方法则导致因调用该对象的 wait() 方法而阻塞的线程中随机选择的一个解除阻塞（但要等到获得锁后才真正可执行）。</li>
+<li>其次，前面叙述的所有方法都可在任何位置调用，但是这一对方法却必须在 synchronized 方法或块中调用，理由也很简单，只有在synchronized 方法或块中当前线程才占有锁，才有锁可以释放。同样的道理，调用这一对方法的对象上的锁必须为当前线程所拥有，这样才有锁可以释放。因此，这一对方法调用必须放置在这样的 synchronized 方法或块中，该方法或块的上锁对象就是调用这一对方法的对象。若不满足这一条件，则程序虽然仍能编译，但在运行时会出现 IllegalMonitorStateException 异常。</li>
+</ul>
+<p>wait() 和 notify() 方法的上述特性决定了它们经常和synchronized 方法或块一起使用，将它们和操作系统的进程间通信机制作一个比较就会发现它们的相似性：synchronized方法或块提供了类似于操作系统原语的功能，它们的结合用于解决各种复杂的线程间通信问题。</p>
+<p><strong>关于 wait() 和 notify() 方法</strong></p>
+<ul>
+<li>调用 notify() 方法导致解除阻塞的线程是从因调用该对象的 wait() 方法而阻塞的线程中随机选取的，我们无法预料哪一个线程将会被选择，所以编程时要特别小心，避免因这种不确定性而产生问题。</li>
+<li>除了 notify()，还有一个方法 notifyAll() 也可起到类似作用，唯一的区别在于，调用 notifyAll() 方法将把因调用该对象的wait()方法而阻塞的所有线程一次性全部解除阻塞。当然，只有获得锁的那一个线程才能进入可执行状态。</li>
+</ul>
+<p>谈到阻塞，就不能不谈一谈死锁，略一分析就能发现，suspend() 方法和不指定超时期限的 wait() 方法的调用都可能产生死锁。遗憾的是，Java 并不在语言级别上支持死锁的避免，我们在编程中必须小心地避免死锁。</p>
+<p>以上我们对 Java 中实现线程阻塞的各种方法作了一番分析，我们重点分析了 wait() 和 notify() 方法，因为它们的功能最强大，使用也最灵活，但是这也导致了它们的效率较低，较容易出错。实际使用中我们应该灵活使用各种方法，以便更好地达到我们的目的。</p>
+<p>关于join()方法</p>
+<p>join()方法可用于让当前线程阻塞，以等待特定线程(调用join的线程)的消亡。不允许线程对象在自己的可执行体中调用自己线程的join。</p>
+<h3 id="线程优先级"><a href="#线程优先级" class="headerlink" title="线程优先级"></a>线程优先级</h3><p>线程的优先级代表该线程的重要程度，当有多个线程同时处于可执行状态并等待获得 CPU 时间时，线程调度系统根据各个线程的优先级来决定给谁分配 CPU 时间，优先级高的线程有更大的机会获得 CPU 时间，优先级低的线程也不是没有机会，只是机会要小一些罢了。</p>
+<p>你可以调用 Thread 类的方法 getPriority() 和 setPriority()来存取线程的优先级，线程的优先级界于1(MIN_PRIORITY)和10(MAX_PRIORITY)之间，缺省是5(NORM_PRIORITY)。</p>
+<h3 id="守护线程与用户线程"><a href="#守护线程与用户线程" class="headerlink" title="守护线程与用户线程"></a>守护线程与用户线程</h3><p>线程可以分为用户线程(User)和守护线程(Daemon)： 守护线程是一类特殊的线程，它和普通线程的区别在于它并不是应用程序的核心部分，当一个应用程序的所有非守护线程终止运行时，即使仍然有守护线程在运行，应用程序也将终止，反之，只要有一个非守护线程在运行，应用程序就不会终止。守护线程一般被用于在后台为其它线程提供服务。 可以通过调用方法 isDaemon() 来判断一个线程是否是守护线程，也可以调用方法 setDaemon() 来将一个线程设为守护线程。</p>
+<p>个人对Daemon线程更直观的理解是：无论User还是Daemon线程，都具有可执行序列，拥有自己的工作栈，区别在于：Daemon线程会随着其父线程结束而结束，它不属于程序本体。另一层意思，父线程的结束取决于其所有子User线程，而与daemon线程无关。它们之间的不同决定了它们用于不同的场景，守护线程一般为其他线程提供服务，如垃圾回收器。</p>
+<p>需要注意的是setDaemon()方法必须在线程对象没有调用start()方法之前调用，否则没效果。</p>
+<h3 id="线程组机制"><a href="#线程组机制" class="headerlink" title="线程组机制"></a>线程组机制</h3><ul>
+<li>线程组是一个 Java 特有的概念，在 Java 中，线程组是类ThreadGroup 的对象，每个线程都隶属于唯一一个线程组，这个线程组在线程创建时指定并在线程的整个生命期内都不能更改。你可以通过调用包含 ThreadGroup 类型参数的 Thread 类构造函数来指定线程属的线程组，若没有指定，则线程缺省地隶属于名为 system 的系统线程组。</li>
+<li>在 Java 中，除了预建的系统线程组外，所有线程组都必须显式创建。在 Java 中，除系统线程组外的每个线程组又隶属于另一个线程组，你可以在创建线程组时指定其所隶属的线程组，若没有指定，则缺省地隶属于系统线程组。这样，所有线程组组成了一棵以系统线程组为根的树。</li>
+<li>Java 允许我们对一个线程组中的所有线程同时进行操作，比如我们可以通过调用线程组的相应方法来设置其中所有线程的优先级，也可以启动或阻塞其中的所有线程。</li>
+<li>Java 的线程组机制的另一个重要作用是线程安全。线程组机制允许我们通过分组来区分有不同安全特性的线程，对不同组的线程进行不同的处理，还可以通过线程组的分层结构来支持不对等安全措施的采用。Java 的 ThreadGroup 类提供了大量的方法来方便我们对线程组树中的每一个线程组以及线程组中的每一个线程进行操作。</li>
+</ul>
+<h3 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h3><p>java.lang.ThreadLocal是local variable（线程局部变量）。它为每一个使用该变量的线程都提供一个变量值的副本，使每一个线程都可以独立地改变自己的副本，而不会和其它线程的副本冲突。从线程的角度看，就好像每一个线程都完全拥有该变量。ThreadLocal本质是一个线程安全的hashMap，key为threadName，Value为线程内的变量。</p>
+<ul>
+<li>Synchronized用于线程间的数据共享，而ThreadLocal则用于线程间的数据隔离。</li>
+<li>ThreadLocal使用场合主要解决多线程中数据因并发产生不一致问题。ThreadLocal为每个线程的中并发访问的数据对象提供一个副本，通过访问副本来运行业务，这样的结果是耗费了内存，但大大减少了线程同步所带来性能消耗，也减少了线程并发控制的复杂度。</li>
+<li>ThreadLocal不能使用原子类型，只能使用Object类型。ThreadLocal的使用比synchronized要简单得多。</li>
+<li>ThreadLocal和Synchonized都用于解决多线程并发访问。但是ThreadLocal与synchronized有本质的区别。synchronized是利用锁的机制，使变量或代码块在某一时该只能被一个线程访问。而ThreadLocal为每一个线程都提供了变量的副本，使得每个线程在某一时间访问到的并不是同一个对象，这样就隔离了多个线程对数据的数据共享。而Synchronized却正好相反，它用于在多个线程间通信时能够获得数据共享。</li>
+<li>当然ThreadLocal并不能替代synchronized,它们处理不同的问题域。Synchronized用于实现锁机制，比ThreadLocal更加复杂。</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>多线程的核心在于多个代码块并发执行，本质特点在于各代码块之间的代码是乱序执行的。我们的程序是否需要多线程，就是要看这是否也是它的内在特点。</li>
+<li>假如我们的程序根本不要求多个代码块并发执行，那自然不需要使用多线程；假如我们的程序虽然要求多个代码块并发执行，但是却不要求乱序，则我们完全可以用一个循环来简单高效地实现，也不需要使用多线程；只有当它完全符合多线程的特点时，多线程机制对线程间通信和线程管理的强大支持才能有用武之地，这时使用多线程才是值得的。</li>
+</ul>
+<p><em>注 ：本文转载于今日头条作者：ImCoder</em></p>
+
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/10/03/java面试-内存分析/" title="java面试-内存分析">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么使用多线程？"><span class="post-toc-text">为什么使用多线程？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是进程和线程？"><span class="post-toc-text">什么是进程和线程？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#工作原理？"><span class="post-toc-text">工作原理？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程状态转换"><span class="post-toc-text">线程状态转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#锁机制"><span class="post-toc-text">锁机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#synchronized-方法"><span class="post-toc-text">synchronized 方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#synchronized-块"><span class="post-toc-text">synchronized 块</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#阻塞机制"><span class="post-toc-text">阻塞机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程优先级"><span class="post-toc-text">线程优先级</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#守护线程与用户线程"><span class="post-toc-text">守护线程与用户线程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程组机制"><span class="post-toc-text">线程组机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ThreadLocal"><span class="post-toc-text">ThreadLocal</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-text">小结</span></a></li></ol>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</aside>
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="https://github.com/520Muzili" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="https://github.com/520Muzili" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+				
+					<a href="https://github.com/520Muzili" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
+					
+				
+					<a href="https://github.com/520Muzili" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+				
+					<a href="https://github.com/520Muzili" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
+						
+				
+		</div>
+	</div>
+
+	<div  class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by 木子李. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(https://wuchaojob.gitee.io/random-img/' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+

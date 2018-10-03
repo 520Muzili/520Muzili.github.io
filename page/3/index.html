@@ -158,6 +158,74 @@
 						<h2>
 							
 	
+		<a href="/2018/10/01/DDL总结-数据类型/" itemprop="url">		
+			DDL总结-数据类型		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									数据类型数值型整型
+
+
+
+类型
+字节数
+
+
+
+
+tinyint
+1
+
+
+smallint
+2
+
+
+mediumint
+3
+
+
+int/integer
+4
+
+
+bigint
+8
+
+
+
+特点
+
+都可以设置无符号和有符号，默认有符号，通过unsigned设置无符号
+如果超出了范围，会报out or range异常，插入临界值
+长度可以不指定，默认会有一个长度
+长度代表显示的最大宽度，如果不够则左边用0填	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DDL总结-数据类型/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
 		<a href="/2018/10/01/DDL总结-表的管理/" itemprop="url">		
 			DDL总结-表的管理		
 		</a>
@@ -315,54 +383,6 @@ set 字段=值,字段=值
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/DML总结-修改/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DML总结-插入/" itemprop="url">		
-			DML总结-插入		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									插入方式一语法
-insert into 表名(字段名,...) values(值,...);
-
-特点
-
-要求值的类型和字段的类型要一致或兼容
-字段的个数和顺序不一定与原始表中的字段个数和顺序一致但必须保证值和字段一一对应
-假如表中有可以为null的字段，注意可以通过以下两种方式插入null值
-
-
-①字段和值都省略
-
-
-②字段写上，值使用null
-
-字段和值的个数必须一致
-字段名可以省略，默认所有列	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DML总结-插入/" class="pull-right">
 								展开全文
 							</a>		
 						<span>

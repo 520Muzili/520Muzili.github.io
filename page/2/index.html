@@ -158,6 +158,54 @@
 						<h2>
 							
 	
+		<a href="/2018/10/02/Mysql-存储过程/" itemprop="url">		
+			Mysql-存储过程		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									存储过程创建create procedure 存储过程名(参数模式 参数名 参数类型)
+begin
+        存储过程体
+end
+
+注意
+
+参数模式：in、out、inout，其中in可以省略
+
+
+存储过程体的每一条sql语句都需要用分号结尾
+
+调用call 存储过程名(实参列表)
+
+举例
+call sp1（‘值’）;    //调用in模式的参数
+set @name; call sp1(@	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-02
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/02/Mysql-存储过程/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
 		<a href="/2018/10/02/Mysql-变量/" itemprop="url">		
 			Mysql-变量		
 		</a>
@@ -342,74 +390,6 @@ FOREIGN KEY
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/DDL总结-常见的约束/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DDL总结-数据类型/" itemprop="url">		
-			DDL总结-数据类型		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									数据类型数值型整型
-
-
-
-类型
-字节数
-
-
-
-
-tinyint
-1
-
-
-smallint
-2
-
-
-mediumint
-3
-
-
-int/integer
-4
-
-
-bigint
-8
-
-
-
-特点
-
-都可以设置无符号和有符号，默认有符号，通过unsigned设置无符号
-如果超出了范围，会报out or range异常，插入临界值
-长度可以不指定，默认会有一个长度
-长度代表显示的最大宽度，如果不够则左边用0填	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DDL总结-数据类型/" class="pull-right">
 								展开全文
 							</a>		
 						<span>
