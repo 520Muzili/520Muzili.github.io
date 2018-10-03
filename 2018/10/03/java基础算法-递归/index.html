@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>Mysql-存储过程</title>
+	<title>java基础算法-递归</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《Mysql-存储过程》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《java基础算法-递归》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/02/Mysql-存储过程/" itemprop="url">		
-			Mysql-存储过程		
+		<a href="/2018/10/03/java基础算法-递归/" itemprop="url">		
+			java基础算法-递归		
 		</a>
 	
 
@@ -170,9 +170,9 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/02/Mysql-存储过程/" itemprop="url">
-	<time datetime="2018-10-02T04:22:39.364Z" itemprop="datePublished">
-  		2018-10-02
+						<a href="/2018/10/03/java基础算法-递归/" itemprop="url">
+	<time datetime="2018-10-03T07:41:48.440Z" itemprop="datePublished">
+  		2018-10-03
   </time>
 </a>    
 &nbsp;
@@ -182,7 +182,7 @@
 						
 							<i class="fa fa-tags"></i>
 							
-								<a href="#Mysql" title="Mysql" rel="23">Mysql</a>&nbsp;
+								<a href="#递归算法" title="递归算法" rel="1">递归算法</a>&nbsp;
 													 											
 						
 					</span>
@@ -192,29 +192,41 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h2 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><pre class="line-numbers language-bash"><code class="language-bash">create procedure 存储过程名<span class="token punctuation">(</span>参数模式 参数名 参数类型<span class="token punctuation">)</span>
-begin
-        存储过程体
-end
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>注意</p>
-<blockquote>
-<p>参数模式：in、out、inout，其中in可以省略</p>
-</blockquote>
-<blockquote>
-<p>存储过程体的每一条sql语句都需要用分号结尾</p>
-</blockquote>
-<h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><pre class="line-numbers language-bash"><code class="language-bash">call 存储过程名<span class="token punctuation">(</span>实参列表<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>举例</p>
-<pre class="line-numbers language-bash"><code class="language-bash">call sp1（‘值’）<span class="token punctuation">;</span>    //调用in模式的参数
-<span class="token keyword">set</span> @name<span class="token punctuation">;</span> call sp1<span class="token punctuation">(</span>@name<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">select</span> @name<span class="token punctuation">;</span>    //调用out模式的参数
-<span class="token keyword">set</span> @name<span class="token operator">=</span>值<span class="token punctuation">;</span> call sp1<span class="token punctuation">(</span>@name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">select</span> @name<span class="token punctuation">;</span>    //调用inout模式的参数
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><pre class="line-numbers language-bash"><code class="language-bash">show create procedure 存储过程名<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><pre class="line-numbers language-bash"><code class="language-bash">drop procedure 存储过程名<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+						<p>递归思想：从最外部到达最里部，从最里部开始解决问题，直到解决完最外部的问题。</p>
+<p>基本含义</p>
+<p>是指函数/过程/子程序在运行过程序中直接或间接调用自身而产生的重入现象。</p>
+<p>在计算机编程里，递归指的是一个过程：函数不断引用自身，直到引用的对象已知。</p>
+<p>使用递归解决问题，思路清晰，代码少。但是在主流高级语言中（如C语言、Pascal语言等）使用递归算法要耗用更多的栈空间，所以在堆栈尺寸受限制时（如嵌入式系统或者内核态编程），应避免采用。所有的递归算法都可以改写成与之等价的非递归算法。</p>
+<p><strong>示例</strong></p>
+<p>计算n的阶乘</p>
+<pre class="line-numbers language-bash"><code class="language-bash">package <span class="token function">test</span><span class="token punctuation">;</span>
+
+class Recursion <span class="token punctuation">{</span>
+
+    public static void main<span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        long result <span class="token operator">=</span> testRecursion<span class="token punctuation">(</span>10<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System.out.println<span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    /*
+     * 计算n的阶乘
+     */
+    static int testRecursion<span class="token punctuation">(</span>int n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        //当n<span class="token operator">=</span>1时终止递归
+        if<span class="token punctuation">(</span>n<span class="token operator">==</span>1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> 1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> n * testRecursion<span class="token punctuation">(</span>n-1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>由此可见，递归算法本质就是方法本身调用自己，每次调用时传入参数不同，递归体内含有方法结束条件，当传递的参数符合结束条件时，最内层的方法结束调用，以此达到迭代的效果。 </p>
+<p><strong>递归应用实例</strong>（尚未补充）</p>
 
 					
 				</div>
@@ -223,15 +235,9 @@ end
 
 		<ul class="am-pagination">
     
-    	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/02/Mysql-函数/" title="Mysql-函数">
-      		&laquo; 上一篇
-		</a>
-		</li>
-	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/02/Mysql-变量/" title="Mysql-变量">
+		<a class="pull-right" href="/2018/10/02/Mysql-流程控制结构/" title="Mysql-流程控制结构">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -315,18 +321,6 @@ end
 	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
 -->
 
-	
-		<aside class="post-widget">
-			<nav class="post-toc-wrap" id="post-toc">
-				
-					<strong>文章目录</strong>
-				
-				
-				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储过程"><span class="post-toc-text">存储过程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建"><span class="post-toc-text">创建</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#调用"><span class="post-toc-text">调用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看"><span class="post-toc-text">查看</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除"><span class="post-toc-text">删除</span></a></li></ol></li></ol>
-			</nav>
-			<div class="post-toc-bar"><div>
-		</aside>
 	
 
 	</div>
