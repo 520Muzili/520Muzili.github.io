@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>java基础算法-递归</title>
+	<title>java面试-内存分析</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《java基础算法-递归》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《java面试-内存分析》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/03/java基础算法-递归/" itemprop="url">		
-			java基础算法-递归		
+		<a href="/2018/10/03/java面试-内存分析/" itemprop="url">		
+			java面试-内存分析		
 		</a>
 	
 
@@ -170,8 +170,8 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/03/java基础算法-递归/" itemprop="url">
-	<time datetime="2018-10-03T07:41:48.440Z" itemprop="datePublished">
+						<a href="/2018/10/03/java面试-内存分析/" itemprop="url">
+	<time datetime="2018-10-03T12:10:32.488Z" itemprop="datePublished">
   		2018-10-03
   </time>
 </a>    
@@ -182,7 +182,7 @@
 						
 							<i class="fa fa-tags"></i>
 							
-								<a href="#递归算法" title="递归算法" rel="1">递归算法</a>&nbsp;
+								<a href="#内存分析" title="内存分析" rel="1">内存分析</a>&nbsp;
 													 											
 						
 					</span>
@@ -192,41 +192,53 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p>递归思想：从最外部到达最里部，从最里部开始解决问题，直到解决完最外部的问题。</p>
-<p>基本含义</p>
-<p>是指函数/过程/子程序在运行过程序中直接或间接调用自身而产生的重入现象。</p>
-<p>在计算机编程里，递归指的是一个过程：函数不断引用自身，直到引用的对象已知。</p>
-<p>使用递归解决问题，思路清晰，代码少。但是在主流高级语言中（如C语言、Pascal语言等）使用递归算法要耗用更多的栈空间，所以在堆栈尺寸受限制时（如嵌入式系统或者内核态编程），应避免采用。所有的递归算法都可以改写成与之等价的非递归算法。</p>
-<p><strong>示例</strong></p>
-<p>计算n的阶乘</p>
-<pre class="line-numbers language-bash"><code class="language-bash">package <span class="token function">test</span><span class="token punctuation">;</span>
-
-class Recursion <span class="token punctuation">{</span>
-
-    public static void main<span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-        long result <span class="token operator">=</span> testRecursion<span class="token punctuation">(</span>10<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System.out.println<span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    /*
-     * 计算n的阶乘
-     */
-    static int testRecursion<span class="token punctuation">(</span>int n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-        //当n<span class="token operator">=</span>1时终止递归
-        if<span class="token punctuation">(</span>n<span class="token operator">==</span>1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> 1<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token keyword">return</span> n * testRecursion<span class="token punctuation">(</span>n-1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>由此可见，递归算法本质就是方法本身调用自己，每次调用时传入参数不同，递归体内含有方法结束条件，当传递的参数符合结束条件时，最内层的方法结束调用，以此达到迭代的效果。 </p>
-<p><strong>递归应用实例</strong>（尚未补充）</p>
+						<h3 id="基本的概念"><a href="#基本的概念" class="headerlink" title="基本的概念"></a>基本的概念</h3><blockquote>
+<p>基本类型包括：byte、short、int、long、char、float、double、boolean</p>
+</blockquote>
+<blockquote>
+<p>引用类型包括：类类型、接口类型和数组</p>
+</blockquote>
+<h3 id="栈内存-stack"><a href="#栈内存-stack" class="headerlink" title="栈内存(stack)"></a>栈内存(stack)</h3><ul>
+<li>程序在栈内存中运行</li>
+<li>栈中存的是基本数据类型和堆中对象的引用</li>
+<li>栈是运行时的单元</li>
+<li>栈解决程序的运行问题，即程序如何执行，或者说如何处理数据</li>
+<li>一个线程一个独立的线程栈</li>
+<li>栈内存特点，数数据一执行完毕，变量会立即释放，节约内存空间</li>
+<li>栈内存中的数据，没有默认初始化值，需要手动设置</li>
+</ul>
+<p><strong>深入理解</strong></p>
+<p>栈（stack），位于通用RAM中，但通过它的“堆栈指针”可以从处理器哪里获得支持。堆栈指针若向下移动，则分配新的内存；若向上移动，则释放那些内存。存储读取速度，仅次于寄存器。存放基本类型数据变量和对象、数组等引用类型的引用！</p>
+<p><img src="../imgs/内存分析1.jpg" alt="image"></p>
+<p>栈帧存储了方法的局部变量表、操作数栈、动态连接和方法返回地址等信息。</p>
+<p>每一个方法从调用开始到执行完成的过程，就对应着一个栈帧在虚拟机栈里面从入栈到出栈（也叫弹栈）的过程（后入先出，先入后出）。</p>
+<p>对于栈，只有栈顶的栈帧是有效的，称为当前栈帧，这个栈帧所关联的方法称为当前方法。执行引擎所运行的所有字节码指令都只针对当前栈帧进行操作。</p>
+<h3 id="堆内存-heap"><a href="#堆内存-heap" class="headerlink" title="堆内存(heap)"></a>堆内存(heap)</h3><ul>
+<li>程序运行所需的大部分数据保存在堆内存中</li>
+<li>堆中存的是对象</li>
+<li>堆是存储的单元，堆只是一块共享的内存</li>
+<li>堆解决的是数据存储的问题，即数据怎么放，放在哪儿</li>
+<li>堆内存中所有的实体都有内存地址值</li>
+<li>堆内存中的实体是用来封装数据的，这些数据都有默认初始化值</li>
+<li>所有线程共享堆内存</li>
+<li>堆内存中的实体不再被指向时，JVM启动垃圾回收机制，自动清除，这也是JAVA优于C++的表现之一（C++中需要程序员手动清除）</li>
+</ul>
+<p>以下是几个小技巧，记住了就更容易理解堆栈</p>
+<blockquote>
+<ol>
+<li>栈存储的信息都是跟当前线程（或程序）相关的信息。(局部变量、程序运行状态、方法、方法返回值)等，<br>栈中存的是基本数据类型和堆中对象的引用。一个对象的大小是不可估计的，或者说是可以动态变化的，但是<br>在栈中，一个对象只对应了一个4byte的引用（堆栈分离的好处）。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>堆只负责存储对象信息。<br>平时我们报错java.lang.StackOverflowError异常<br>就是因为我们栈中存储的数据比较多<br>堆和栈中，栈是程序运行最根本的东西。程序运行可以没有堆，但是不能没有栈。<br>而堆是为栈进行数据存储服务的，说白了堆就是一块共享的内存。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>栈中的数据大小和生命周期是可以确定的，当没有引用指向数据时，这个数据就会消失。堆中的对象的由垃圾回收器gc负责回收。</li>
+</ol>
+</blockquote>
 
 					
 				</div>
@@ -235,15 +247,9 @@ class Recursion <span class="token punctuation">{</span>
 
 		<ul class="am-pagination">
     
-    	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/03/java面试-内存分析/" title="java面试-内存分析">
-      		&laquo; 上一篇
-		</a>
-		</li>
-	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/02/Mysql-流程控制结构/" title="Mysql-流程控制结构">
+		<a class="pull-right" href="/2018/10/03/java基础算法-递归/" title="java基础算法-递归">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -327,6 +333,18 @@ class Recursion <span class="token punctuation">{</span>
 	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
 -->
 
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本的概念"><span class="post-toc-text">基本的概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#栈内存-stack"><span class="post-toc-text">栈内存(stack)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#堆内存-heap"><span class="post-toc-text">堆内存(heap)</span></a></li></ol>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</aside>
 	
 
 	</div>
