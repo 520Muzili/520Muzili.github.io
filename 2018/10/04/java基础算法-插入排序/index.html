@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>java基础算法-选择排序</title>
+	<title>java基础算法-插入排序</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《java基础算法-选择排序》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《java基础算法-插入排序》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/04/java基础算法-选择排序/" itemprop="url">		
-			java基础算法-选择排序		
+		<a href="/2018/10/04/java基础算法-插入排序/" itemprop="url">		
+			java基础算法-插入排序		
 		</a>
 	
 
@@ -170,8 +170,8 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/04/java基础算法-选择排序/" itemprop="url">
-	<time datetime="2018-10-04T14:43:23.039Z" itemprop="datePublished">
+						<a href="/2018/10/04/java基础算法-插入排序/" itemprop="url">
+	<time datetime="2018-10-04T15:16:23.973Z" itemprop="datePublished">
   		2018-10-04
   </time>
 </a>    
@@ -182,7 +182,7 @@
 						
 							<i class="fa fa-tags"></i>
 							
-								<a href="#选择排序" title="选择排序" rel="1">选择排序</a>&nbsp;
+								<a href="#插入排序" title="插入排序" rel="1">插入排序</a>&nbsp;
 													 											
 						
 					</span>
@@ -192,7 +192,14 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>选择排序(Selection sort)是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小(或最大)的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法(比如序列[5， 5， 3]第一次就将第一个[5]与[3]交换，导致第一个5挪动到第二个5后面)。</p>
+						<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>有一个已经有序的数据序列，要求在这个已经排好的数据序列中插入一个数，但要求插入后此数据序列仍然有序，这个时候就要用到一种新的排序方法–插入排序法,插入排序的基本操作就是将一个数据插入到已经排好序的有序数据中，从而得到一个新的、个数加一的有序数据，算法适用于少量数据的排序，时间复杂度为O(n^2)。是稳定的排序方法。插入算法把要排序的数组分成两部分:第一部分包含了这个数组的所有元素，但将最后一个元素除外(让数组多一个空间才有插入的位置)，而第二部分就只包含这一个元素(即待插入元素)。在第一部分排序完成后，再将这个最后元素插入到已排好序的第一部分中。</p>
+<h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><p>每步将一个待排序的纪录，按其关键码值的大小插入前面已经排序的文件中适当位置上，直到全部插入完为止。</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>⒈ 从第一个元素开始，该元素可以认为已经被排序</p>
+<p>⒉ 取出下一个元素，在已经排序的元素序列中从后向前扫描</p>
+<p>⒊ 如果该元素（已排序）大于新元素，将该元素移到下一位置</p>
+<p>⒋ 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</p>
+<p>⒌ 将新元素插入到下一位置中</p>
+<p>⒍ 重复步骤2</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><pre class="line-numbers language-bash"><code class="language-bash">public class Demo <span class="token punctuation">{</span>
 
     public static void main<span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -211,25 +218,28 @@
 
     static void sort<span class="token punctuation">(</span>int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        //定义临时变量
-        int temp<span class="token operator">=</span>0<span class="token punctuation">;</span>
+        for<span class="token punctuation">(</span>int i<span class="token operator">=</span>1<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr.length<span class="token punctuation">;</span>i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        for<span class="token punctuation">(</span>int i<span class="token operator">=</span>0<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr.length<span class="token punctuation">;</span>i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            int temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-            for<span class="token punctuation">(</span>int j<span class="token operator">=</span>i+1<span class="token punctuation">;</span>j<span class="token operator">&lt;</span>arr.length<span class="token punctuation">;</span>j++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            int index<span class="token operator">=</span>i-1<span class="token punctuation">;</span>
 
-                if<span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                    arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                    arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
+            //和前一个数进行比较
+            while<span class="token punctuation">(</span>index<span class="token operator">></span>0<span class="token operator">&amp;&amp;</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>arr<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+                //把前一个数后移一位
+                arr<span class="token punctuation">[</span>index+1<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+                index--<span class="token punctuation">;</span>
             <span class="token punctuation">}</span>
+
+            //将临时值放入合适的位置
+            arr<span class="token punctuation">[</span>index+1<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
 <span class="token punctuation">}</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 					
 				</div>
@@ -238,15 +248,9 @@
 
 		<ul class="am-pagination">
     
-    	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/04/java基础算法-插入排序/" title="java基础算法-插入排序">
-      		&laquo; 上一篇
-		</a>
-		</li>
-	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/04/java基础算法-快速排序/" title="java基础算法-快速排序">
+		<a class="pull-right" href="/2018/10/04/java基础算法-选择排序/" title="java基础算法-选择排序">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -338,7 +342,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解释"><span class="post-toc-text">解释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例"><span class="post-toc-text">示例</span></a></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解释"><span class="post-toc-text">解释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思想"><span class="post-toc-text">思想</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#步骤"><span class="post-toc-text">步骤</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例"><span class="post-toc-text">示例</span></a></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>

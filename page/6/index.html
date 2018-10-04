@@ -158,6 +158,52 @@
 						<h2>
 							
 	
+		<a href="/2018/10/01/DQL总结-连接查询/" itemprop="url">		
+			DQL总结-连接查询		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									连接查询含义当查询中涉及到了多个表的字段，需要使用多表连接
+select 字段1，字段2 from 表1,表2 ...
+
+笛卡尔乘积：当查询多个表时，没有添加有效的连接条件，导致多个表所有行实现完全连接。
+如何解决：添加有效的连接条件。
+分类按年代分类：
+
+sql92：
+
+等值连接
+语法：
+select 查询列表
+from 表1 别名,表2 别名
+where 表1.key=表2.key
+【and 	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DQL总结-连接查询/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
 		<a href="/2018/10/01/DQL总结-分组查询/" itemprop="url">		
 			DQL总结-分组查询		
 		</a>
@@ -339,56 +385,6 @@ _：任意单个字符
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/DQL总结-条件查询/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-基础查询/" itemprop="url">		
-			DQL总结-基础查询		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									基础查询语法select 查询列表 from 表名;
-
-特点
-查询列表可以是字段、常量、表达式、函数，也可以是多个
-查询结果是一个虚拟表
-
-示例查询单个字段
-select 字段名 from 表名;
-
- 查询多个字段
-select 字段名 字段名 from 表名;
-
-查询所有字段
-select * from 表名;
-
-查询长量
-select 常量值;
-
-注意：字符型和日期型的常量值必须用单引号引起来	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-基础查询/" class="pull-right">
 								展开全文
 							</a>		
 						<span>
