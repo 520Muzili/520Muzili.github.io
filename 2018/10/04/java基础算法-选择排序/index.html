@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>java基础算法-快速排序</title>
+	<title>java基础算法-选择排序</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《java基础算法-快速排序》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《java基础算法-选择排序》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/04/java基础算法-快速排序/" itemprop="url">		
-			java基础算法-快速排序		
+		<a href="/2018/10/04/java基础算法-选择排序/" itemprop="url">		
+			java基础算法-选择排序		
 		</a>
 	
 
@@ -170,8 +170,8 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/04/java基础算法-快速排序/" itemprop="url">
-	<time datetime="2018-10-04T13:57:38.417Z" itemprop="datePublished">
+						<a href="/2018/10/04/java基础算法-选择排序/" itemprop="url">
+	<time datetime="2018-10-04T14:43:23.039Z" itemprop="datePublished">
   		2018-10-04
   </time>
 </a>    
@@ -182,7 +182,7 @@
 						
 							<i class="fa fa-tags"></i>
 							
-								<a href="#快速排序" title="快速排序" rel="1">快速排序</a>&nbsp;
+								<a href="#选择排序" title="选择排序" rel="1">选择排序</a>&nbsp;
 													 											
 						
 					</span>
@@ -192,29 +192,15 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>快速排序（Quicksort）是对冒泡排序的一种改进。</p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
-<h3 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h3><ul>
-<li>选择一个关键值作为基准值。比基准值小的都在左边序列（一般是无序的），比基准值大的都在右边（一般是无序的）。</li>
-<li>从后往前比较，用基准值和最后一个值比较，如果比基准值小的交换位置，如果没有继续比较下一个，直到找到第一个比基准值小的值才交换。找到这个值之后，又从前往后开始比较，如果有比基准值大的，交换位置，如果没有继续比较下一个，直到找到第一个比基准值大的值才交换。直到从前往后的比较索引&gt;从后往前比较的索引，结束第一次循环，此时，对于基准值来说，左右两边就是有序的了。</li>
-<li>接着分别比较左右两边的序列，重复上述的循环。</li>
-</ul>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><pre class="line-numbers language-bash"><code class="language-bash">package <span class="token function">test</span><span class="token punctuation">;</span>
-
-public class Demo <span class="token punctuation">{</span>
+						<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>选择排序(Selection sort)是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小(或最大)的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法(比如序列[5， 5， 3]第一次就将第一个[5]与[3]交换，导致第一个5挪动到第二个5后面)。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><pre class="line-numbers language-bash"><code class="language-bash">public class Demo <span class="token punctuation">{</span>
 
     public static void main<span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token operator">=</span> <span class="token punctuation">{</span>5,7,4,6,5,8,6,9<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-        //定义数组的起始索引
-        int low<span class="token operator">=</span>0<span class="token punctuation">;</span>
-
-        //定义数组的末尾索引
-        int high<span class="token operator">=</span>arr.length-1<span class="token punctuation">;</span>
+        int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token operator">=</span> <span class="token punctuation">{</span>1,5,2,7,6,7,10,8<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
         //测试
-        sort<span class="token punctuation">(</span>arr,low,high<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sort<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         //打印结果
         for<span class="token punctuation">(</span>int i:arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -223,63 +209,27 @@ public class Demo <span class="token punctuation">{</span>
 
     <span class="token punctuation">}</span>
 
-    static void sort<span class="token punctuation">(</span>int <span class="token punctuation">[</span><span class="token punctuation">]</span> arr,int low,int high<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    static void sort<span class="token punctuation">(</span>int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        int start<span class="token operator">=</span>low<span class="token punctuation">;</span>
-        int end<span class="token operator">=</span>high<span class="token punctuation">;</span>
+        //定义临时变量
+        int temp<span class="token operator">=</span>0<span class="token punctuation">;</span>
 
-        //确定基准值
-        int key<span class="token operator">=</span>arr<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        for<span class="token punctuation">(</span>int i<span class="token operator">=</span>0<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr.length<span class="token punctuation">;</span>i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-        //判断end是否大于start，当等于时，比较结束
-        while<span class="token punctuation">(</span>end<span class="token operator">></span>start<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            for<span class="token punctuation">(</span>int j<span class="token operator">=</span>i+1<span class="token punctuation">;</span>j<span class="token operator">&lt;</span>arr.length<span class="token punctuation">;</span>j++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-            //从后开始比较
-            while<span class="token punctuation">(</span>end<span class="token operator">></span>start<span class="token operator">&amp;&amp;</span>arr<span class="token punctuation">[</span>end<span class="token punctuation">]</span><span class="token operator">>=</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                end--<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-
-            //当后值小于基准值调换二者位置
-            if<span class="token punctuation">(</span>arr<span class="token punctuation">[</span>end<span class="token punctuation">]</span><span class="token operator">&lt;</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                int temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>end<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                arr<span class="token punctuation">[</span>end<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                arr<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-
-            //从前开始比较
-            while<span class="token punctuation">(</span>end<span class="token operator">></span>start<span class="token operator">&amp;&amp;</span>arr<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token operator">&lt;=</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                start++<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-
-            //当前值大于基准值时调换二者位置
-            if<span class="token punctuation">(</span>arr<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token operator">></span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                int temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                arr<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>end<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                arr<span class="token punctuation">[</span>end<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+                if<span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
-
-        //比较结束之后，此时start等于end，即基准值索引,得到左边小于基准值的无序序列，右边大于基准值的无序序列
-
-        //比较low与基准值索引，之间为左无序序列
-        if<span class="token punctuation">(</span>low<span class="token operator">&lt;</span>start<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-            //递归进行排序
-            sort<span class="token punctuation">(</span>arr,low,start-1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        //比较high与基准值索引，之间为右无序序列
-        if<span class="token punctuation">(</span>high<span class="token operator">></span>end<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-            //递归进行排序
-            sort<span class="token punctuation">(</span>arr,end+1,high<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
     <span class="token punctuation">}</span>
 
 <span class="token punctuation">}</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 					
 				</div>
@@ -288,15 +238,9 @@ public class Demo <span class="token punctuation">{</span>
 
 		<ul class="am-pagination">
     
-    	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/04/java基础算法-选择排序/" title="java基础算法-选择排序">
-      		&laquo; 上一篇
-		</a>
-		</li>
-	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/04/java基础算法-冒泡排序/" title="java基础算法-冒泡排序">
+		<a class="pull-right" href="/2018/10/04/java基础算法-快速排序/" title="java基础算法-快速排序">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -388,7 +332,7 @@ public class Demo <span class="token punctuation">{</span>
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解释"><span class="post-toc-text">解释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原理"><span class="post-toc-text">原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#做法"><span class="post-toc-text">做法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例"><span class="post-toc-text">示例</span></a></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解释"><span class="post-toc-text">解释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例"><span class="post-toc-text">示例</span></a></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>
