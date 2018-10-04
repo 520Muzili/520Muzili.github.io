@@ -61,7 +61,7 @@
 	
 	<!-- others: such as change-bg, time... -->
 	<p class="page-name-other">
-		10/3/2018 
+		10/4/2018 
 		<style type="text/css">
 	header:after {
 		content: '';
@@ -152,6 +152,90 @@
     <div class="am-u-md-8 am-u-sm-12">
 		<div class="pure">
 			<li>
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DDL总结-库的管理/" itemprop="url">		
+			DDL总结-库的管理		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									库的管理创建库create database 【if not exists】 库名【 character set 字符集名】;
+
+修改库alter database 库名 character set 字符集名;
+
+删除库drop database 【if exists】 库名;
+
+	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DDL总结-库的管理/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DQL总结-删除/" itemprop="url">		
+			DML总结-删除		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									删除方式一删除单表的记录
+语法
+语法：delete from 表名 【where 筛选条件】【limit 条目数】;
+
+级联删除
+语法
+delete 别名1,别名2 from 表1 别名 
+inner|left|right join 表2 别名 
+on 连接条件
+【where 筛选条件】
+
+使用truncate语法
+truncate table 表名   //清空
+
+两种方式的区别【面试题】1.t	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DQL总结-删除/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
 				
 						
 					<div class="pure-text">
@@ -279,95 +363,6 @@ from 表1 别名
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/DQL查询总结/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-联合查询/" itemprop="url">		
-			DQL总结-联合查询		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									联合查询含义union：合并、联合，将多次查询结果合并成一个结果
-语法查询语句1
-union 【all】
-查询语句2
-union 【all】
-...
-
-意义将一条比较复杂的查询语句拆分成多条语句
-适用于查询多个表的时候，查询的列基本是一致
-特点要求多条查询语句的查询列数必须一致
-要求多条查询语句的查询的各列类型、顺序最好一致
-union 去重，union all包含重复项
-	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-联合查询/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-分页查询/" itemprop="url">		
-			DQL总结-分页查询		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									分页查询应用场景当要查询的条目数太多，一页显示不全
-语法select 查询列表
-from 表
-limit 【offset，】size;
-
-注意：
-offset代表的是起始的条目索引，默认从0开始
-size代表的是显示的条目数
-公式假如要显示的页数为page，每一页条目数为size
-select 查询列表
-from 表
-limit (page-1)*size,size;
-
-	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-分页查询/" class="pull-right">
 								展开全文
 							</a>		
 						<span>

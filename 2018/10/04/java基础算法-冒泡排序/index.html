@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>DML总结-插入</title>
+	<title>java基础算法-冒泡排序</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《DML总结-插入》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《java基础算法-冒泡排序》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/01/DML总结-插入/" itemprop="url">		
-			DML总结-插入		
+		<a href="/2018/10/04/java基础算法-冒泡排序/" itemprop="url">		
+			java基础算法-冒泡排序		
 		</a>
 	
 
@@ -170,9 +170,9 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/01/DML总结-插入/" itemprop="url">
-	<time datetime="2018-10-01T12:33:26.573Z" itemprop="datePublished">
-  		2018-10-01
+						<a href="/2018/10/04/java基础算法-冒泡排序/" itemprop="url">
+	<time datetime="2018-10-04T11:09:56.020Z" itemprop="datePublished">
+  		2018-10-04
   </time>
 </a>    
 &nbsp;
@@ -182,7 +182,7 @@
 						
 							<i class="fa fa-tags"></i>
 							
-								<a href="#Mysql" title="Mysql" rel="23">Mysql</a>&nbsp;
+								<a href="#冒泡排序" title="冒泡排序" rel="1">冒泡排序</a>&nbsp;
 													 											
 						
 					</span>
@@ -192,35 +192,49 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><h3 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h3><p>语法</p>
-<pre class="line-numbers language-bash"><code class="language-bash">insert into 表名<span class="token punctuation">(</span>字段名,<span class="token punctuation">..</span>.<span class="token punctuation">)</span> values<span class="token punctuation">(</span>值,<span class="token punctuation">..</span>.<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>特点</p>
-<ul>
-<li>要求值的类型和字段的类型要一致或兼容</li>
-<li>字段的个数和顺序不一定与原始表中的字段个数和顺序一致<br>但必须保证值和字段一一对应</li>
-<li>假如表中有可以为null的字段，注意可以通过以下两种方式插入null值</li>
-</ul>
-<blockquote>
-<p>①字段和值都省略</p>
-</blockquote>
-<blockquote>
-<p>②字段写上，值使用null</p>
-<ul>
-<li>字段和值的个数必须一致</li>
-<li>字段名可以省略，默认所有列</li>
-</ul>
-</blockquote>
-<h3 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h3><p>语法</p>
-<pre class="line-numbers language-bash"><code class="language-bash">insert into 表名 <span class="token keyword">set</span> 字段<span class="token operator">=</span>值,字段<span class="token operator">=</span>值,<span class="token punctuation">..</span>.<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="两种方式的区别"><a href="#两种方式的区别" class="headerlink" title="两种方式的区别"></a>两种方式的区别</h3><p>方式一支持一次插入多行，语法如下：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">insert into 表名【<span class="token punctuation">(</span>字段名,<span class="token punctuation">..</span><span class="token punctuation">)</span>】 values<span class="token punctuation">(</span>值，<span class="token punctuation">..</span><span class="token punctuation">)</span>,<span class="token punctuation">(</span>值，<span class="token punctuation">..</span>.<span class="token punctuation">)</span>,<span class="token punctuation">..</span>.<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>方式一支持子查询，语法如下：</p>
-<pre class="line-numbers language-bash"><code class="language-bash">insert into 表名
-查询语句<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+						<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>冒泡排序（Bubble Sort，台湾译为：泡沫排序或气泡排序）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>冒泡排序算法的运作如下：（从后往前）</p>
+<p>1.比较相邻的元素。如果第一个比第二个大，就交换他们两个。</p>
+<p>2.对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。</p>
+<p>3.针对所有的元素重复以上的步骤，除了最后一个。</p>
+<p>4.持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><pre class="line-numbers language-bash"><code class="language-bash">public class Demo <span class="token punctuation">{</span>
+
+    public static void main<span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token operator">=</span> <span class="token punctuation">{</span>7,5,8,9,6,10,3<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+        sort<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        for<span class="token punctuation">(</span>int value:arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System.out.print<span class="token punctuation">(</span>value+<span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    static void sort<span class="token punctuation">(</span>int<span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        //定义临时变量
+        int temp<span class="token operator">=</span>0<span class="token punctuation">;</span>
+
+        //记录次数
+        for<span class="token punctuation">(</span>int i<span class="token operator">=</span>1<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr.length<span class="token punctuation">;</span>i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            //循环遍历数组
+            for<span class="token punctuation">(</span>int j<span class="token operator">=</span>0<span class="token punctuation">;</span>j<span class="token operator">&lt;</span>arr.length-1<span class="token punctuation">;</span>j++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+                //比较数组相邻的两个值，大的放在后一位
+                if<span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">></span>arr<span class="token punctuation">[</span>j+1<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>j+1<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    arr<span class="token punctuation">[</span>j+1<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 					
 				</div>
@@ -230,14 +244,14 @@
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/01/DML总结-修改/" title="DML总结-修改">
+   		<a class="pull-left" href="/2018/10/04/java基础算法-快速排序/" title="java基础算法-快速排序">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/01/DQL查询总结/" title="DQL总结">
+		<a class="pull-right" href="/2018/10/03/java面试-线程实现三种方式/" title="java面试-线程实现三种方式">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -329,7 +343,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插入"><span class="post-toc-text">插入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式一"><span class="post-toc-text">方式一</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式二"><span class="post-toc-text">方式二</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#两种方式的区别"><span class="post-toc-text">两种方式的区别</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解释"><span class="post-toc-text">解释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原理"><span class="post-toc-text">原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例"><span class="post-toc-text">示例</span></a></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>
