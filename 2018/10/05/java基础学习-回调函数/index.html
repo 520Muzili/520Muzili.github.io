@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>DDL总结-数据类型</title>
+	<title>java基础学习-回调函数</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《DDL总结-数据类型》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《java基础学习-回调函数》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/10/01/DDL总结-数据类型/" itemprop="url">		
-			DDL总结-数据类型		
+		<a href="/2018/10/05/java基础学习-回调函数/" itemprop="url">		
+			java基础学习-回调函数		
 		</a>
 	
 
@@ -170,9 +170,9 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/10/01/DDL总结-数据类型/" itemprop="url">
-	<time datetime="2018-10-01T13:33:40.490Z" itemprop="datePublished">
-  		2018-10-01
+						<a href="/2018/10/05/java基础学习-回调函数/" itemprop="url">
+	<time datetime="2018-10-05T02:35:23.764Z" itemprop="datePublished">
+  		2018-10-05
   </time>
 </a>    
 &nbsp;
@@ -182,7 +182,7 @@
 						
 							<i class="fa fa-tags"></i>
 							
-								<a href="#Mysql" title="Mysql" rel="23">Mysql</a>&nbsp;
+								<a href="#回掉函数" title="回掉函数" rel="1">回掉函数</a>&nbsp;
 													 											
 						
 					</span>
@@ -192,131 +192,46 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数值型"><a href="#数值型" class="headerlink" title="数值型"></a>数值型</h3><p><strong>整型</strong></p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>字节数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>tinyint</td>
-<td>1</td>
-</tr>
-<tr>
-<td>smallint</td>
-<td>2</td>
-</tr>
-<tr>
-<td>mediumint</td>
-<td>3</td>
-</tr>
-<tr>
-<td>int/integer</td>
-<td>4</td>
-</tr>
-<tr>
-<td>bigint</td>
-<td>8</td>
-</tr>
-</tbody>
-</table>
-<p>特点</p>
-<ul>
-<li>都可以设置无符号和有符号，默认有符号，通过unsigned设置无符号</li>
-<li>如果超出了范围，会报out or range异常，插入临界值</li>
-<li>长度可以不指定，默认会有一个长度</li>
-<li>长度代表显示的最大宽度，如果不够则左边用0填充，但需要搭配zerofill，并且默认变为无符号整型</li>
-</ul>
-<p><strong>浮点型</strong><br>定点数：decimal(M,D)</p>
-<p>浮点数:</p>
-<blockquote>
-<p>float(M,D)   4</p>
-</blockquote>
-<blockquote>
-<p>double(M,D)  8</p>
-</blockquote>
-<p>特点</p>
-<ul>
-<li>M代表整数部位+小数部位的个数，D代表小数部位</li>
-<li>如果超出范围，则报out or range异常，并且插入临界值</li>
-<li>M和D都可以省略，但对于定点数，M默认为10，D默认为0</li>
-<li>如果精度要求较高，则优先考虑使用定点数</li>
-</ul>
-<h3 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>char</td>
-<td>固定长度的字符，写法为char(M)，最大长度不能超过M，其中M可以省略，默认为1</td>
-</tr>
-<tr>
-<td>varchar</td>
-<td>可变长度的字符，写法为varchar(M)，最大长度不能超过M，其中M不可以省略</td>
-</tr>
-<tr>
-<td>binary</td>
-<td>较小的二进制</td>
-</tr>
-<tr>
-<td>varbinary</td>
-<td>较小的二进制</td>
-</tr>
-<tr>
-<td>enum</td>
-<td>枚举</td>
-</tr>
-<tr>
-<td>set</td>
-<td></td>
-</tr>
-<tr>
-<td>text</td>
-<td>长文本</td>
-</tr>
-<tr>
-<td>blob</td>
-<td>较大的二进制</td>
-</tr>
-</tbody>
-</table>
-<h3 id="日期型"><a href="#日期型" class="headerlink" title="日期型"></a>日期型</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>year</td>
-<td>年</td>
-</tr>
-<tr>
-<td>date</td>
-<td>日期</td>
-</tr>
-<tr>
-<td>time</td>
-<td>时间</td>
-</tr>
-<tr>
-<td>datetime</td>
-<td>日期+时间</td>
-</tr>
-<tr>
-<td>timestamp</td>
-<td>日期+时间，比较容易受时区、语法模式、版本的影响，更能反映当前时区的真实时间</td>
-</tr>
-</tbody>
-</table>
+						<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>当程序跑起来时，一般情况下，应用程序（application program）会时常通过API调用库里所预先备好的函数。但是有些库函数（library function）却要求应用先传给它一个函数，好在合适的时候调用，以完成目标任务。这个被传入的、后又被调用的函数就称为回调函数（callback function）。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><pre class="line-numbers language-bash"><code class="language-bash">public class Demo <span class="token punctuation">{</span>
+
+    public static void main<span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        //创建方法所在实体对象
+        User user<span class="token operator">=</span>new Muzili<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        //启用回调函数
+        callBack<span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+
+    <span class="token punctuation">}</span>
+
+    // 创建回调函数
+    static void callBack<span class="token punctuation">(</span>User user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        user.queryMoney<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+interface User<span class="token punctuation">{</span>
+
+    public void queryMoney<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+class Muzili implements User<span class="token punctuation">{</span>
+
+    @Override
+    public void queryMoney<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System.out.println<span class="token punctuation">(</span><span class="token string">"查询木子小姐姐的余额"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 					
 				</div>
@@ -326,14 +241,14 @@
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/10/01/DDL总结-常见的约束/" title="DDL总结-常见约束">
+   		<a class="pull-left" href="/2018/10/05/java基础学习-内部类的四种实现方式/" title="java基础学习-内部类的四种实现方式">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/10/01/DDL总结-表的管理/" title="DDL总结-表的管理">
+		<a class="pull-right" href="/2018/10/04/java基础算法-插入排序/" title="java基础算法-插入排序">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -425,7 +340,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型"><span class="post-toc-text">数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数值型"><span class="post-toc-text">数值型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符型"><span class="post-toc-text">字符型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#日期型"><span class="post-toc-text">日期型</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解释"><span class="post-toc-text">解释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例"><span class="post-toc-text">示例</span></a></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</aside>

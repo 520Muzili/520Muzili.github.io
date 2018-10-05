@@ -61,7 +61,7 @@
 	
 	<!-- others: such as change-bg, time... -->
 	<p class="page-name-other">
-		10/4/2018 
+		10/5/2018 
 		<style type="text/css">
 	header:after {
 		content: '';
@@ -152,6 +152,110 @@
     <div class="am-u-md-8 am-u-sm-12">
 		<div class="pure">
 			<li>
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/TCL总结-事务/" itemprop="url">		
+			TCL总结-事务		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									含义事务：一条或多条sql语句组成一个执行单位，一组sql语句要么都执行要么都不执行
+特点（ACID）A 原子性：一个事务是不可再分割的整体，要么都执行要么都不执行
+C 一致性：一个事务可以使数据从一个一致状态切换到另外一个一致的状态
+I 隔离性：一个事务不受其他事务的干扰，多个事务互相隔离的
+D 持久性：一个事务一旦提交了，则永久的持久化到本地
+事务的使用步骤了解：
+隐式（自动）事务：没有明显的	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/TCL总结-事务/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DDL总结-常见的约束/" itemprop="url">		
+			DDL总结-常见约束		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									常见约束常见的约束
+
+
+类型
+说明
+
+
+
+
+NOT NULL
+非空，该字段的值必填
+
+
+UNIQUE
+唯一，该字段的值不可重复
+
+
+DEFAULT
+默认，该字段的值不用手动插入有默认值
+
+
+CHECK
+检查，mysql不支持
+
+
+PRIMARY KEY
+主键，该字段的值不可重复并且非空  unique+not null
+
+
+FOREIGN KEY
+外键，该字段的值引用了另外的表的字段
+
+
+
+主键和	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DDL总结-常见的约束/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
 				
 						
 					<div class="pure-text">
@@ -295,94 +399,6 @@ alter table 表名 modify c
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/DDL总结-库的管理/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-删除/" itemprop="url">		
-			DML总结-删除		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									删除方式一删除单表的记录
-语法
-语法：delete from 表名 【where 筛选条件】【limit 条目数】;
-
-级联删除
-语法
-delete 别名1,别名2 from 表1 别名 
-inner|left|right join 表2 别名 
-on 连接条件
-【where 筛选条件】
-
-使用truncate语法
-truncate table 表名   //清空
-
-两种方式的区别【面试题】1.t	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-删除/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DML总结-修改/" itemprop="url">		
-			DML总结-修改		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									修改修改单表的记录语法
-update 表名 set 字段=值,字段=值 【where 筛选条件】;
-
-修改多表的记录语法
-update 表1 别名 
-left|right|inner join 表2 别名 
-on 连接条件  
-set 字段=值,字段=值 
-【where 筛选条件】;
-
-	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DML总结-修改/" class="pull-right">
 								展开全文
 							</a>		
 						<span>
