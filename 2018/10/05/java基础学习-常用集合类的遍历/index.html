@@ -193,19 +193,23 @@
 				<div class="content" id="post-content">
 					
 						<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><ul>
-<li>使用for循环遍历<pre class="line-numbers language-bash"><code class="language-bash">for<span class="token punctuation">(</span>int i<span class="token operator">=</span>0<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>list.size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  Object obj<span class="token operator">=</span>list.get<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  System.out.println<span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<li>使用for循环遍历</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">for<span class="token punctuation">(</span>int i<span class="token operator">=</span>0<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>list.size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Object obj<span class="token operator">=</span>list.get<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    System.out.println<span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li>使用iterator（迭代器）遍历<pre class="line-numbers language-bash"><code class="language-bash">Iterator iterator <span class="token operator">=</span> list.iterator<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<ul>
+<li>使用iterator（迭代器）遍历</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">Iterator iterator <span class="token operator">=</span> list.iterator<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 while<span class="token punctuation">(</span>iterator.hasNext<span class="token punctuation">(</span><span class="token punctuation">))</span> <span class="token punctuation">{</span>
-  Object obj <span class="token operator">=</span> iterator.next<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  System.out.println<span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Object obj <span class="token operator">=</span> iterator.next<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    System.out.println<span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
+<ul>
 <li>使用foreach遍历</li>
 </ul>
 <pre class="line-numbers language-bash"><code class="language-bash">for<span class="token punctuation">(</span>Object obj:list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -253,11 +257,13 @@ while<span class="token punctuation">(</span>iterator.hasNext<span class="token 
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>for循环遍历（利用迭代器内部实现光标自增原理，骚操作，不推荐）<pre class="line-numbers language-bash"><code class="language-bash">for<span class="token punctuation">(</span>Iterator iterator <span class="token operator">=</span> set.iterator<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>iterator.hasNext<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  System.out.println<span class="token punctuation">(</span>iterator.next<span class="token punctuation">(</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
+<li>for循环遍历（利用迭代器内部实现光标自增原理，骚操作，不推荐）</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">for<span class="token punctuation">(</span>Iterator iterator <span class="token operator">=</span> set.iterator<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>iterator.hasNext<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    System.out.println<span class="token punctuation">(</span>iterator.next<span class="token punctuation">(</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
+<ul>
 <li>foreach遍历</li>
 </ul>
 <pre class="line-numbers language-bash"><code class="language-bash">for<span class="token punctuation">(</span>Object obj:set<span class="token punctuation">)</span> <span class="token punctuation">{</span>
