@@ -10,7 +10,7 @@
 		
 
 <head>
-	<title>java基础算法-递归</title>
+	<title>java基础算法-递归算法</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class=page-name>当前文章&nbsp;:&nbsp;《java基础算法-递归》</p>
+			<p class=page-name>当前文章&nbsp;:&nbsp;《java基础算法-递归算法》</p>
 			
 		
 	
@@ -161,7 +161,7 @@
 					
 	
 		<a href="/2018/10/03/java基础算法-递归/" itemprop="url">		
-			java基础算法-递归		
+			java基础算法-递归算法		
 		</a>
 	
 
@@ -227,6 +227,16 @@ class Recursion <span class="token punctuation">{</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>由此可见，递归算法本质就是方法本身调用自己，每次调用时传入参数不同，递归体内含有方法结束条件，当传递的参数符合结束条件时，最内层的方法结束调用，以此达到迭代的效果。 </p>
 <p><strong>递归应用实例</strong>（尚未补充）</p>
+<pre class="line-numbers language-bash"><code class="language-bash">void test<span class="token punctuation">(</span>File file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    System.out.println<span class="token punctuation">(</span>file.getName<span class="token punctuation">(</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
+    if<span class="token punctuation">(</span>file.isDirectory<span class="token punctuation">(</span><span class="token punctuation">))</span> <span class="token punctuation">{</span>
+        File<span class="token punctuation">[</span><span class="token punctuation">]</span> files<span class="token operator">=</span>file.listFiles<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        for<span class="token punctuation">(</span>File temp: files<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            test<span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 					
 				</div>
