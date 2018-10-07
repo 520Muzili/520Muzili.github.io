@@ -61,7 +61,7 @@
 	
 	<!-- others: such as change-bg, time... -->
 	<p class="page-name-other">
-		10/6/2018 
+		10/7/2018 
 		<style type="text/css">
 	header:after {
 		content: '';
@@ -152,6 +152,51 @@
     <div class="am-u-md-8 am-u-sm-12">
 		<div class="pure">
 			<li>
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DQL总结-分页查询/" itemprop="url">		
+			DQL总结-分页查询		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									分页查询应用场景当要查询的条目数太多，一页显示不全
+语法select 查询列表
+from 表
+limit 【offset，】size;
+
+注意：
+offset代表的是起始的条目索引，默认从0开始
+size代表的是显示的条目数
+公式假如要显示的页数为page，每一页条目数为size
+select 查询列表
+from 表
+limit (page-1)*size,size;
+
+	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DQL总结-分页查询/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
 				
 						
 					<div class="pure-text">
@@ -342,45 +387,6 @@ round
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/DQL总结-常见函数/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-排序查询/" itemprop="url">		
-			DQL总结-排序查询		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									排序查询语法关键字：order by
-select 查询列表 from 表 where 筛选条件 order by 排序列表 【asc|desc】   //asc 代表升序 desc代表降序 默认是升序
-
-特点asc：升序，不写默认降序
-desc：降序，可以省略不写
-排序列表 支持 单个字段、多个字段、函数、表达式、别名
-order by的位置一般放在查询语句的最后（除limit语句之外）
-	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-排序查询/" class="pull-right">
 								展开全文
 							</a>		
 						<span>
