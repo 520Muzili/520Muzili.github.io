@@ -158,6 +158,93 @@
 						<h2>
 							
 	
+		<a href="/2018/10/01/DQL查询总结/" itemprop="url">		
+			DQL总结		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									总结语法select 查询列表    
+from 表1 别名       
+连接类型 join 表2   
+on 连接条件         
+where 筛选          
+group by 分组列表   
+having 筛选         
+order by排序列表    
+limit 起始条目索引，条目数;  
+
+执行顺序select 查询列表    ⑦
+from 表1 别名     	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DQL查询总结/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DQL总结-联合查询/" itemprop="url">		
+			DQL总结-联合查询		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									联合查询含义union：合并、联合，将多次查询结果合并成一个结果
+语法查询语句1
+union 【all】
+查询语句2
+union 【all】
+...
+
+意义将一条比较复杂的查询语句拆分成多条语句
+适用于查询多个表的时候，查询的列基本是一致
+特点要求多条查询语句的查询列数必须一致
+要求多条查询语句的查询的各列类型、顺序最好一致
+union 去重，union all包含重复项
+	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DQL总结-联合查询/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
 		<a href="/2018/10/01/DQL总结-分页查询/" itemprop="url">		
 			DQL总结-分页查询		
 		</a>
@@ -278,115 +365,6 @@ where 表1.key=表2.key
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/DQL总结-连接查询/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-分组查询/" itemprop="url">		
-			DQL总结-分组查询		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									分组查询语法select 分组函数，分组后的字段
-from 表
-【where 筛选条件】
-group by 分组的字段
-【having 分组后的筛选】
-【order by 排序列表】
-
-特点
-
-
-Name
-使用关键字
-筛选的表
-位置
-
-
-
-
-分组前筛选
-where
-原始表
-group by的前面
-
-
-分组后筛选
-having
-分组后的表
-group by的后面
-
-
-
-	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-分组查询/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-常见函数/" itemprop="url">		
-			DQL总结-常见函数		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									常见函数概述功能：类似于java中的方法
-好处：提高重用性和隐藏实现细节
-调用：select 函数名(实参列表);
-单行函数字符函数concat:连接
-substr:截取子串
-upper:变大写
-lower：变小写
-replace：替换
-length：获取字节长度
-trim:去前后空格
-lpad：左填充
-rpad：右填充
-instr:获取子串第一次出现的索引
-数学函数ceil:向上取整
-round	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-常见函数/" class="pull-right">
 								展开全文
 							</a>		
 						<span>

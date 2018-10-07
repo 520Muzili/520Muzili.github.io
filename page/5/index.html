@@ -158,6 +158,98 @@
 						<h2>
 							
 	
+		<a href="/2018/10/02/Mysql-变量/" itemprop="url">		
+			Mysql-变量		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									Mysql-变量系统变量说明：变量由系统提供的，不用自定义
+语法
+查看系统变量
+show 【global|session 】variables like '';   //如果没有显式声明global还是session，则默认是session
+
+查看指定的系统变量的值
+select @@【global|session】.变量名;    //如果没有显式声明global还是session，则默认是se	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-02
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/02/Mysql-变量/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/Mysql-视图/" itemprop="url">		
+			Mysql-视图		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									含义mysql5.1版本出现的新特性，本身是一个虚拟表，它的数据来自于表，通过执行时动态生成。
+好处
+简化sql语句
+
+
+提高了sql的重用性
+
+
+保护基表的数据，提高了安全性
+
+创建create view 视图名
+as
+查询语句;
+
+修改方式一create or replace view 视图名
+as
+查询语句;
+
+方式二alter view 视图名
+as
+查询语句
+
+删除drop view 视	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/Mysql-视图/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
 		<a href="/2018/10/01/TCL总结-事务/" itemprop="url">		
 			TCL总结-事务		
 		</a>
@@ -318,87 +410,6 @@ bigint
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/DDL总结-数据类型/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DDL总结-表的管理/" itemprop="url">		
-			DDL总结-表的管理		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									表的管理创建表create table 【if not exists】 表名(
-    字段名 字段类型 【约束】,
-    字段名 字段类型 【约束】,
-    ...
-    字段名 字段类型 【约束】 
-)
-
-修改表添加列
-alter table 表名 add column 列名 类型 【first|after 字段名】;
-
-修改列的类型或约束
-alter table 表名 modify c	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DDL总结-表的管理/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DDL总结-库的管理/" itemprop="url">		
-			DDL总结-库的管理		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									库的管理创建库create database 【if not exists】 库名【 character set 字符集名】;
-
-修改库alter database 库名 character set 字符集名;
-
-删除库drop database 【if exists】 库名;
-
-	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DDL总结-库的管理/" class="pull-right">
 								展开全文
 							</a>		
 						<span>

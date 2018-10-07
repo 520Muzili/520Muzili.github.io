@@ -158,6 +158,87 @@
 						<h2>
 							
 	
+		<a href="/2018/10/01/DDL总结-表的管理/" itemprop="url">		
+			DDL总结-表的管理		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									表的管理创建表create table 【if not exists】 表名(
+    字段名 字段类型 【约束】,
+    字段名 字段类型 【约束】,
+    ...
+    字段名 字段类型 【约束】 
+)
+
+修改表添加列
+alter table 表名 add column 列名 类型 【first|after 字段名】;
+
+修改列的类型或约束
+alter table 表名 modify c	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DDL总结-表的管理/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
+		<a href="/2018/10/01/DDL总结-库的管理/" itemprop="url">		
+			DDL总结-库的管理		
+		</a>
+	
+
+						</h2>
+						
+						
+							<p>
+								
+									库的管理创建库create database 【if not exists】 库名【 character set 字符集名】;
+
+修改库alter database 库名 character set 字符集名;
+
+删除库drop database 【if exists】 库名;
+
+	
+								  
+							</p>
+						
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
+						</span>
+						<span class="continue-read">       	
+							<a href="/2018/10/01/DDL总结-库的管理/" class="pull-right">
+								展开全文
+							</a>		
+						<span>
+						
+					</div>       
+			
+				
+						
+					<div class="pure-text">
+						<h2>
+							
+	
 		<a href="/2018/10/01/DQL总结-删除/" itemprop="url">		
 			DML总结-删除		
 		</a>
@@ -282,93 +363,6 @@ insert into 表名(字段名,...) values(值,...);
 						</span>
 						<span class="continue-read">       	
 							<a href="/2018/10/01/DML总结-插入/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL查询总结/" itemprop="url">		
-			DQL总结		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									总结语法select 查询列表    
-from 表1 别名       
-连接类型 join 表2   
-on 连接条件         
-where 筛选          
-group by 分组列表   
-having 筛选         
-order by排序列表    
-limit 起始条目索引，条目数;  
-
-执行顺序select 查询列表    ⑦
-from 表1 别名     	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL查询总结/" class="pull-right">
-								展开全文
-							</a>		
-						<span>
-						
-					</div>       
-			
-				
-						
-					<div class="pure-text">
-						<h2>
-							
-	
-		<a href="/2018/10/01/DQL总结-联合查询/" itemprop="url">		
-			DQL总结-联合查询		
-		</a>
-	
-
-						</h2>
-						
-						
-							<p>
-								
-									联合查询含义union：合并、联合，将多次查询结果合并成一个结果
-语法查询语句1
-union 【all】
-查询语句2
-union 【all】
-...
-
-意义将一条比较复杂的查询语句拆分成多条语句
-适用于查询多个表的时候，查询的列基本是一致
-特点要求多条查询语句的查询列数必须一致
-要求多条查询语句的查询的各列类型、顺序最好一致
-union 去重，union all包含重复项
-	
-								  
-							</p>
-						
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp2018-10-01
-						</span>
-						<span class="continue-read">       	
-							<a href="/2018/10/01/DQL总结-联合查询/" class="pull-right">
 								展开全文
 							</a>		
 						<span>
