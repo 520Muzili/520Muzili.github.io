@@ -1,0 +1,552 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head>
+	<title>java面试-面试题合集（三）</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="John Doe">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-2">
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto"></p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class=page-name>当前文章&nbsp;:&nbsp;《java面试-面试题合集（三）》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		10/9/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(https://wuchaojob.gitee.io/random-img/' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i  class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="标签">标签</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="关于">关于</a>	
+      		</li>
+    		
+      		<li class="fa fa-/gallery">
+           		<a href="/gallery" title="相册">相册</a>	
+      		</li>
+    		
+    		
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+	
+		<a href="/2018/10/09/java面试-面试题合集3/" itemprop="url">		
+			java面试-面试题合集（三）		
+		</a>
+	
+
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/10/09/java面试-面试题合集3/" itemprop="url">
+	<time datetime="2018-10-09T15:19:56.499Z" itemprop="datePublished">
+  		2018-10-09
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+							<i class="fa fa-tags"></i>
+							
+								<a href="#面试题" title="面试题" rel="3">面试题</a>&nbsp;
+													 											
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<p><strong>面向对象的特征有哪些方面？</strong></p>
+<p><strong>答</strong>：面向对象的特征主要有以下几个方面：</p>
+<ul>
+<li>抽象：抽象是将一类对象的共同特征总结出来构造类的过程，包括数据抽象<br>和行为抽象两方面。抽象只关注对象有哪些属性和行为，并不关注这些行为的<br>细节是什么。</li>
+<li>继承：继承是从已有类得到继承信息创建新类的过程。提供继承信息的类被<br>称为父类（超类、基类）；得到继承信息的类被称为子类（派生类）。继承让<br>变化中的软件系统有了一定的延续性，同时继承也是封装程序中可变因素的重<br>要手段（如果不能理解请阅读阎宏博士的《Java 与模式》或《设计模式精解》<br>中关于桥梁模式的部分）。</li>
+<li>封装：通常认为封装是把数据和操作数据的方法绑定起来，对数据的访问只<br>能通过已定义的接口。面向对象的本质就是将现实世界描绘成一系列完全自<br>治、封闭的对象。我们在类中编写的方法就是对实现细节的一种封装；我们编<br>写一个类就是对数据和数据操作的封装。可以说，封装就是隐藏一切可隐藏的<br>东西，只向外界提供最简单的编程接口（可以想想普通洗衣机和全自动洗衣机<br>的差别，明显全自动洗衣机封装更好因此操作起来更简单；我们现在使用的智<br>能手机也是封装得足够好的，因为几个按键就搞定了所有的事情）。</li>
+<li>多态性：多态性是指允许不同子类型的对象对同一消息作出不同的响应。简<br>单的说就是用同样的对象引用调用同样的方法但是做了不同的事情。多态性分为编译时的多态性和运行时的多态性。如果将对象的方法视为对象向外界提供<br>的服务，那么运行时的多态性可以解释为：当 A 系统访问 B 系统提供的服务<br>时，B 系统有多种提供服务的方式，但一切对 A 系统来说都是透明的（就像电<br>动剃须刀是 A 系统，它的供电系统是 B 系统，B 系统可以使用电池供电或者用<br>交流电，甚至还有可能是太阳能，A 系统只会通过 B 类对象调用供电的方法，<br>但并不知道供电系统的底层实现是什么，究竟通过何种方式获得了动力）。方<br>法重载（overload）实现的是编译时的多态性（也称为前绑定），而方法重写<br>（override）实现的是运行时的多态性（也称为后绑定）。运行时的多态是面<br>向对象最精髓的东西，要实现多态需要做两件事：1). 方法重写（子类继承父<br>类并重写父类中已有的或抽象的方法）；2). 对象造型（用父类型引用引用子<br>类型对象，这样同样的引用调用同样的方法就会根据子类对象的不同而表现出<br>不同的行为）。</li>
+</ul>
+<p><strong>访问修饰符  public,private,protected,以及不写（默认）时的区别？</strong></p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>当前类</th>
+<th>同包</th>
+<th>子类</th>
+<th>其他包</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>default</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>private</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<p>类的成员不写访问修饰时默认为 default。默认对于同一个包中的其他类相当<br>于公开（public），对于不是同一个包中的其他类相当于私有（private）。受<br>保护（protected）对子类相当于公开，对不是同一包中的没有父子关系的类相<br>当于私有。Java 中，外部类的修饰符只能是 public 或默认，类的成员（包括<br>内部类）的修饰符可以是以上四种。</p>
+<p><strong>String  是最基本的数据类型吗？</strong></p>
+<p><strong>答</strong>：不是。Java 中的基本数据类型只有 8 个：byte、short、int、long、<br>float、double、char、boolean；除了基本类型（primitive type），剩下的<br>都是引用类型（reference type），Java 5 以后引入的枚举类型也算是一种比<br>较特殊的引用类型。</p>
+<p><strong>float f=3.4; 是否正确？</strong></p>
+<p><strong>答</strong>:不正确。3.4 是双精度数，将双精度型（double）赋值给浮点型（float）<br>属于下转型（down-casting，也称为窄化）会造成精度损失，因此需要强制类<br>型转换 float f =(float)3.4; 或者写成 float f =3.4F;</p>
+<p><strong>short s1 = 1; s1 = s1  + 1; 有错吗 ?short s1 = 1; s1 += 1; 有错吗？</strong></p>
+<p><strong>答</strong>：对于 short s1 = 1; s1 = s1 + 1;由于 1 是 int 类型，因此 s1+1 运算结<br>果也是 int 型，需要强制转换类型才能赋值给 short 型。而 short s1 = 1; s1<br>+= 1;可以正确编译，因为 s1+= 1;相当于 s1 = (short)(s1 + 1);其中有隐含<br>的强制类型转换。</p>
+<p><strong>Java有没有goto？</strong></p>
+<p><strong>答</strong>：goto 是 Java 中的保留字，在目前版本的 Java 中没有使用。（根据 James<br>Gosling（Java 之父）编写的《The Java Programming Language》一书的附录<br>中给出了一个 Java 关键字列表，其中有 goto 和 const，但是这两个是目前无<br>法使用的关键字，因此有些地方将其称之为保留字，其实保留字这个词应该有<br>更广泛的意义，因为熟悉 C 语言的程序员都知道，在系统类库中使用过的有特<br>殊意义的单词或单词的组合都被视为保留字）</p>
+<p><strong>int和Integer有什么区别</strong></p>
+<p><strong>答</strong>：Java 是一个近乎纯洁的面向对象编程语言，但是为了编程的方便还是引入<br>了基本数据类型，但是为了能够将这些基本数据类型当成对象操作，Java 为每<br>一个基本数据类型都引入了对应的包装类型（wrapper class），int 的包装类<br>就是 Integer，从 Java 5 开始引入了自动装箱/拆箱机制，使得二者可以相互<br>转换。</p>
+<p><strong>&amp; 和 &amp;&amp; 的区别？</strong></p>
+<p><strong>答</strong>：&amp;运算符有两种用法：(1)按位与；(2)逻辑与。&amp;&amp;运算符是短路与运算。逻<br>辑与跟短路与的差别是非常巨大的，虽然二者都要求运算符左右两端的布尔值<br>都是 true 整个表达式的值才是 true。&amp;&amp;之所以称为短路运算是因为，如果&amp;&amp;<br>左边的表达式的值是 false，右边的表达式会被直接短路掉，不会进行运算。<br>很多时候我们可能都需要用&amp;&amp;而不是&amp;，例如在验证用户登录时判定用户名不是<br>null 而且不是空字符串，应当写为：username != null<br>&amp;&amp;!username.equals(“”)，二者的顺序不能交换，更不能用&amp;运算符，因为第一<br>个条件如果不成立，根本不能进行字符串的 equals 比较，否则会产生<br>NullPointerException 异常。注意：逻辑或运算符（|）和短路或运算符<br>（||）的差别也是如此。</p>
+<p><strong>解释内存中的栈 (stack) 、堆 (heap) 和方法区 (method area) 的用法</strong></p>
+<p><strong>答</strong>：通常我们定义一个基本数据类型的变量，一个对象的引用，还有就是函数<br>调用的现场保存都使用 JVM 中的栈空间；而通过 new 关键字和构造器创建的对<br>象则放在堆空间，堆是垃圾收集器管理的主要区域，由于现在的垃圾收集器都<br>采用分代收集算法，所以堆空间还可以细分为新生代和老生代，再具体一点可<br>以分为 Eden、Survivor（又可分为 From Survivor 和 To Survivor）、<br>Tenured；方法区和堆都是各个线程共享的内存区域，用于存储已经被 JVM 加载<br>的类信息、常量、静态变量、JIT 编译器编译后的代码等数据；程序中的字面<br>量（literal）如直接书写的 100、”hello”和常量都是放在常量池中，常量池<br>是方法区的一部分，。栈空间操作起来最快但是栈很小，通常大量的对象都是<br>放在堆空间，栈和堆的大小都可以通过 JVM 的启动参数来进行调整，栈空间用光了会引发StackOverflowError，而堆和常量池空间不足则会引发OutOfMemoryError。</p>
+<pre class="line-numbers language-bash"><code class="language-bash">String str <span class="token operator">=</span> new String<span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>上面的语句中变量 str 放在栈上，用 new 创建出来的字符串对象放在堆上，而<br>“hello”这个字面量是放在方法区的。</p>
+<p><strong>补充 1</strong>：较新版本的 Java（从 Java 6 的某个更新开始）中，由于 JIT 编译器的<br>发展和”逃逸分析”技术的逐渐成熟，栈上分配、标量替换等优化技术使得对象<br>一定分配在堆上这件事情已经变得不那么绝对了。</p>
+<p><strong>补充 2</strong>：运行时常量池相当于 Class 文件常量池具有动态性，Java 语言并不要<br>求常量一定只有编译期间才能产生，运行期间也可以将新的常量放入池中，</p>
+<p><strong>Math.round(11.5)  等于多少？ Math.round(- - 11.5) 等于多少？</strong></p>
+<p><strong>答</strong>：Math.round(11.5)的返回值是 12，Math.round(-11.5)的返回值是-11。四<br>舍五入的原理是在参数上加 0.5 然后进行下取整。</p>
+<p><strong>switch  是否能作用在  byte  上，是否能作用在  long  上，是否能作用在<br>g String  上</strong></p>
+<p><strong>答</strong>：在 Java 5 以前，switch(expr)中，expr 只能是 byte、short、char、<br>int。从 Java 5 开始，Java 中引入了枚举类型，expr 也可以是 enum 类型，从<br>Java 7 开始，expr 还可以是字符串（String），但是长整型（long）在目前所<br>有的版本中都是不可以的。</p>
+<p><strong>用最有效率的方法计算 2 乘以 8 ？</strong></p>
+<p><strong>答</strong>： 2 &lt;&lt; 3（左移 3 位相当于乘以 2 的 3 次方，右移 3 位相当于除以 2 的 3 次<br>方）。</p>
+<p><strong>补充</strong>：我们为编写的类重写 hashCode 方法时，可能会看到如下所示的代码，其<br>实我们不太理解为什么要使用这样的乘法运算来产生哈希码（散列码），而且<br>为什么这个数是个素数，为什么通常选择 31 这个数？前两个问题的答案你可以<br>自己百度一下，选择 31 是因为可以用移位和减法运算来代替乘法，从而得到更<br>好的性能。说到这里你可能已经想到了：31 * num 等价于(num &lt;&lt; 5) - num，<br>左移 5 位相当于乘以 2 的 5 次方再减去自身就相当于乘以 31，现在的 VM 都能<br>自动完成这个优化。</p>
+<p><strong>数组有没有  length() ) 方法？g String  有没有  length() 方法？</strong></p>
+<p><strong>答</strong>：数组没有 length()方法，有 length 的属性。String 有 length()方法。<br>JavaScript 中，获得字符串的长度是通过 length 属性得到的，这一点容易和<br>Java 混淆。</p>
+<p><strong>14 、在 a Java  中，如何跳出当前的多重嵌套循环？</strong></p>
+<p><strong>答</strong>：在最外层循环前加一个标记如 A，然后用 break A;可以跳出多重循环。<br>（Java 中支持带标签的 break 和 continue 语句，作用有点类似于 C 和 C++中的<br>goto 语句，但是就像要避免使用 goto 一样，应该避免使用带标签的 break 和<br>continue，因为它不会让你的程序变得更优雅，很多时候甚至有相反的作用，<br>所以这种语法其实不知道更好）</p>
+<p><strong>构造器（ constructor ）是否可被重写（ override ）？</strong></p>
+<p><strong>答</strong>：构造器不能被继承，因此不能被重写，但可以被重载。</p>
+<p><strong>两个对象值相同 (x.equals(y) == true) ，但却可有不同的  hash code ，这<br>句话对不对？</strong></p>
+<p><strong>答</strong>：不对，如果两个对象 x 和 y 满足 x.equals(y) == true，它们的哈希码<br>（hash code）应当相同。Java 对于 eqauls 方法和 hashCode 方法是这样规定<br>的：(1)如果两个对象相同（equals 方法返回 true），那么它们的 hashCode 值<br>一定要相同；(2)如果两个对象的 hashCode 相同，它们并不一定相同。当然，<br>你未必要按照要求去做，但是如果你违背了上述原则就会发现在使用容器时，<br>相同的对象可以出现在 Set 集合中，同时增加新元素的效率会大大下降（对于<br>使用哈希存储的系统，如果哈希码频繁的冲突将会造成存取性能急剧下降）。</p>
+<p><strong>补充</strong>：关于 equals 和 hashCode 方法，很多 Java 程序都知道，但很多人也就是<br>仅仅知道而已，在 Joshua Bloch 的大作《Effective Java》（很多软件公司，<br>《Effective Java》、《Java 编程思想》以及《重构：改善既有代码质量》是<br>Java 程序员必看书籍，如果你还没看过，那就赶紧去亚马逊买一本吧）中是这<br>样介绍 equals 方法的：首先 equals 方法必须满足自反性（x.equals(x)必须返<br>回 true）、对称性（x.equals(y)返回 true 时，y.equals(x)也必须返回<br>true）、传递性（x.equals(y)和 y.equals(z)都返回 true 时，x.equals(z)也<br>必须返回 true）和一致性（当 x 和 y 引用的对象信息没有被修改时，多次调用<br>x.equals(y)应该得到同样的返回值），而且对于任何非 null 值的引用 x，<br>x.equals(null)必须返回 false。实现高质量的 equals 方法的诀窍包括：1.<br>使用==操作符检查”参数是否为这个对象的引用”；2. 使用 instanceof 操作符<br>检查”参数是否为正确的类型”；3. 对于类中的关键属性，检查参数传入对象的<br>属性是否与之相匹配；4. 编写完 equals 方法后，问自己它是否满足对称性、<br>传递性、一致性；5. 重写 equals 时总是要重写 hashCode；6. 不要将 equals<br>方法参数中的 Object 对象替换为其他的类型，在重写时不要忘掉@Override 注<br>解。</p>
+<p><strong>是否可以继承String类？</strong></p>
+<p><strong>答</strong>：String 类是 final 类，不可以被继承。</p>
+<p><strong>补充</strong>：继承 String 本身就是一个错误的行为，对 String 类型最好的重用方式<br>是关联关系（Has-A）和依赖关系（Use-A）而不是继承关系（Is-A）。</p>
+<p><strong>当一个对象被当作 参数传递到一个方法后，此方法可改变这个对象的属<br>性，并可返回变化后的结果，那么这里到底是值传递还是引用传递？</strong></p>
+<p><strong>答</strong>：是值传递。Java 语言的方法调用只支持参数的值传递。当一个对象实例作<br>为一个参数被传递到方法中时，参数的值就是对该对象的引用。对象的属性可<br>以在被调用过程中被改变，但对对象引用的改变是不会影响到调用者的。C++和<br>C#中可以通过传引用或传输出参数来改变传入的参数的值。在 C#中可以编写如<br>下所示的代码，但是在 Java 中却做不到。<br><strong>说明</strong>：Java 中没有传引用实在是非常的不方便，这一点在 Java 8 中仍然没有<br>得到改进，正是如此在 Java 编写的代码中才会出现大量的 Wrapper 类（将需要<br>通过方法调用修改的引用置于一个 Wrapper 类中，再将 Wrapper 对象传入方<br>法），这样的做法只会让代码变得臃肿，尤其是让从 C 和 C++转型为 Java 程序<br>员的开发者无法容忍。</p>
+<p><strong>String 和 和  StringBuilder 、r StringBuffer  的区别？</strong></p>
+<p><strong>答</strong>：Java 平台提供了两种类型的字符串：String 和<br>StringBuffer/StringBuilder，它们可以储存和操作字符串。其中 String 是只<br>读字符串，也就意味着 String 引用的字符串内容是不能被改变的。而<br>StringBuffer/StringBuilder 类表示的字符串对象可以直接进行修改。<br>StringBuilder 是 Java 5 中引入的，它和 StringBuffer 的方法完全相同，区<br>别在于它是在单线程环境下使用的，因为它的所有方面都没有被 synchronized<br>修饰，因此它的效率也比 StringBuffer 要高。</p>
+<p><strong>重载（ Overload ）和重写（ Override ）的区别。重载的方法能否根据返回<br>类型进行区分？</strong></p>
+<p><strong>答</strong>：方法的重载和重写都是实现多态的方式，区别在于前者实现的是编译时的<br>多态性，而后者实现的是运行时的多态性。重载发生在一个类中，同名的方法<br>如果有不同的参数列表（参数类型不同、参数个数不同或者二者都不同）则视<br>为重载；重写发生在子类与父类之间，重写要求子类被重写方法与父类被重写<br>方法有相同的返回类型，比父类被重写方法更好访问，不能比父类被重写方法<br>声明更多的异常（里氏代换原则）。重载对返回类型没有特殊的要求。</p>
+<p><strong>描述一下 M JVM  加载 s class  文件的原理机</strong></p>
+<p><strong>答</strong>：JVM 中类的装载是由类加载器（ClassLoader）和它的子类来实现的，Java<br>中的类加载器是一个重要的 Java 运行时系统组件，它负责在运行时查找和装入<br>类文件中的类。<br>由于 Java 的跨平台性，经过编译的 Java 源程序并不是一个可执行程序，而是<br>一个或多个类文件。当 Java 程序需要使用某个类时，JVM 会确保这个类已经被<br>加载、连接（验证、准备和解析）和初始化。类的加载是指把类的.class 文件<br>中的数据读入到内存中，通常是创建一个字节数组读入.class 文件，然后产生<br>与所加载类对应的 Class 对象。加载完成后，Class 对象还不完整，所以此时<br>的类还不可用。当类被加载后就进入连接阶段，这一阶段包括验证、准备（为静态变量分配内存并设置默认的初始值）和解析（将符号引用替换为直接引<br>用）三个步骤。最后 JVM 对类进行初始化，包括：1)如果类存在直接的父类并<br>且这个类还没有被初始化，那么就先初始化父类；2)如果类中存在初始化语<br>句，就依次执行这些初始化语句。<br>类的加载是由类加载器完成的，类加载器包括：根加载器（BootStrap）、扩展<br>加载器（Extension）、系统加载器（System）和用户自定义类加载器<br>（java.lang.ClassLoader 的子类）。从 Java 2（JDK 1.2）开始，类加载过程<br>采取了父亲委托机制（PDM）。PDM 更好的保证了 Java 平台的安全性，在该机<br>制中，JVM 自带的 Bootstrap 是根加载器，其他的加载器都有且仅有一个父类<br>加载器。类的加载首先请求父类加载器加载，父类加载器无能为力时才由其子<br>类加载器自行加载。JVM 不会向 Java 程序提供对 Bootstrap 的引用。下面是关<br>于几个类加载器的说明：</p>
+<ul>
+<li>Bootstrap：一般用本地代码实现，负责加载 JVM 基础核心类库<br>（rt.jar）；</li>
+<li>Extension：从 java.ext.dirs 系统属性所指定的目录中加载类<br>库，它的父加载器是 Bootstrap；</li>
+<li>System：又叫应用类加载器，其父类是 Extension。它是应用最<br>广泛的类加载器。它从环境变量 classpath 或者系统属性<br>java.class.path 所指定的目录中记载类，是用户自定义加载器<br>的默认父加载器。</li>
+</ul>
+<p><strong>char  型变量中能不能存贮一个中文汉字，为什么？</strong></p>
+<p><strong>答</strong>：char 类型可以存储一个中文汉字，因为 Java 中使用的编码是 Unicode（不<br>选择任何特定的编码，直接使用字符在字符集中的编号，这是统一的唯一方<br>法），一个 char 类型占 2 个字节（16 比特），所以放一个中文是没问题的。</p>
+<p><strong>补充</strong>：使用 Unicode 意味着字符在 JVM 内部和外部有不同的表现形式，在 JVM<br>内部都是 Unicode，当这个字符被从 JVM 内部转移到外部时（例如存入文件系<br>统中），需要进行编码转换。所以 Java 中有字节流和字符流，以及在字符流和<br>字节流之间进行转换的转换流，如 InputStreamReader 和<br>OutputStreamReader，这两个类是字节流和字符流之间的适配器类，承担了编<br>码转换的任务；对于 C 程序员来说，要完成这样的编码转换恐怕要依赖于<br>union（联合体/共用体）共享内存的特征来实现了。</p>
+<p><strong>抽象类（ abstract class ）和接口（ interface ）有什么异同？</strong></p>
+<p><strong>答</strong>：抽象类和接口都不能够实例化，但可以定义抽象类和接口类型的引用。一<br>个类如果继承了某个抽象类或者实现了某个接口都需要对其中的抽象方法全部<br>进行实现，否则该类仍然需要被声明为抽象类。接口比抽象类更加抽象，因为<br>抽象类中可以定义构造器，可以有抽象方法和具体方法，而接口中不能定义构<br>造器而且其中的方法全部都是抽象方法。抽象类中的成员可以是 private、默<br>认、protected、public 的，而接口中的成员全都是 public 的。抽象类中可以<br>定义成员变量，而接口中定义的成员变量实际上都是常量。有抽象方法的类必<br>须被声明为抽象类，而抽象类未必要有抽象方法。</p>
+<p><strong>静态嵌套类 (Static Nested Class) 和内部类（ Inner Class ）的不同？</strong></p>
+<p><strong>答</strong>：Static Nested Class 是被声明为静态（static）的内部类，它可以不依<br>赖于外部类实例被实例化。</p>
+<p><strong>Java  中会存在内存泄漏吗，请简单描述</strong><br><strong>答</strong>：理论上 Java 因为有垃圾回收机制（GC）不会存在内存泄露问题（这也是<br>Java 被广泛使用于服务器端编程的一个重要原因）；然而在实际开发中，可能<br>会存在无用但可达的对象，这些对象不能被 GC 回收，因此也会导致内存泄露的<br>发生。例如 Hibernate 的 Session（一级缓存）中的对象属于持久态，垃圾回<br>收器是不会回收这些对象的，然而这些对象中可能存在无用的垃圾对象，如果<br>不及时关闭（close）或清空（flush）一级缓存就可能导致内存泄露</p>
+<p><strong>抽象的（ abstract ）方法是否可同时是静态的（ static ）, , 是否可同时是<br>本地方法（ nati ve ），是否可同时被 d synchronized  修饰？</strong></p>
+<p><strong>答</strong>：都不能。抽象方法需要子类重写，而静态的方法是无法被重写的，因此二<br>者是矛盾的。本地方法是由本地代码（如 C 代码）实现的方法，而抽象方法是<br>没有实现的，也是矛盾的。synchronized 和方法的实现细节有关，抽象方法不<br>涉及实现细节，因此也是相互矛盾的。</p>
+<p><strong>阐述静态变量和实例变量的区别</strong></p>
+<p><strong>答</strong>：静态变量是被 static 修饰符修饰的变量，也称为类变量，它属于类，不属<br>于类的任何一个对象，一个类不管创建多少个对象，静态变量在内存中有且仅<br>有一个拷贝；实例变量必须依存于某一实例，需要先创建对象然后通过对象才<br>能访问到它。静态变量可以实现让多个对象共享内存。</p>
+<p><strong>补充</strong>：在 Java 开发中，上下文类和工具类中通常会有大量的静态成员</p>
+<p><strong>是否可以从一个静态（ static ）方法内部发出对非静态（ non- - static ）方<br>法的调用？</strong></p>
+<p><strong>答</strong>：不可以，静态方法只能访问静态成员，因为非静态方法的调用要先创建对<br>象，在调用静态方法时可能对象并没有被初始化。</p>
+<p><strong>如何实现对象克隆？</strong></p>
+<p>答：有两种方式：</p>
+<ul>
+<li>实现 Cloneable 接口并重写 Object 类中的 clone()方法；</li>
+<li>实现 Serializable 接口，通过对象的序列化和反序列化实现克隆，可以</li>
+</ul>
+<p><strong>GC 是什么？为什么要有 GC？</strong></p>
+<p><strong>答</strong>：GC 是垃圾收集的意思，内存处理是编程人员容易出现问题的地方，忘记或<br>者错误的内存回收会导致程序或系统的不稳定甚至崩溃，Java 提供的 GC 功能<br>可以自动监测对象是否超过作用域从而达到自动回收内存的目的，Java 语言没<br>有提供释放已分配内存的显示操作方法。Java 程序员不用担心内存管理，因为<br>垃圾收集器会自动进行管理。要请求垃圾收集，可以调用下面的方法之一：<br>System.gc() 或 Runtime.getRuntime().gc() ，但 JVM 可以屏蔽掉显示的垃圾<br>回收调用。</p>
+<p>垃圾回收可以有效的防止内存泄露，有效的使用可以使用的内存。垃圾回收器<br>通常是作为一个单独的低优先级的线程运行，不可预知的情况下对内存堆中已<br>经死亡的或者长时间没有使用的对象进行清除和回收，程序员不能实时的调用<br>垃圾回收器对某个对象或所有对象进行垃圾回收。在 Java 诞生初期，垃圾回收<br>是 Java 最大的亮点之一，因为服务器端的编程需要有效的防止内存泄露问题，<br>然而时过境迁，如今 Java 的垃圾回收机制已经成为被诟病的东西。移动智能终<br>端用户通常觉得 iOS 的系统比 Android 系统有更好的用户体验，其中一个深层<br>次的原因就在于 Android 系统中垃圾回收的不可预知性。</p>
+<p><strong>补充</strong>：垃圾回收机制有很多种，包括：分代复制垃圾回收、标记垃圾回收、增<br>量垃圾回收等方式。标准的 Java 进程既有栈又有堆。栈保存了原始型局部变<br>量，堆保存了要创建的对象。Java 平台对堆内存回收和再利用的基本算法被称<br>为标记和清除，但是 Java 对其进行了改进，采用“分代式垃圾收集”。这种方<br>法会跟 Java 对象的生命周期将堆内存划分为不同的区域，在垃圾收集过程中，<br>可能会将对象移动到不同区域：</p>
+<ul>
+<li>伊甸园（Eden）：这是对象最初诞生的区域，并且对大多数对象来说，这里<br>是它们唯一存在过的区域。</li>
+<li>幸存者乐园（Survivor）：从伊甸园幸存下来的对象会被挪到这里。</li>
+<li>终身颐养园（Tenured）：这是足够老的幸存对象的归宿。年轻代收集<br>（Minor-GC）过程是不会触及这个地方的。当年轻代收集不能把对象放进终身<br>颐养园时，就会触发一次完全收集（Major-GC），这里可能还会牵扯到压缩，<br>以便为大对象腾出足够的空间。</li>
+</ul>
+
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/10/07/java面试-Java基础面试题之hashtable和hashmap的区别详解/" title="java面试-Java基础面试题之hashtable和hashmap的区别详解">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="https://github.com/520Muzili" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="https://github.com/520Muzili" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+				
+					<a href="https://github.com/520Muzili" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
+					
+				
+					<a href="https://github.com/520Muzili" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+				
+					<a href="https://github.com/520Muzili" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
+						
+				
+		</div>
+	</div>
+
+	<div  class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by 木子李. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(https://wuchaojob.gitee.io/random-img/' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+

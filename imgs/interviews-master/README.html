@@ -1,0 +1,774 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head>
+	<title>木子李</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="John Doe">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-2">
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto"></p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class="page-name"></p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		10/9/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(https://wuchaojob.gitee.io/random-img/' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i  class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="标签">标签</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="关于">关于</a>	
+      		</li>
+    		
+      		<li class="fa fa-/gallery">
+           		<a href="/gallery" title="相册">相册</a>	
+      		</li>
+    		
+    		
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!--content start-->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+    <div class="am-u-md-8 am-u-sm-12">
+        <article class="am-article blog-article-p">
+
+            <div class="page-header">
+	<div class="blog-text-center">
+		
+			
+			
+
+		  	 		
+	</div>    	 		
+</div>  	 		
+
+                
+
+                <p align="center"><img src="/images/InterviewsRepository.jpg?raw=true"></p>
+
+<h1 id="Interviews"><a href="#Interviews" class="headerlink" title="Interviews"></a>Interviews</h1><blockquote>
+<p>Your personal guide to Software Engineering technical interviews. Video<br>solutions to the following interview problems with detailed explanations can be found <a href="https://www.youtube.com/channel/UCKvwPt6BifPP54yzH99ff1g" target="_blank" rel="noopener">here</a>.</p>
+<p>Maintainer - <a href="https://github.com/kdn251" target="_blank" rel="noopener">Kevin Naughton Jr.</a></p>
+</blockquote>
+<h2 id="Translations"><a href="#Translations" class="headerlink" title="Translations"></a>Translations</h2><ul>
+<li><a href="./README-zh-cn.md">简体中文</a></li>
+</ul>
+<h2 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h2><ul>
+<li><a href="#youtube">YouTube</a></li>
+<li><a href="#instagram">Instagram</a></li>
+<li><a href="#articles">Articles</a></li>
+<li><a href="#online-judges">Online Judges</a></li>
+<li><a href="#live-coding-practice">Live Coding Practice</a></li>
+<li><a href="#data-structures">Data Structures</a></li>
+<li><a href="#algorithms">Algorithms</a></li>
+<li><a href="#greedy-algorithms">Greedy Algorithms</a></li>
+<li><a href="#bitmasks">Bitmasks</a></li>
+<li><a href="#runtime-analysis">Runtime Analysis</a></li>
+<li><a href="#video-lectures">Video Lectures</a></li>
+<li><a href="#interview-books">Interview Books</a></li>
+<li><a href="#computer-science-news">Computer Science News</a></li>
+<li><a href="#directory-tree">Directory Tree</a></li>
+</ul>
+<h2 id="YouTube"><a href="#YouTube" class="headerlink" title="YouTube"></a>YouTube</h2><ul>
+<li><a href="https://www.youtube.com/channel/UCKvwPt6BifPP54yzH99ff1g" target="_blank" rel="noopener">Kevin Naughton Jr.</a></li>
+</ul>
+<h2 id="Instagram"><a href="#Instagram" class="headerlink" title="Instagram"></a>Instagram</h2><ul>
+<li><a href="https://www.instagram.com/programeme/" target="_blank" rel="noopener">Programeme</a></li>
+</ul>
+<h2 id="Articles"><a href="#Articles" class="headerlink" title="Articles"></a>Articles</h2><ul>
+<li><a href="https://medium.com/@Naughton/starting-work-b06e10f6007e" target="_blank" rel="noopener">Starting Work</a></li>
+</ul>
+<h2 id="Online-Judges"><a href="#Online-Judges" class="headerlink" title="Online Judges"></a>Online Judges</h2><ul>
+<li><a href="https://leetcode.com/" target="_blank" rel="noopener">LeetCode</a></li>
+<li><a href="https://vjudge.net/" target="_blank" rel="noopener">Virtual Judge</a></li>
+<li><a href="https://www.careercup.com/" target="_blank" rel="noopener">CareerCup</a></li>
+<li><a href="https://www.hackerrank.com/" target="_blank" rel="noopener">HackerRank</a></li>
+<li><a href="https://codefights.com/" target="_blank" rel="noopener">CodeFights</a></li>
+<li><a href="https://open.kattis.com/" target="_blank" rel="noopener">Kattis</a></li>
+<li><a href="https://www.hackerearth.com" target="_blank" rel="noopener">HackerEarth</a></li>
+<li><a href="https://codility.com/programmers/lessons/1-iterations/" target="_blank" rel="noopener">Codility</a></li>
+<li><a href="http://codeforces.com/" target="_blank" rel="noopener">Code Forces</a></li>
+<li><a href="https://www.codechef.com/" target="_blank" rel="noopener">Code Chef</a></li>
+<li><a href="http://www.spoj.com/" target="_blank" rel="noopener">Sphere Online Judge - SPOJ</a></li>
+<li><a href="https://www.interviewbit.com/" target="_blank" rel="noopener">InterviewBit</a></li>
+</ul>
+<h2 id="Live-Coding-Practice"><a href="#Live-Coding-Practice" class="headerlink" title="Live Coding Practice"></a>Live Coding Practice</h2><ul>
+<li><a href="https://www.pramp.com/ref/gt4" target="_blank" rel="noopener">Pramp</a></li>
+<li><a href="http://www.gainlo.co/#!/" target="_blank" rel="noopener">Gainlo</a></li>
+<li><a href="https://refdash.com/" target="_blank" rel="noopener">Refdash</a></li>
+<li><a href="https://www.interviewing.io/" target="_blank" rel="noopener">Interviewing.io</a></li>
+</ul>
+<h2 id="Data-Structures"><a href="#Data-Structures" class="headerlink" title="Data Structures"></a>Data Structures</h2><h3 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h3><ul>
+<li>A <em>Linked List</em> is a linear collection of data elements, called nodes, each<br>pointing to the next node by means of a pointer. It is a data structure<br>consisting of a group of nodes which together represent a sequence.</li>
+<li><strong>Singly-linked list</strong>: linked list in which each node points to the next node and the last node points to null</li>
+<li><strong>Doubly-linked list</strong>: linked list in which each node has two pointers, p and n, such that p points to the previous node and n points to the next node; the last node’s n pointer points to null</li>
+<li><strong>Circular-linked list</strong>: linked list in which each node points to the next node and the last node points back to the first node</li>
+<li>Time Complexity:<ul>
+<li>Access: <code>O(n)</code></li>
+<li>Search: <code>O(n)</code></li>
+<li>Insert: <code>O(1)</code></li>
+<li>Remove: <code>O(1)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><ul>
+<li>A <em>Stack</em> is a collection of elements, with two principle operations: <em>push</em>, which adds to the collection, and<br><em>pop</em>, which removes the most recently added element</li>
+<li><strong>Last in, first out data structure (LIFO)</strong>: the most recently added object is the first to be removed</li>
+<li>Time Complexity:<ul>
+<li>Access: <code>O(n)</code></li>
+<li>Search: <code>O(n)</code></li>
+<li>Insert: <code>O(1)</code></li>
+<li>Remove: <code>O(1)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><ul>
+<li>A <em>Queue</em> is a collection of elements, supporting two principle operations: <em>enqueue</em>, which inserts an element<br>into the queue, and <em>dequeue</em>, which removes an element from the queue</li>
+<li><strong>First in, first out data structure (FIFO)</strong>: the oldest added object is the first to be removed</li>
+<li>Time Complexity:<ul>
+<li>Access: <code>O(n)</code></li>
+<li>Search: <code>O(n)</code></li>
+<li>Insert: <code>O(1)</code></li>
+<li>Remove: <code>O(1)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h3><ul>
+<li>A <em>Tree</em> is an undirected, connected, acyclic graph</li>
+</ul>
+<h3 id="Binary-Tree"><a href="#Binary-Tree" class="headerlink" title="Binary Tree"></a>Binary Tree</h3><ul>
+<li>A <em>Binary Tree</em> is a tree data structure in which each node has at most two children, which are referred to as<br>the <em>left child</em> and <em>right child</em></li>
+<li><strong>Full Tree</strong>: a tree in which every node has either 0 or 2 children</li>
+<li><strong>Perfect Binary Tree</strong>: a binary tree in which all interior nodes have two children and all leave have the same depth</li>
+<li><strong>Complete Tree</strong>: a binary tree in which every level <em>except possibly the last</em> is full and all nodes in the last<br>level are as far left as possible</li>
+</ul>
+<h3 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h3><ul>
+<li>A binary search tree, sometimes called BST, is a type of binary tree which maintains the property that the value in each<br>node must be greater than or equal to any value stored in the left sub-tree, and less than or equal to any value stored<br>in the right sub-tree</li>
+<li>Time Complexity:<ul>
+<li>Access: <code>O(log(n))</code></li>
+<li>Search: <code>O(log(n))</code></li>
+<li>Insert: <code>O(log(n))</code></li>
+<li>Remove: <code>O(log(n))</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/BST.png?raw=true" alt="Binary Search Tree" width="400" height="500"></p>
+<h3 id="Trie"><a href="#Trie" class="headerlink" title="Trie"></a>Trie</h3><ul>
+<li>A trie, sometimes called a radix or prefix tree, is a kind of search tree that is used to store a dynamic set or associative<br>array where the keys are usually Strings. No node in the tree stores the key associated with that node; instead, its position<br>in the tree defines the key with which it is associated. All the descendants of a node have a common prefix of the String associated<br>with that node, and the root is associated with the empty String.</li>
+</ul>
+<p><img src="/images/trie.png?raw=true" alt="Alt text" title="Trie"></p>
+<h3 id="Fenwick-Tree"><a href="#Fenwick-Tree" class="headerlink" title="Fenwick Tree"></a>Fenwick Tree</h3><ul>
+<li>A Fenwick tree, sometimes called a binary indexed tree, is a tree in concept, but in practice is implemented as an implicit data<br>structure using an array. Given an index in the array representing a vertex, the index of a vertex’s parent or child is calculated<br>through bitwise operations on the binary representation of its index. Each element of the array contains the pre-calculated sum of<br>a range of values, and by combining that sum with additional ranges encountered during an upward traversal to the root, the prefix<br>sum is calculated</li>
+<li>Time Complexity:<ul>
+<li>Range Sum: <code>O(log(n))</code></li>
+<li>Update: <code>O(log(n))</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/fenwickTree.png?raw=true" alt="Alt text" title="Fenwick Tree"></p>
+<h3 id="Segment-Tree"><a href="#Segment-Tree" class="headerlink" title="Segment Tree"></a>Segment Tree</h3><ul>
+<li>A Segment tree, is a tree data structure for storing intervals, or segments. It allows querying which of the stored segments contain<br>a given point</li>
+<li>Time Complexity:<ul>
+<li>Range Query: <code>O(log(n))</code></li>
+<li>Update: <code>O(log(n))</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/segmentTree.png?raw=true" alt="Alt text" title="Segment Tree"></p>
+<h3 id="Heap"><a href="#Heap" class="headerlink" title="Heap"></a>Heap</h3><ul>
+<li>A <em>Heap</em> is a specialized tree based structure data structure that satisfies the <em>heap</em> property: if A is a parent node of<br>B, then the key (the value) of node A is ordered with respect to the key of node B with the same ordering applying across the entire heap.<br>A heap can be classified further as either a “max heap” or a “min heap”. In a max heap, the keys of parent nodes are always greater<br>than or equal to those of the children and the highest key is in the root node. In a min heap, the keys of parent nodes are less than<br>or equal to those of the children and the lowest key is in the root node</li>
+<li>Time Complexity:<ul>
+<li>Access Max / Min: <code>O(1)</code></li>
+<li>Insert: <code>O(log(n))</code></li>
+<li>Remove Max / Min: <code>O(log(n))</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/heap.png?raw=true" alt="Max Heap" width="400" height="500"></p>
+<h3 id="Hashing"><a href="#Hashing" class="headerlink" title="Hashing"></a>Hashing</h3><ul>
+<li><em>Hashing</em> is used to map data of an arbitrary size to data of a fixed size. The values returned by a hash<br>function are called hash values, hash codes, or simply hashes. If two keys map to the same value, a collision occurs</li>
+<li><strong>Hash Map</strong>: a <em>hash map</em> is a structure that can map keys to values. A hash map uses a hash function to compute<br>an index into an array of buckets or slots, from which the desired value can be found.</li>
+<li>Collision Resolution<ul>
+<li><strong>Separate Chaining</strong>: in <em>separate chaining</em>, each bucket is independent, and contains a list of entries for each index. The<br>time for hash map operations is the time to find the bucket (constant time), plus the time to iterate through the list</li>
+<li><strong>Open Addressing</strong>: in <em>open addressing</em>, when a new entry is inserted, the buckets are examined, starting with the<br>hashed-to-slot and proceeding in some sequence, until an unoccupied slot is found. The name open addressing refers to<br>the fact that the location of an item is not always determined by its hash value</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/hash.png?raw=true" alt="Alt text" title="Hashing"></p>
+<h3 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h3><ul>
+<li>A <em>Graph</em> is an ordered pair of G = (V, E) comprising a set V of vertices or nodes together with a set E of edges or arcs,<br>which are 2-element subsets of V (i.e. an edge is associated with two vertices, and that association takes the form of the<br>unordered pair comprising those two vertices)<ul>
+<li><strong>Undirected Graph</strong>: a graph in which the adjacency relation is symmetric. So if there exists an edge from node u to node<br>v (u -&gt; v), then it is also the case that there exists an edge from node v to node u (v -&gt; u)</li>
+<li><strong>Directed Graph</strong>: a graph in which the adjacency relation is not symmetric. So if there exists an edge from node u to node v<br>(u -&gt; v), this does <em>not</em> imply that there exists an edge from node v to node u (v -&gt; u)</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/graph.png?raw=true" alt="Graph" width="400" height="500"></p>
+<h2 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h2><h3 id="Sorting"><a href="#Sorting" class="headerlink" title="Sorting"></a>Sorting</h3><h4 id="Quicksort"><a href="#Quicksort" class="headerlink" title="Quicksort"></a>Quicksort</h4><ul>
+<li>Stable: <code>No</code></li>
+<li>Time Complexity:<ul>
+<li>Best Case: <code>O(nlog(n))</code></li>
+<li>Worst Case: <code>O(n^2)</code></li>
+<li>Average Case: <code>O(nlog(n))</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/quicksort.gif?raw=true" alt="Alt text" title="Quicksort"></p>
+<h4 id="Mergesort"><a href="#Mergesort" class="headerlink" title="Mergesort"></a>Mergesort</h4><ul>
+<li><em>Mergesort</em> is also a divide and conquer algorithm. It continuously divides an array into two halves, recurses on both the<br>left subarray and right subarray and then merges the two sorted halves</li>
+<li>Stable: <code>Yes</code></li>
+<li>Time Complexity:<ul>
+<li>Best Case: <code>O(nlog(n))</code></li>
+<li>Worst Case: <code>O(nlog(n))</code></li>
+<li>Average Case: <code>O(nlog(n))</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/mergesort.gif?raw=true" alt="Alt text" title="Mergesort"></p>
+<h4 id="Bucket-Sort"><a href="#Bucket-Sort" class="headerlink" title="Bucket Sort"></a>Bucket Sort</h4><ul>
+<li><em>Bucket Sort</em> is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket<br>is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm</li>
+<li>Time Complexity:<ul>
+<li>Best Case: <code>Ω(n + k)</code></li>
+<li>Worst Case: <code>O(n^2)</code></li>
+<li>Average Case:<code>Θ(n + k)</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/bucketsort.png?raw=true" alt="Alt text" title="Bucket Sort"></p>
+<h4 id="Radix-Sort"><a href="#Radix-Sort" class="headerlink" title="Radix Sort"></a>Radix Sort</h4><ul>
+<li><em>Radix Sort</em> is a sorting algorithm that like bucket sort, distributes elements of an array into a number of buckets. However, radix<br>sort differs from bucket sort by ‘re-bucketing’ the array after the initial pass as opposed to sorting each bucket and merging</li>
+<li>Time Complexity:<ul>
+<li>Best Case: <code>Ω(nk)</code></li>
+<li>Worst Case: <code>O(nk)</code></li>
+<li>Average Case: <code>Θ(nk)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Graph-Algorithms"><a href="#Graph-Algorithms" class="headerlink" title="Graph Algorithms"></a>Graph Algorithms</h3><h4 id="Depth-First-Search"><a href="#Depth-First-Search" class="headerlink" title="Depth First Search"></a>Depth First Search</h4><ul>
+<li><em>Depth First Search</em> is a graph traversal algorithm which explores as far as possible along each branch before backtracking</li>
+<li>Time Complexity: <code>O(|V| + |E|)</code></li>
+</ul>
+<p><img src="/images/dfsbfs.gif?raw=true" alt="Alt text" title="DFS / BFS Traversal"></p>
+<h4 id="Breadth-First-Search"><a href="#Breadth-First-Search" class="headerlink" title="Breadth First Search"></a>Breadth First Search</h4><ul>
+<li><em>Breadth First Search</em> is a graph traversal algorithm which explores the neighbor nodes first, before moving to the next<br>level neighbors</li>
+<li>Time Complexity: <code>O(|V| + |E|)</code></li>
+</ul>
+<p><img src="/images/dfsbfs.gif?raw=true" alt="Alt text" title="DFS / BFS Traversal"></p>
+<h4 id="Topological-Sort"><a href="#Topological-Sort" class="headerlink" title="Topological Sort"></a>Topological Sort</h4><ul>
+<li><em>Topological Sort</em> is the linear ordering of a directed graph’s nodes such that for every edge from node u to node v, u<br>comes before v in the ordering</li>
+<li>Time Complexity: <code>O(|V| + |E|)</code></li>
+</ul>
+<h4 id="Dijkstra’s-Algorithm"><a href="#Dijkstra’s-Algorithm" class="headerlink" title="Dijkstra’s Algorithm"></a>Dijkstra’s Algorithm</h4><ul>
+<li><em>Dijkstra’s Algorithm</em> is an algorithm for finding the shortest path between nodes in a graph</li>
+<li>Time Complexity: <code>O(|V|^2)</code></li>
+</ul>
+<p><img src="/images/dijkstra.gif?raw=true" alt="Alt text" title="Dijkstra&#39;s"></p>
+<h4 id="Bellman-Ford-Algorithm"><a href="#Bellman-Ford-Algorithm" class="headerlink" title="Bellman-Ford Algorithm"></a>Bellman-Ford Algorithm</h4><ul>
+<li><em>Bellman-Ford Algorithm</em> is an algorithm that computes the shortest paths from a single source node to all other nodes in a weighted graph</li>
+<li>Although it is slower than Dijkstra’s, it is more versatile, as it is capable of handling graphs in which some of the edge weights are<br>negative numbers</li>
+<li>Time Complexity:<ul>
+<li>Best Case: <code>O(|E|)</code></li>
+<li>Worst Case: <code>O(|V||E|)</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/bellman-ford.gif?raw=true" alt="Alt text" title="Bellman-Ford"></p>
+<h4 id="Floyd-Warshall-Algorithm"><a href="#Floyd-Warshall-Algorithm" class="headerlink" title="Floyd-Warshall Algorithm"></a>Floyd-Warshall Algorithm</h4><ul>
+<li><em>Floyd-Warshall Algorithm</em> is an algorithm for finding the shortest paths in a weighted graph with positive or negative edge weights, but<br>no negative cycles</li>
+<li>A single execution of the algorithm will find the lengths (summed weights) of the shortest paths between <em>all</em> pairs of nodes</li>
+<li>Time Complexity:<ul>
+<li>Best Case: <code>O(|V|^3)</code></li>
+<li>Worst Case: <code>O(|V|^3)</code></li>
+<li>Average Case: <code>O(|V|^3)</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="Prim’s-Algorithm"><a href="#Prim’s-Algorithm" class="headerlink" title="Prim’s Algorithm"></a>Prim’s Algorithm</h4><ul>
+<li><em>Prim’s Algorithm</em> is a greedy algorithm that finds a minimum spanning tree for a weighted undirected graph. In other words, Prim’s find a<br>subset of edges that forms a tree that includes every node in the graph</li>
+<li>Time Complexity: <code>O(|V|^2)</code></li>
+</ul>
+<p><img src="/images/prim.gif?raw=true" alt="Alt text" title="Prim&#39;s Algorithm"></p>
+<h4 id="Kruskal’s-Algorithm"><a href="#Kruskal’s-Algorithm" class="headerlink" title="Kruskal’s Algorithm"></a>Kruskal’s Algorithm</h4><ul>
+<li><em>Kruskal’s Algorithm</em> is also a greedy algorithm that finds a minimum spanning tree in a graph. However, in Kruskal’s, the graph does not<br>have to be connected</li>
+<li>Time Complexity: <code>O(|E|log|V|)</code></li>
+</ul>
+<p><img src="/images/kruskal.gif?raw=true" alt="Alt text" title="Kruskal&#39;s Algorithm"></p>
+<h2 id="Greedy-Algorithms"><a href="#Greedy-Algorithms" class="headerlink" title="Greedy Algorithms"></a>Greedy Algorithms</h2><ul>
+<li><em>Greedy Algorithms</em> are algorithms that make locally optimal choices at each step in the hope of eventually reaching the globally optimal solution</li>
+<li>Problems must exhibit two properties in order to implement a Greedy solution:<ul>
+<li>Optimal Substructure<ul>
+<li>An optimal solution to the problem contains optimal solutions to the given problem’s subproblems</li>
+</ul>
+</li>
+<li>The Greedy Property<ul>
+<li>An optimal solution is reached by “greedily” choosing the locally optimal choice without ever reconsidering previous choices</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example - Coin Change<ul>
+<li>Given a target amount V cents and a list of denominations of n coins, i.e. we have coinValue[i] (in cents) for coin types i from [0…n - 1],<br>what is the minimum number of coins that we must use to represent amount V? Assume that we have an unlimited supply of coins of any type</li>
+<li>Coins - Penny (1 cent), Nickel (5 cents), Dime (10 cents), Quarter (25 cents)</li>
+<li>Assume V = 41. We can use the Greedy algorithm of continuously selecting the largest coin denomination less than or equal to V, subtract that<br>coin’s value from V, and repeat.</li>
+<li>V = 41 | 0 coins used</li>
+<li>V = 16 | 1 coin used (41 - 25 = 16)</li>
+<li>V = 6  | 2 coins used (16 - 10 = 6)</li>
+<li>V = 1  | 3 coins used (6 - 5 = 1)</li>
+<li>V = 0  | 4 coins used (1 - 1 = 0)</li>
+<li>Using this algorithm, we arrive at a total of 4 coins which is optimal</li>
+</ul>
+</li>
+</ul>
+<h2 id="Bitmasks"><a href="#Bitmasks" class="headerlink" title="Bitmasks"></a>Bitmasks</h2><ul>
+<li>Bitmasking is a technique used to perform operations at the bit level. Leveraging bitmasks often leads to faster runtime complexity and<br>helps limit memory usage</li>
+<li>Test kth bit: <code>s &amp; (1 &lt;&lt; k);</code></li>
+<li>Set kth bit: <code>s |= (1 &lt;&lt; k);</code></li>
+<li>Turn off kth bit: <code>s &amp;= ~(1 &lt;&lt; k);</code></li>
+<li>Toggle kth bit: <code>s ^= (1 &lt;&lt; k);</code></li>
+<li>Multiple by 2<sup>n</sup>: <code>s &lt;&lt; n;</code></li>
+<li>Divide by 2<sup>n</sup>: <code>s &gt;&gt; n;</code></li>
+<li>Intersection: <code>s &amp; t;</code></li>
+<li>Union: <code>s | t;</code></li>
+<li>Set Subtraction: <code>s &amp; ~t;</code></li>
+<li>Extract lowest set bit: <code>s &amp; (-s);</code></li>
+<li>Extract lowest unset bit: <code>~s &amp; (s + 1);</code></li>
+<li>Swap Values:<pre><code>       ```
+          x ^= y;
+          y ^= x;
+          x ^= y;
+       ```
+</code></pre></li>
+</ul>
+<h2 id="Runtime-Analysis"><a href="#Runtime-Analysis" class="headerlink" title="Runtime Analysis"></a>Runtime Analysis</h2><h4 id="Big-O-Notation"><a href="#Big-O-Notation" class="headerlink" title="Big O Notation"></a>Big O Notation</h4><ul>
+<li><em>Big O Notation</em> is used to describe the upper bound of a particular algorithm. Big O is used to describe worst case scenarios</li>
+</ul>
+<p><img src="/images/bigO.png?raw=true" alt="Alt text" title="Theta Notation"></p>
+<h4 id="Little-O-Notation"><a href="#Little-O-Notation" class="headerlink" title="Little O Notation"></a>Little O Notation</h4><ul>
+<li><em>Little O Notation</em> is also used to describe an upper bound of a particular algorithm; however, Little O provides a bound<br>that is not asymptotically tight</li>
+</ul>
+<h4 id="Big-Ω-Omega-Notation"><a href="#Big-Ω-Omega-Notation" class="headerlink" title="Big Ω Omega Notation"></a>Big Ω Omega Notation</h4><ul>
+<li><em>Big Omega Notation</em> is used to provide an asymptotic lower bound on a particular algorithm</li>
+</ul>
+<p><img src="/images/bigOmega.png?raw=true" alt="Alt text" title="Theta Notation"></p>
+<h4 id="Little-ω-Omega-Notation"><a href="#Little-ω-Omega-Notation" class="headerlink" title="Little ω Omega Notation"></a>Little ω Omega Notation</h4><ul>
+<li><em>Little Omega Notation</em> is used to provide a lower bound on a particular algorithm that is not asymptotically tight</li>
+</ul>
+<h4 id="Theta-Θ-Notation"><a href="#Theta-Θ-Notation" class="headerlink" title="Theta Θ Notation"></a>Theta Θ Notation</h4><ul>
+<li><em>Theta Notation</em> is used to provide a bound on a particular algorithm such that it can be “sandwiched” between<br>two constants (one for an upper limit and one for a lower limit) for sufficiently large values</li>
+</ul>
+<p><img src="/images/theta.png?raw=true" alt="Alt text" title="Theta Notation"></p>
+<h2 id="Video-Lectures"><a href="#Video-Lectures" class="headerlink" title="Video Lectures"></a>Video Lectures</h2><ul>
+<li>Data Structures<ul>
+<li><a href="https://archive.org/details/ucberkeley-webcast?&amp;and[]=subject%3A%22Computer%20Science%22&amp;and[]=subject%3A%22CS%22" target="_blank" rel="noopener">UC Berkeley Data Structures</a></li>
+<li><a href="https://www.youtube.com/watch?v=T0yzrZL1py0&amp;list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf&amp;index=1" target="_blank" rel="noopener">MIT Advanced Data Structures</a></li>
+</ul>
+</li>
+<li>Algorithms<ul>
+<li><a href="https://www.youtube.com/watch?v=HtSuA80QTyo&amp;list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&amp;index=1" target="_blank" rel="noopener">MIT Introduction to Algorithms</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PL6ogFv-ieghdoGKGg2Bik3Gl1glBTEu8c" target="_blank" rel="noopener">MIT Advanced Algorithms</a></li>
+<li><a href="https://archive.org/details/ucberkeley-webcast?&amp;and[]=subject%3A%22Computer%20Science%22&amp;and[]=subject%3A%22CS%22" target="_blank" rel="noopener">UC Berkeley Algorithms</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Interview-Books"><a href="#Interview-Books" class="headerlink" title="Interview Books"></a>Interview Books</h2><ul>
+<li><a href="https://www.amazon.com/Competitive-Programming-3rd-Steven-Halim/dp/B00FG8MNN8" target="_blank" rel="noopener">Competitive Programming 3 - Steven Halim &amp; Felix Halim</a> </li>
+<li><a href="https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=sr_1_1?s=books&amp;ie=UTF8" target="_blank" rel="noopener">Cracking The Coding Interview - Gayle Laakmann McDowell</a></li>
+<li><a href="https://www.amazon.com/Cracking-PM-Interview-Product-Technology-ebook/dp/B00ISYMUR6/ref=sr_1_1?s=books&amp;ie=UTF8" target="_blank" rel="noopener">Cracking The PM Interview - Gayle Laakmann McDowell &amp; Jackie Bavaro</a></li>
+<li><a href="https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844/ref=sr_1_1?ie=UTF8&amp;qid=1490295989&amp;sr=8-1&amp;keywords=Introduction+to+Algorithms" target="_blank" rel="noopener">Introduction to Algorithms -  Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest &amp; Clifford Stein</a></li>
+</ul>
+<h2 id="Computer-Science-News"><a href="#Computer-Science-News" class="headerlink" title="Computer Science News"></a>Computer Science News</h2><ul>
+<li><a href="https://news.ycombinator.com/" target="_blank" rel="noopener">Hacker News</a></li>
+<li><a href="https://lobste.rs/" target="_blank" rel="noopener">Lobsters</a></li>
+</ul>
+<h2 id="Directory-Tree"><a href="#Directory-Tree" class="headerlink" title="Directory Tree"></a>Directory Tree</h2><pre><code>.
+├── Array
+│   ├── bestTimeToBuyAndSellStock.java
+│   ├── findTheCelebrity.java
+│   ├── gameOfLife.java
+│   ├── increasingTripletSubsequence.java
+│   ├── insertInterval.java
+│   ├── longestConsecutiveSequence.java
+│   ├── maximumProductSubarray.java
+│   ├── maximumSubarray.java
+│   ├── mergeIntervals.java
+│   ├── missingRanges.java
+│   ├── productOfArrayExceptSelf.java
+│   ├── rotateImage.java
+│   ├── searchInRotatedSortedArray.java
+│   ├── spiralMatrixII.java
+│   ├── subsetsII.java
+│   ├── subsets.java
+│   ├── summaryRanges.java
+│   ├── wiggleSort.java
+│   └── wordSearch.java
+├── Backtracking
+│   ├── androidUnlockPatterns.java
+│   ├── generalizedAbbreviation.java
+│   └── letterCombinationsOfAPhoneNumber.java
+├── BinarySearch
+│   ├── closestBinarySearchTreeValue.java
+│   ├── firstBadVersion.java
+│   ├── guessNumberHigherOrLower.java
+│   ├── pow(x,n).java
+│   └── sqrt(x).java
+├── BitManipulation
+│   ├── binaryWatch.java
+│   ├── countingBits.java
+│   ├── hammingDistance.java
+│   ├── maximumProductOfWordLengths.java
+│   ├── numberOf1Bits.java
+│   ├── sumOfTwoIntegers.java
+│   └── utf-8Validation.java
+├── BreadthFirstSearch
+│   ├── binaryTreeLevelOrderTraversal.java
+│   ├── cloneGraph.java
+│   ├── pacificAtlanticWaterFlow.java
+│   ├── removeInvalidParentheses.java
+│   ├── shortestDistanceFromAllBuildings.java
+│   ├── symmetricTree.java
+│   └── wallsAndGates.java
+├── DepthFirstSearch
+│   ├── balancedBinaryTree.java
+│   ├── battleshipsInABoard.java
+│   ├── convertSortedArrayToBinarySearchTree.java
+│   ├── maximumDepthOfABinaryTree.java
+│   ├── numberOfIslands.java
+│   ├── populatingNextRightPointersInEachNode.java
+│   └── sameTree.java
+├── Design
+│   └── zigzagIterator.java
+├── DivideAndConquer
+│   ├── expressionAddOperators.java
+│   └── kthLargestElementInAnArray.java
+├── DynamicProgramming
+│   ├── bombEnemy.java
+│   ├── climbingStairs.java
+│   ├── combinationSumIV.java
+│   ├── countingBits.java
+│   ├── editDistance.java
+│   ├── houseRobber.java
+│   ├── paintFence.java
+│   ├── paintHouseII.java
+│   ├── regularExpressionMatching.java
+│   ├── sentenceScreenFitting.java
+│   ├── uniqueBinarySearchTrees.java
+│   └── wordBreak.java
+├── HashTable
+│   ├── binaryTreeVerticalOrderTraversal.java
+│   ├── findTheDifference.java
+│   ├── groupAnagrams.java
+│   ├── groupShiftedStrings.java
+│   ├── islandPerimeter.java
+│   ├── loggerRateLimiter.java
+│   ├── maximumSizeSubarraySumEqualsK.java
+│   ├── minimumWindowSubstring.java
+│   ├── sparseMatrixMultiplication.java
+│   ├── strobogrammaticNumber.java
+│   ├── twoSum.java
+│   └── uniqueWordAbbreviation.java
+├── LinkedList
+│   ├── addTwoNumbers.java
+│   ├── deleteNodeInALinkedList.java
+│   ├── mergeKSortedLists.java
+│   ├── palindromeLinkedList.java
+│   ├── plusOneLinkedList.java
+│   ├── README.md
+│   └── reverseLinkedList.java
+├── Queue
+│   └── movingAverageFromDataStream.java
+├── README.md
+├── Sort
+│   ├── meetingRoomsII.java
+│   └── meetingRooms.java
+├── Stack
+│   ├── binarySearchTreeIterator.java
+│   ├── decodeString.java
+│   ├── flattenNestedListIterator.java
+│   └── trappingRainWater.java
+├── String
+│   ├── addBinary.java
+│   ├── countAndSay.java
+│   ├── decodeWays.java
+│   ├── editDistance.java
+│   ├── integerToEnglishWords.java
+│   ├── longestPalindrome.java
+│   ├── longestSubstringWithAtMostKDistinctCharacters.java
+│   ├── minimumWindowSubstring.java
+│   ├── multiplyString.java
+│   ├── oneEditDistance.java
+│   ├── palindromePermutation.java
+│   ├── README.md
+│   ├── reverseVowelsOfAString.java
+│   ├── romanToInteger.java
+│   ├── validPalindrome.java
+│   └── validParentheses.java
+├── Tree
+│   ├── binaryTreeMaximumPathSum.java
+│   ├── binaryTreePaths.java
+│   ├── inorderSuccessorInBST.java
+│   ├── invertBinaryTree.java
+│   ├── lowestCommonAncestorOfABinaryTree.java
+│   ├── sumOfLeftLeaves.java
+│   └── validateBinarySearchTree.java
+├── Trie
+│   ├── addAndSearchWordDataStructureDesign.java
+│   ├── implementTrie.java
+│   └── wordSquares.java
+└── TwoPointers
+    ├── 3Sum.java
+    ├── 3SumSmaller.java
+    ├── mergeSortedArray.java
+    ├── minimumSizeSubarraySum.java
+    ├── moveZeros.java
+    ├── removeDuplicatesFromSortedArray.java
+    ├── reverseString.java
+    └── sortColors.java
+
+18 directories, 124 files
+</code></pre>
+
+            
+        </article>
+    </div>
+</div>
+
+
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="https://github.com/520Muzili" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="https://github.com/520Muzili" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+				
+					<a href="https://github.com/520Muzili" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
+					
+				
+					<a href="https://github.com/520Muzili" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+				
+					<a href="https://github.com/520Muzili" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
+						
+				
+		</div>
+	</div>
+
+	<div  class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by 木子李. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(https://wuchaojob.gitee.io/random-img/' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+
